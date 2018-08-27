@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_141009) do
+ActiveRecord::Schema.define(version: 2018_08_27_164957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2018_08_27_141009) do
     t.string "name"
     t.string "fake_author"
     t.string "fake_city"
-    t.bigint "user_id"
+    t.bigint "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_opinions_on_user_id"
+    t.index ["creator_id"], name: "index_opinions_on_creator_id"
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 2018_08_27_141009) do
     t.text "argument"
     t.string "photo"
     t.string "audio_url"
-    t.bigint "user_id"
+    t.bigint "creator_id"
     t.bigint "genre_id"
     t.bigint "opinion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_tracks_on_creator_id"
     t.index ["genre_id"], name: "index_tracks_on_genre_id"
     t.index ["opinion_id"], name: "index_tracks_on_opinion_id"
-    t.index ["user_id"], name: "index_tracks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,14 +73,15 @@ ActiveRecord::Schema.define(version: 2018_08_27_141009) do
     t.bigint "track_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["track_id"], name: "index_votes_on_track_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
-  add_foreign_key "opinions", "users"
+  add_foreign_key "opinions", "users", column: "creator_id"
   add_foreign_key "tracks", "genres"
   add_foreign_key "tracks", "opinions"
-  add_foreign_key "tracks", "users"
+  add_foreign_key "tracks", "users", column: "creator_id"
   add_foreign_key "votes", "tracks"
   add_foreign_key "votes", "users"
 end
