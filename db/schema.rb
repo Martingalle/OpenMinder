@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_134356) do
+ActiveRecord::Schema.define(version: 2018_08_27_141009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "opinions", force: :cascade do |t|
+    t.text "description"
+    t.string "name"
+    t.string "fake_author"
+    t.string "fake_city"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_opinions_on_user_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.string "artist"
+    t.string "artist_location"
+    t.string "album"
+    t.text "argument"
+    t.string "photo"
+    t.string "audio_url"
+    t.bigint "user_id"
+    t.bigint "genre_id"
+    t.bigint "opinion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_tracks_on_genre_id"
+    t.index ["opinion_id"], name: "index_tracks_on_opinion_id"
+    t.index ["user_id"], name: "index_tracks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +59,28 @@ ActiveRecord::Schema.define(version: 2018_08_27_134356) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.integer "birth_year"
+    t.string "city"
+    t.string "photo"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["track_id"], name: "index_votes_on_track_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "opinions", "users"
+  add_foreign_key "tracks", "genres"
+  add_foreign_key "tracks", "opinions"
+  add_foreign_key "tracks", "users"
+  add_foreign_key "votes", "tracks"
+  add_foreign_key "votes", "users"
 end
