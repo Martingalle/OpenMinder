@@ -1,5 +1,5 @@
 class Track < ApplicationRecord
-  belongs_to :user_creator, class_name: 'User'
+  belongs_to :creator, class_name: 'User'
   belongs_to :genre
   belongs_to :opinion
   has_many :votes

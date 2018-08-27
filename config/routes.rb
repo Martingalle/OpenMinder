@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :tracks, only: [:index, :create]
     resources :votes, only: [:create, :update]
   end
-  namespace :user, only: [:show, :update]
+  namespace :user, only: [:show, :update] do
+    resources :opinions, only: [:index]
+    resources :tracks, only: [:index]
+  end
   namespace :admin do
     resources :opinions, only: [:index, :update, :destroy]
     resources :tracks, only: [:index, :update, :destroy]
