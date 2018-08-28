@@ -13,9 +13,9 @@ Dans un premier temps, on liste tous les éléments utiles au pogramme :
 
 Pour chacun de ces éléments, on regarde s'il est pertinent de créer un objet et une table associée. Notamment :
 
-* est-ce que l'élément en question contient beaucoup d'informations ;
-* est-ce que ces informations serviront à établir des liens entre les modèles ;
-* est-ce qu'une même 'instance' d'un élément sera réutilisée.
+* est-ce que l'élément en question contient beaucoup d'informations ?
+* est-ce que ces informations serviront à établir des liens entre les modèles ?
+* est-ce qu'une même *instance* d'un élément sera réutilisée ?
 
 Par exemple, concernant l'élément artiste, si :
 
@@ -25,7 +25,7 @@ Par exemple, concernant l'élément artiste, si :
 
 ... alors il serait pertinent de créer un modèle dédié.
 
-Or, dans l'application *openminder*, un artiste ne pourra appraître deux fois (afin de favoriser la découverte), les données d'un artistes sont peu nombreuses et ne seront pas utilisées pour créer de liens. Nous ne créons donc pas de modèle dédié mais ajoutons un champ au modèle *track* pour le nom de l'artiste.
+Or, dans l'application *openminder*, un artiste ne peut apparaître deux fois (afin de favoriser la découverte), les données d'un artiste sont peu nombreuses et ne seront pas utilisées pour créer de liens. Nous ne créons donc pas de modèle dédié mais ajoutons un champ au modèle *track* pour le nom de l'artiste.
 
 Les modèles seront ainsi :
 
@@ -37,7 +37,7 @@ opinion
 vote
 ```
 
-Une fois qu'on a identifié les éléments qui auront des modèles dédiés, on crée les liens entre eux. Par exemple, un track est créé par un utilisateur, possède un genre musical, répond à une opinion, peut recevoir des votes. On peut donc tirer des lignes entre ces deux modèles :
+Une fois que l'on a identifié les éléments qui auront des modèles dédiés, on crée les liens entre eux. Par exemple, un track est créé par un utilisateur, possède un genre musical, répond à une opinion, peut recevoir des votes. On peut donc tirer des lignes entre les modèles, en partant du track :
 
 ```
 track | ------ | user
@@ -46,7 +46,7 @@ track | ------ | opinion
 track | ------ | votes
 ```
 
-On évolue la quantité des éléments lié à un élément, en partant du point de vue de l'élément lui-même :
+On évalue la quantité des éléments liés à un élément, en partant du point de vue de l'élément lui-même :
 
 * un track possède un seul utilisateur (celui qui l'a créé) ;
 * un track possède un seul genre musical ;
@@ -87,10 +87,12 @@ track   | N ------ 1 | genre
 track   | N ------ 1 | opinion
 track   | 1 ------ N | vote
 vote    | N ------ 1 | user
-opinion | 1 ------ N | user
+opinion | N ------ 1 | user
 ```
 
-On peut donc dessiner la database :
+Si une relation N-N apparait, il faut alors la découper en deux relations N-1 / 1-N. Ce cas n'est pas apparu dans *openminder*.
+
+On peut enfin dessiner la database :
 
 ```
 +--- (1) users (1)---(N) votes
@@ -107,12 +109,22 @@ On peut donc dessiner la database :
 +-- (N) opinions
 ```
 
+*Notes complémentaires*
 
+Normalement, il faudrait borner les quantités de deux éléments liés. Par exemple, un track doit avoir absolument un utilisateur, et un seul. Mais à contrario, un utilisateur peut n'avoir créé aucun track, ou une infinité. On pourrait par contre autoriser l'existence d'un track sans genre lié, donc un minimum de 0 genre et un maximum de 1 genre pour les tracks.
 
+Les relations sont donc (avec les bornes minimales et maximales) :
 
+```
+track   | 0-N ------ 1-1 | user
+track   | 0-N ------ 0-1 | genre
+track   | 0-N ------ 1-1 | opinion
+track   | 1-1 ------ 0-N | vote
+vote    | 0-N ------ 1-1 | user
+opinion | 0-N ------ 1-1 | user
+```
 
-
-
+Cette précision permettra de mieux définir les règles de validation puisque, par défaut, un track ne pourra pas exister sans un genre rattaché (à cause de *belongs_to*). Si l'on veut que cela puisse se faire, il faudra le préciser dans le modèle. Cela influera aussi sur la notion de *dependant_destroy*.
 
 
 
