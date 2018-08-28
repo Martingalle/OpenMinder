@@ -1,7 +1,6 @@
 class OpinionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_opinion, only: [:show]
-  before_action :set_genres, only: [:show]
 
   def index
     @opinions = Opinion.all
