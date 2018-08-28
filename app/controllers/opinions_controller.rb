@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinions = Opinion.all
-    @random_opinions = Opinion.order('RANDOM()').limit(6)
+    @random_opinions = Opinion.random(6)
     @opinion_new = Opinion.new
   end
 
@@ -35,8 +35,5 @@ class OpinionsController < ApplicationController
 
   def opinion_params
     params.require(:opinion).permit(:name, :description)
-  end
-
-  def related_opinions
   end
 end
