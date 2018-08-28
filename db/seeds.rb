@@ -70,7 +70,7 @@ PHOTOS_URL = [
     description: Faker::Lorem.paragraph(2),
     fake_author: Faker::FunnyName.two_word_name,
     fake_city: Faker::Address.city,
-    photo: PHOTOS_URL.sample
+    photo: PHOTOS_URL.sample,
     creator_id: user.id
   )
   rand(8..12).times do
