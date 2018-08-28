@@ -38,39 +38,6 @@ class OpinionsController < ApplicationController
     params.require(:opinion).permit(:name, :description)
   end
 
-  def set_genres
-    # set_opinion
-    # # => @opinion
-    # genres = @opinion.genres
-    # # => [jazz, rock, jazz, metal, rap, metal, jazz...]
-    # genres_to_hash = genres.group_by(&:itself)
-    # # => {'jazz'  => ['jazz', 'jazz', 'jazz'],
-    # #     'rock'  => ['rock'],
-    # #     'metal' => ['metal', 'metal']
-    # #     'rap'   => ['rap']}
-    # genres_counts = {}
-    # # => {}
-    # genres_to_hash.each { |k, v| genres_counts[k] = v.count }
-    # # => {'jazz'  => 3,
-    # #     'rock'  => 1,
-    # #     'metal' => 2
-    # #     'rap'   => 1}
-    # r_sorted_genres = counts.sort_by { |k, v| v }
-    # # => {'rock'  => 1,
-    # #     'rap'   => 1,
-    # #     'metal' => 2,
-    # #     'jazz'  => 3}
-    # @sorted_genres = r_sorted_genres.reverse
-    # # => {'jazz'  => 3,
-    # #     'metal' => 2,
-    # #     'rap'   => 1,
-    # #     'rock'  => 1}
-    # @main_genre = @sorted_genres[0].first
-    # # => 'jazz'
-    # @secondary_genre = @sorted_genres[1].first
-    # # => 'metal'
-  end
-
-  def set_related_opinions
+  def related_opinions
   end
 end
