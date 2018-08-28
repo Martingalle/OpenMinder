@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/update'
+  get 'votes/create'
+  get 'votes/update'
+  get 'tracks/index'
+  get 'tracks/create'
+  get 'opinions/index'
+  get 'opinions/show'
+  get 'opinions/create'
   devise_for :users
   root to: 'opinions#index'
 
