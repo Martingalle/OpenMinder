@@ -40,6 +40,29 @@ puts ''
 puts '-------------------------------------------------------------------------'
 puts 'CREATING OPINIONS AND TRACKS'
 
+PHOTOS_URL = [
+  'https://picsum.photos/900/300?image=1082',
+  'https://picsum.photos/900/300?image=1078',
+  'https://picsum.photos/900/300?image=1077',
+  'https://picsum.photos/900/300?image=1071',
+  'https://picsum.photos/900/300?image=1070',
+  'https://picsum.photos/900/300?image=1065',
+  'https://picsum.photos/900/300?image=1060',
+  'https://picsum.photos/900/300?image=1059',
+  'https://picsum.photos/900/300?image=1045',
+  'https://picsum.photos/900/300?image=1038',
+  'https://picsum.photos/900/300?image=1033',
+  'https://picsum.photos/900/300?image=1014',
+  'https://picsum.photos/900/300?image=999',
+  'https://picsum.photos/900/300?image=995',
+  'https://picsum.photos/900/300?image=965',
+  'https://picsum.photos/900/300?image=964',
+  'https://picsum.photos/900/300?image=961',
+  'https://picsum.photos/900/300?image=960',
+  'https://picsum.photos/900/300?image=839',
+  'https://picsum.photos/900/300?image=836',
+]
+
 50.times do
   user = User.order('RANDOM()').first
   opinion = Opinion.create!(
@@ -47,6 +70,7 @@ puts 'CREATING OPINIONS AND TRACKS'
     description: Faker::Lorem.paragraph(2),
     fake_author: Faker::FunnyName.two_word_name,
     fake_city: Faker::Address.city,
+    photo: PHOTOS_URL.sample
     creator_id: user.id
   )
   rand(8..12).times do
@@ -79,6 +103,7 @@ puts 'CREATING VOTES'
   Vote.create!(
     user_id: user.id,
     track_id: track.id,
+    status: ['up', 'down'].sample
   )
   print '.'
 end
