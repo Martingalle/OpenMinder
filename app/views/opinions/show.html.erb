@@ -1,0 +1,27 @@
+<h1>Opinions#show</h1>
+<p>Find me in app/views/opinions/show.html.erb</p>
+
+<p>@opinion</p>
+<p><%= @opinion %></p>
+
+<p>@opinion.name</p>
+<p><%= @opinion.name %></p>
+
+<p>@opinion.creator</p>
+<p><%= @opinion.creator.username %></p>
+
+<p>@opinion.tracks</p>
+<% @opinion.tracks.each do |track| %>
+  <p><%= track.audio_url %> <span>[up]</span><span>[down]</span></p>
+  <%= link_to 'up', opinion_upvotes_path(@opinion, track) %>
+<% end %>
+
+<p>@opinion.genres</p>
+<% @opinion.genres.each do |genre| %>
+  <p><%= genre.name %></p>
+<% end %>
+
+<%= simple_form_for ([@opinion, @track_new]) do |f| %>
+  <%= f.input :audio_url %>
+  <%= f.button :submit %>
+<% end %>

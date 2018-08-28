@@ -85,6 +85,20 @@ end
 
 puts ''
 puts '-------------------------------------------------------------------------'
+puts 'CREATING DEMO USER'
+
+User.create!(
+    email: 'user@mail.com',
+    password: 'azerty',
+    username: 'John Doe',
+    birth_year: 1987,
+    city: 'Lyon',
+    photo: '',
+    admin: false
+)
+
+puts ''
+puts '-------------------------------------------------------------------------'
 puts 'SEED DONE'
 
 puts "Users: #{User.count}"

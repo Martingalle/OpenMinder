@@ -1,0 +1,22 @@
+<h1>Opinions#index</h1>
+<p>Find me in app/views/opinions/index.html.erb</p>
+
+<p>@opinions</p>
+<% @opinions.each do |opinion| %>
+  <p><%= opinion.name %></p>
+<% end %>
+
+<hr>
+
+<p>@random_opinions</p>
+<% @random_opinions.each do |opinion| %>
+  <p><%= opinion.name %></p>
+<% end %>
+
+<hr>
+
+<%= simple_form_for @opinion_new do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
