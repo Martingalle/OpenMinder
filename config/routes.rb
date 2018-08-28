@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/update'
-  get 'votes/create'
-  get 'votes/update'
-  get 'tracks/index'
-  get 'tracks/create'
-  get 'opinions/index'
-  get 'opinions/show'
-  get 'opinions/create'
+  get 'genres/show'
   devise_for :users
   root to: 'opinions#index'
 
   resources :opinions, only: [:index, :show, :create] do
     resources :tracks, only: [:index, :create]
-    resources :votes, only: [:create, :update]
+    get 'upvotes', to: 'tracks#upvote'
   end
+  resources :genres, only: [:show]
   namespace :user, only: [:show, :update] do
     resources :opinions, only: [:index]
     resources :tracks, only: [:index]
