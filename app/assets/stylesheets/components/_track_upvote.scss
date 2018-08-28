@@ -1,0 +1,112 @@
+.track {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background-color: lightblue;
+  margin: 5px auto;
+  width: 70%;
+}
+
+/* Body design */
+.track-body {
+  flex: 1 1 auto;
+}
+.track-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.track-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* track image */
+.track-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 175px;
+}
+
+/* Upvote design */
+.track-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.track-count {
+  margin: 2px 0 0;
+}
+.track-arrow-up {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.track-arrow-down {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid black;
+  border-bottom: 6px solid transparent;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.track-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.track-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+.track-controls a:hover {
+  color: #D3473C !important
+}
+.track-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.track:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+.track-upvote:hover, .track-upvote.track-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.track-upvote-upvoted .track-arrow {
+  border-bottom-color: #5898f1;
+}
+// .track:hover .track-upvote {
+//   transform: scale(1.2)
+// }
+.track:hover .track-controls-hidden a {
+  color: #E6E6E6;
+}
+.track-upvote:hover .track-arrow {
+  border-bottom: 9px solid #5898f1;
+}
