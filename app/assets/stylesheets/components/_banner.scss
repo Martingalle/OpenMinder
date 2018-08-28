@@ -1,0 +1,35 @@
+.banner {
+  margin: 20px 20px;
+  color: white;
+  text-align: center;
+  height: 40vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-image: cover !important;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0;
+}
+.banner h1 {
+  margin: 0 auto;
+  padding: 10px 0;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: italic;
+  width: 80%;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.banner-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
