@@ -1,0 +1,17 @@
+body {
+  margin-top: 90px;
+  position: relative;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 10px -15px #777;
+  background: #F4F4F4;
+  margin-bottom: $footer-height;
+  padding: 20px;
+}
+
+// body.home {
+//   margin-top: 0px;
+// }

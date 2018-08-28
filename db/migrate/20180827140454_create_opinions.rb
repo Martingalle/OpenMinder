@@ -10,4 +10,8 @@ class CreateOpinions < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+
+  def index
+    @opinion = Opinion.all
+  end
 end
