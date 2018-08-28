@@ -33,4 +33,14 @@ class Opinion < ApplicationRecord
     return nil if self.genres.empty?
     Genre.find(genres_occurrences_desc[1].first)
   end
+
+  def related_opinions
+    Opinion.all.select do |opinion|
+      opinion.main_genre == self.main_genre
+    end
+  end
+
+  def self.random(count)
+    Opinion.order('RANDOM()').limit(count)
+  end
 end
