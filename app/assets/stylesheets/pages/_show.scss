@@ -1,0 +1,59 @@
+.opinion-description p {
+  padding: 50px 40px;
+
+}
+
+.opinion-player h2 {
+  margin: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.opinion-player-title {
+    margin: 40px 0;
+}
+
+
+.opinion-player-details {
+  display: flex;
+}
+
+.opinion-tracks {
+  width: 70%;
+  padding: 0 20px;
+}
+
+.opinion-genres {
+  width: 100%;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+  box-shadow: 1px 0px 0px grey;
+  h1 {
+    font-size: 18px;
+    opacity: 0.8;
+  }
+}
+
+.opinion-genre-name {
+  display: inline-block;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: steelblue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.opinion-add-track {
+  margin: 20px 5px;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+
