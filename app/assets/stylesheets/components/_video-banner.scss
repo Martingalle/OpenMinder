@@ -1,0 +1,27 @@
+.video-banner {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: relative;
+  overflow: hidden;
+}
+
+.video-banner-content {
+  z-index: 2;
+}
+
+.video-banner h1 {
+  font-size: 60px;
+  text-shadow: 2px 5px 10px #0000009e;
+}
+
+video {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
