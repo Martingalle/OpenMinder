@@ -109,7 +109,9 @@ On peut enfin dessiner la database :
 +-- (N) opinions
 ```
 
-*Notes complémentaires*
+<hr>
+
+**Notes complémentaires**
 
 Normalement, il faudrait borner les quantités de deux éléments liés. Par exemple, un track doit avoir absolument un utilisateur, et un seul. Mais à contrario, un utilisateur peut n'avoir créé aucun track, ou une infinité. On pourrait par contre autoriser l'existence d'un track sans genre lié, donc un minimum de 0 genre et un maximum de 1 genre pour les tracks.
 
