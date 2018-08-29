@@ -3,16 +3,34 @@
 .om-icons {
   display: flex;
   justify-content: space-between;
-  // margin-right: auto;
-  // margin-left: auto;
-  // padding-left: 5px;
-  // padding-right: 5px;
+  margin: none;
 }
 
 .main-info {
+  margin-top: 55px;
+  margin-bottom: 55px;
   h3 {
     text-align: center;
+    color: #000;
+    text-shadow: none;
   }
+}
+
+.secondary-title {
+  margin-top: 55px;
+  height: 30px;
+  margin-bottom: 75px;
+  h3 {
+    text-align: center;
+    color: #000;
+    text-shadow: none;
+  }
+}
+
+.main-title {
+  height: 30px;
+  margin-bottom: 75px;
+
 }
 
 .opinion-card-random {
@@ -21,6 +39,11 @@
   height: 300px;
 }
 
-.container-form {
+.fas {
+  font-size: 45px;
+}
 
+.container-form {
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
