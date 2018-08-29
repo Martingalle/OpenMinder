@@ -1,0 +1,33 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $footer-height;
+  background: linear-gradient(115.86848027565588deg, rgba(160, 0, 239,1) 25.90234375%,rgba(159, 0, 238,1) 25.90234375%,rgba(33, 0, 91,1) 77.62109375%);
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  z-index: -1;
+
+  .footer-content {
+    margin-top: 70px;
+    position: fixed;
+    // z-index: -1;
+  }
+
+  li {
+    list-style: none;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .footer-text {
+    margin-top: 10px;
+  }
+
+  .mentions-legales {
+    width: 400px;
+  }
+}
