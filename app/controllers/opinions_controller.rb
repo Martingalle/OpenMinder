@@ -37,11 +37,11 @@ class OpinionsController < ApplicationController
     # USER STORIES
     # - creating a new opinion
     # ---------------------------------------------------------
-    @opinions = Opinion.all
     opinion = Opinion.new(opinion_params)
     opinion.creator = current_user
     @new = true
     if opinion.save
+      @track_new = Track.new
       redirect_to opinion_path(opinion, new: true)
     else
       @opinions = Opinion.all
