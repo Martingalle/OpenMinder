@@ -9,6 +9,25 @@ class OpinionsController < ApplicationController
     # - displaying random opinions
     # - creating a new opinion
     # ---------------------------------------------------------
+
+
+
+
+    # ---- search ----
+
+    @search_query = 'no search'
+    if params[:query].present?
+      @search_query = params[:query]
+      @opinions = Opinion.where(main_genre: params[:query])
+    else
+      @opinions = policy_scope(Opinion).order(created_at: :desc)
+    end
+
+    # ----------------
+
+
+
+
     @opinions = policy_scope(Opinion).order(created_at: :desc)
     @random_opinions = @opinions.sample(6)
     @opinion_new = Opinion.new

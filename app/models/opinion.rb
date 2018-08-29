@@ -1,4 +1,5 @@
 class Opinion < ApplicationRecord
+  include PgSearch
   belongs_to :creator, class_name: 'User'
   has_many :tracks, dependent: :destroy
   has_many :genres, through: :tracks
@@ -51,4 +52,15 @@ class Opinion < ApplicationRecord
   def self.random(count)
     Opinion.order('RANDOM()').limit(count)
   end
+
+
+  # ---- search ----
+
+  pg_search_scope :search_by_main_genre_and_secondary_genre,
+    against: [ :main_genre, :secondary_genre ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
+
 end
