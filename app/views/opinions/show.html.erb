@@ -1,0 +1,19 @@
+<br><br><br><br>
+
+<p>user: <%= current_user.username %></p>
+<p>admin: <%= current_user.admin %></p>
+
+<hr>
+<% @opinion.tracks.each do |track| %>
+  <p>
+    <%= track.name %> / <%= track.audio_url %>
+    <small><%= link_to 'hard_delete', opinion_track_path(@opinion, params: { id: track} ), method: :delete %></small>
+    <%= simple_form_for([@opinion, track]) do |f| %>
+      <%= hidden_field_tag(:track, track.id) %>
+      <%= f.input :name %>
+      <%= f.input :audio_url %>
+      <%= f.button :submit %>
+    <% end %>
+  </p>
+  <hr>
+<% end %>

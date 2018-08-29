@@ -83,7 +83,7 @@ PHOTOS_URL = [
       album: Faker::Music.album,
       argument: Faker::Lorem.paragraph(2),
       photo: '',
-      audio_url: '',
+      audio_url: 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com',
       creator_id: user.id,
       genre_id: genre.id,
       opinion_id: opinion.id
@@ -140,7 +140,7 @@ User.create!(
     birth_year: 1987,
     city: 'Lyon',
     photo: '',
-    admin: true
+    admin: false
 )
 
 User.create!(
@@ -151,7 +151,7 @@ User.create!(
     birth_year: 1987,
     city: 'Lyon',
     photo: '',
-    admin: false
+    admin: true
 )
 
 User.create!(

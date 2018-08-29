@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_opinion, only: [:show]
+  before_action :set_opinion, only: [:show, :update, :destroy]
 
   def index
     # ---------------------------------------------------------
@@ -9,8 +9,8 @@ class OpinionsController < ApplicationController
     # - displaying random opinions
     # - creating a new opinion
     # ---------------------------------------------------------
-    @opinions = Opinion.all
-    @random_opinions = Opinion.random(6)
+    @opinions = policy_scope(Opinion).order(created_at: :desc)
+    @random_opinions = @opinions.sample(6)
     @opinion_new = Opinion.new
   end
 
@@ -55,6 +55,7 @@ class OpinionsController < ApplicationController
 
   def set_opinion
     @opinion = Opinion.find(params[:id])
+    authorize @opinion
   end
 
   def opinion_params
