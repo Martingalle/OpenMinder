@@ -126,6 +126,7 @@ User.create!(
     email: 'user2@mail.com',
     password: 'azerty',
     username: 'Paul',
+    username: 'Jane Doe',
     birth_year: 1987,
     city: 'Lyon',
     photo: '',
@@ -134,6 +135,27 @@ User.create!(
 
 User.create!(
     email: 'user3@mail.com',
+    password: 'azerty',
+    username: 'Jack',
+    birth_year: 1987,
+    city: 'Lyon',
+    photo: '',
+    admin: true
+)
+
+User.create!(
+    email: 'admin1@mail.com',
+    password: 'azerty',
+    username: 'Paul',
+    username: 'Jane Doe',
+    birth_year: 1987,
+    city: 'Lyon',
+    photo: '',
+    admin: false
+)
+
+User.create!(
+    email: 'admin2@mail.com',
     password: 'azerty',
     username: 'Jack',
     birth_year: 1987,
