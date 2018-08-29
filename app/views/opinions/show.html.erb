@@ -1,19 +1,74 @@
-<br><br><br><br>
-
-<p>user: <%= current_user.username %></p>
-<p>admin: <%= current_user.admin %></p>
+<p>User: <%= current_user.username %></p>
+<p>Admin: <%= current_user.admin %></p>
 
 <hr>
-<% @opinion.tracks.each do |track| %>
-  <p>
-    <%= track.name %> / <%= track.audio_url %>
-    <small><%= link_to 'hard_delete', opinion_track_path(@opinion, params: { id: track} ), method: :delete %></small>
-    <%= simple_form_for([@opinion, track]) do |f| %>
-      <%= hidden_field_tag(:track, track.id) %>
+
+<h2>CRUD on opinion</h2>
+<br>
+
+<h4><strong>*** Opinion informations</strong></h4>
+<small>Id: <%= @opinion.id %></small><br>
+<small>Name: <%= @opinion.name %></small><br>
+<small>Description: <%= @opinion.description %></small>
+
+<hr>
+
+<p><strong>Edit opinion</strong></p>
+<% if policy(Opinion).update? %>
+  <%= simple_form_for(@opinion) do |f| %>
+    <small>
       <%= f.input :name %>
-      <%= f.input :audio_url %>
+      <%= f.input :description %>
       <%= f.button :submit %>
+    </small>
+  <% end %>
+<% else %>
+  <p><small>You can't edit opinion</small></p>
+<% end %>
+
+<hr>
+
+<p><strong>Delete opinion</strong></p>
+<% if policy(Opinion).destroy? %>
+  <small><%= link_to 'Delete the opinion', opinion_path(@opinion), method: :delete %></small>
+<% else %>
+  <p><small>You can't delete opinion</small></p>
+<% end %>
+
+<hr>
+
+<h2>CRUD on tracks</h2>
+<br>
+
+<% @opinion.tracks[0..1].each do |track| %>
+
+    <h4><strong>*** Track informations</strong></h4>
+    <small>Id: <%= track.id %> | Name: <%= track.name %> | Url: <%= track.audio_url %></small>
+
+    <hr>
+
+    <p><strong>Edit track</strong></p>
+    <% if policy(Track).update? %>
+      <%= simple_form_for([@opinion, track]) do |f| %>
+        <small>
+          <%= f.input :audio_url %>
+          <%= f.association :genre %>
+          <%= f.input :argument %>
+          <%= f.button :submit %>
+        </small>
+      <% end %>
+    <% else %>
+      <p><small>You can't edit track</small></p>
     <% end %>
-  </p>
+
+    <hr>
+
+    <p><strong>Delete track</strong></p>
+    <% if policy(Track).destroy? %>
+      <small><%= link_to 'Delete the track', opinion_track_path(@opinion, track), method: :delete %></small>
+    <% else %>
+      <p><small>You can't delete track</small></p>
+    <% end %>
   <hr>
+
 <% end %>

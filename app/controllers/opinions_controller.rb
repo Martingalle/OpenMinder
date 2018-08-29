@@ -51,6 +51,24 @@ class OpinionsController < ApplicationController
     end
   end
 
+  # ! admin only
+  def update
+    if @opinion.update(opinion_params)
+      redirect_to opinion_path(@opinion)
+    else
+      render_show
+    end
+  end
+
+  # ! admin only
+  def destroy
+    if @opinion.destroy
+      redirect_to opinions_path
+    else
+      render_show
+    end
+  end
+
   private
 
   def set_opinion
@@ -60,5 +78,11 @@ class OpinionsController < ApplicationController
 
   def opinion_params
     params.require(:opinion).permit(:name, :description)
+  end
+
+  def render_show
+    @track_new = Track.new
+    @new = params[:new] || false
+    render :show
   end
 end

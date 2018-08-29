@@ -26,7 +26,9 @@ class Track < ApplicationRecord
     self.genre = Genre.order('RANDOM()').first
   end
 
-  def set_audio_url
-    self.audio_url = 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com'
+  require 'faker'
+
+  def set_name
+    self.name = Faker::Pokemon.move
   end
 end
