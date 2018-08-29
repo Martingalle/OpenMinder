@@ -21,74 +21,79 @@
   </div>
 </div> -->
 
+<div class="container main-info">
+  <div class="row">
+    <div class="card main-title">
+      <h3>Lorem Ipsum</h3>
+    </div>
+  </div>
+  <div class="container om-icons">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-music"></i>
+        </div>
+        <div class="text-information">
+          <h4>MUSIC</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-headphones"></i>
+        </div>
+        <div class="text-information">
+          <h4>KNOWLEDGE</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-comments"></i>
+        </div>
+        <div class="text-information">
+          <h4>SHARE</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
-<hr>
 
 <div class="container">
-
   <div class="row">
 
 
       <!-- insert <div class="card"> -->
         <% @random_opinions.each do |opinion| %>
-        <div class="col-xs-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
+          <div class="card-category"><%= opinion.main_genre %></div>
           <div class="card-description">
             <p>Here is an opinion</p>
             <p><%= opinion.name %></p>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           <a class="card-link" href="#" ></a>
           </div>
         </div>
         <% end %>
-
-
   </div>
-  <!-- <div class="row">
+</div>
 
-    <div class="col-xs-12 col-sm-4">
+<div class="container container-form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <!-- insert <div class="card"> -->
-        <!-- <% 3.times do |card| %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2>Le Wagon Shanghai</h2>
-          <p>Very cool city, the best</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-        </div>
+        <%= simple_form_for @opinion_new do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.button :submit %>
         <% end %>
     </div>
-
-  </div> -->
-  <!-- <% 3.times do |card| %> -->
-  <!-- <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-
-        <!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2>Le Wagon Shanghai</h2>
-          <p>Very cool city, the best</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
-        </div>
-    </div>
-  <% end %>
-  </div> -->
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-        <!-- insert <div class="card"> -->
-          <%= simple_form_for @opinion_new do |f| %>
-            <%= f.input :name %>
-            <%= f.input :description %>
-            <%= f.button :submit %>
-          <% end %>
-      </div>
-    </div>
   </div>
+</div>
