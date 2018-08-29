@@ -1,0 +1,14 @@
+.button {
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 10px 15px;
+  border: 1px solid $blue;
+  color: $blue;
+  transition: 0.5s ease-in-out;
+  // transition: color 1s ease-in-out;
+
+  &:hover {
+    color: $purple;
+    border: 1px solid $purple;
+  }
+}
