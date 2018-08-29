@@ -1,14 +1,15 @@
 .button {
   background-color: transparent;
-  border-radius: 50px;
+  border-radius: 0px;
   padding: 10px 15px;
-  border: 1px solid $blue;
+  border: 1.5px solid $blue;
   color: $blue;
+  font-weight: 300;
   transition: 0.5s ease-in-out;
   // transition: color 1s ease-in-out;
 
   &:hover {
     color: $purple;
-    border: 1px solid $purple;
+    border: 1.5px solid $purple;
   }
 }
