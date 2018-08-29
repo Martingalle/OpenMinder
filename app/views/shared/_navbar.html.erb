@@ -1,10 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <!-- <div class="container"> -->
     <div class="navbar-wagon">
-      <!-- Logo -->
-      <%= link_to opinions_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "openminderlogo.png", height: 50 %>
-      <% end %>
 
       <!-- Right Navigation -->
       <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -13,17 +9,50 @@
 
 
           <!-- Avatar with dropdown menu -->
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <img src="https://avatars3.githubusercontent.com/u/40064197?s=400&u=53c95378a60c3dae2d21758baeeaab037df9453d&v=4" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Log Out</a></li>
-            </ul>
+
+          <div class="navbar-wagon-item">
+            <div class="dropdown">
+              <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+
+              <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <div class="flex-nabar-display">
+                  <div><img src="https://avatars3.githubusercontent.com/u/40064197?s=400&u=53c95378a60c3dae2d21758baeeaab037df9453d&v=4" class="avatar"></div>
+                  <div><%= current_user.username %></div>
+                  <div><a href="#">Profile</a></div>
+                  <div>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                    <% end %>
+                  </div>
+                  <div><%= link_to 'Back to the home', opinions_path %></div>
+                  <div><a href="#page-top"><i class="fas fa-arrow-up"></i></a></div>
+                </div>
+              </div>
+
+
+            </div>
           </div>
-        </div>
+
+        <% else %>
+          <!-- Login link (when logged out) -->
+          <div class="navbar-wagon-item">
+            <div class="dropdown">
+              <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+                <li><%= link_to 'Back to the home', opinions_path %></li>
+              </ul>
+            </div>
+          </div>
 
         <% end %>
+
+
+
+
+
+
+
 
 
       <!-- Dropdown list appearing on mobile only -->
