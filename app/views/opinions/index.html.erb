@@ -6,25 +6,10 @@
   </div>
 </div>
 
-<!-- <p>Découvrez tous les clichés musicaux</p>
-<% @opinions.each do |opinion| %>
-  <p><%= opinion.name %></p>
-<% end %> -->
-
-
-<!-- <div class="container random-opinions">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-lg-12">
-      <p>Découvrez quelques clichés musicaux</p>
-
-    </div>
-  </div>
-</div> -->
-
 <div class="container main-info">
   <div class="row">
     <div class="card main-title">
-      <h3>Lorem Ipsum</h3>
+      <h3>Pourquoi Open Minder</h3>
     </div>
   </div>
   <div class="container om-icons">
@@ -65,10 +50,13 @@
 </div>
 
 
-<div class="container">
+<div class="container container-opinions">
   <div class="row">
-
-
+    <div class="card secondary-title">
+      <h3>Découvrez quelques clichés musicaux</h3>
+    </div>
+  </div>
+  <div class="row">
       <!-- insert <div class="card"> -->
         <% @random_opinions.each do |opinion| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -92,7 +80,7 @@
         <%= simple_form_for @opinion_new do |f| %>
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: "button" %>
         <% end %>
     </div>
   </div>
