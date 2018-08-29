@@ -7,6 +7,9 @@
   }
 }
 
+.open {
+  color: $purple;
+}
 
 .fa-bars:before {
   color: #444;
@@ -79,7 +82,7 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-  width: 168vh;
+  width: 173vh;
 }
 
 .dropdown-menu-right{
@@ -90,7 +93,7 @@
 
 
 .navbar-wagon-dropdown-menu {
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.9);
   background-opacity: 0.4;
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
