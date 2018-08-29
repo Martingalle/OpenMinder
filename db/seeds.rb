@@ -113,13 +113,33 @@ puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USER'
 
 User.create!(
-    email: 'user@mail.com',
+    email: 'user1@mail.com',
     password: 'azerty',
-    username: 'John Doe',
+    username: 'Pierre',
     birth_year: 1987,
     city: 'Lyon',
     photo: '',
     admin: false
+)
+
+User.create!(
+    email: 'user2@mail.com',
+    password: 'azerty',
+    username: 'Paul',
+    birth_year: 1987,
+    city: 'Lyon',
+    photo: '',
+    admin: false
+)
+
+User.create!(
+    email: 'user3@mail.com',
+    password: 'azerty',
+    username: 'Jack',
+    birth_year: 1987,
+    city: 'Lyon',
+    photo: '',
+    admin: true
 )
 
 puts ''
