@@ -1,2 +1,111 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<<div class="banner video-banner">
+  <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
+  <div class="banner-content video-banner-content">
+    <h1>Open Minder</h1>
+    <h4>New musical horizons</h4>
+  </div>
+</div>
+
+<div class="container main-info">
+  <div class="row">
+    <div class="card main-title">
+      <h3>Pourquoi Open Minder</h3>
+    </div>
+  </div>
+  <div class="container om-icons">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-music"></i>
+        </div>
+        <div class="text-information">
+          <h4>MUSIC</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-headphones"></i>
+        </div>
+        <div class="text-information">
+          <h4>KNOWLEDGE</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="icon-information">
+          <i class="fas fa-comments"></i>
+        </div>
+        <div class="text-information">
+          <h4>SHARE</h4>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container container-opinions">
+  <div class="row">
+    <div class="card secondary-title">
+      <h3>Découvrez quelques clichés musicaux</h3>
+    </div>
+  </div>
+  <div class="row">
+      <!-- insert <div class="card"> -->
+        <% @random_opinions.each do |opinion| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
+          <div class="card-category"><%= opinion.main_genre %></div>
+          <div class="card-description">
+            <p>Here is an opinion</p>
+            <p><%= opinion.name %></p>
+          </div>
+          <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <% end %>
+  </div>
+</div>
+
+<div class="container container-form">
+  <div class="row">
+    <div class="card">
+      <h3>Ajoutez vos clichés musicaux!</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <!-- insert <div class="card"> -->
+        <%= simple_form_for @opinion_new do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.button :submit, class: "button" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container container-form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+      <div class="form-opinion">
+        <h3>Ajoutez vos clichés musicaux!</h3>
+        <%= simple_form_for @opinion_new do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.button :submit, class: "button" %>
+        <% end %>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

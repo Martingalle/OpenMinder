@@ -1,4 +1,4 @@
-<div class="banner video-banner">
+<<div class="banner video-banner">
   <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
   <div class="banner-content video-banner-content">
     <h1>Open Minder</h1>
@@ -73,15 +73,19 @@
   </div>
 </div>
 
+
 <div class="container container-form">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-      <!-- insert <div class="card"> -->
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
+
+      <div class="form-opinion">
+        <h3>Ajoutez vos clichés musicaux!</h3>
         <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name %>
-          <%= f.input :description %>
+          <%= f.input :name, placeholder: "test" %>
+          <%= f.input :description, placeholder: "test" %>
           <%= f.button :submit, class: "button" %>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
