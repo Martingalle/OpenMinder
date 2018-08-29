@@ -37,7 +37,7 @@
         <div class="opinion-genres">
           <h1>Genres related to the Tracks !</h1>
           <% @opinion.genres_occurrences_desc.each do |k,v| %>
-              <div class="opinion-genre-name"><%= k %></div>
+              <div class="opinion-genre-name"><%= k[:genre].name %></div>
           <% end %>
         </div>
 
