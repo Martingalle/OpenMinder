@@ -6,48 +6,51 @@
   </div>
 </div>
 
-<div class="container main-info">
-  <div class="row">
-    <div class="card main-title">
-      <h3>Pourquoi Open Minder</h3>
-    </div>
-  </div>
-  <div class="container om-icons">
+<div class="wrapper">
+  <div class="container main-info">
     <div class="row">
-      <div class="col-xs-6">
-        <div class="icon-information">
-          <i class="fas fa-music"></i>
-        </div>
-        <div class="text-information">
-          <h4>MUSIC</h4>
-          <p>lorem ipsum</p>
-        </div>
+      <div class="card main-title">
+        <h3>Pourquoi Open Minder</h3>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="icon-information">
-          <i class="fas fa-headphones"></i>
-        </div>
-        <div class="text-information">
-          <h4>KNOWLEDGE</h4>
-          <p>lorem ipsum</p>
+    <div class="container openminded-icons">
+      <div class="row">
+        <div class="col-xs-6 openminded-icons-infobox">
+          <div class="icon-information">
+            <%= image_tag"compact-disc.png"%>
+          </div>
+          <div class="text-information">
+            <h4>ECOUTEZ</h4>
+            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="icon-information">
-          <i class="fas fa-comments"></i>
+      <div class="row">
+        <div class="col-xs-6 openminded-icons-infobox">
+          <div class="icon-information">
+            <%= image_tag"idea.png"%>
+          </div>
+          <div class="text-information">
+            <h4>DÉCOUVREZ</h4>
+            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
+          </div>
         </div>
-        <div class="text-information">
-          <h4>SHARE</h4>
-          <p>lorem ipsum</p>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 openminded-icons-infobox">
+          <div class="icon-information">
+            <%= image_tag"share.png"%>
+          </div>
+          <div class="text-information">
+            <h4>PARTAGEZ</h4>
+            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <div class="container container-opinions">
@@ -81,8 +84,22 @@
       <div class="form-opinion">
         <h3>Ajoutez vos clichés musicaux!</h3>
         <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, placeholder: "test" %>
-          <%= f.input :description, placeholder: "test" %>
+          <%= f.input :name, placeholder: "Donnez un titre à votre cliché" %>
+          <%= f.input :description, placeholder: "Décrivez le cliché" %>
+          <!-- <%= f.association :genres, as: :check_boxes %> -->
+
+          <fieldset class="form-group">
+            <legend class="col-form-label pt-0">Main genre</legend>
+            <input type="hidden" name="opinion[genre_ids][]" value="" />
+            <div class="category-choices">
+              <% Genre.all.each do |genre| %>
+                <input type="checkbox" class="hidden" value="<%= genre.id %>" name="post[genre_ids][]" id="post_genre_ids_<%= genre.id %>">
+                <label class="category-choice" for="post_genre_ids_<%= genre.id %>">
+                  <%= genre.name %>
+                  <i class="fa fa-music"></i>
+                </label>
+              <% end %>
+          </fieldset>
           <%= f.button :submit, class: "button" %>
         <% end %>
       </div>

@@ -65,3 +65,39 @@ label.collection_check_boxes {
   vertical-align: -2px;
   margin-left: 2px;
 }
+
+.form-control {
+    height: auto;
+    font-weight: lighter;
+}
+
+.category-choices {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.category-choice {
+  background: $purple;
+  padding: 13px;
+  color: white;
+  opacity: 0.6;
+  flex: 0 0 30%;
+  text-align: center;
+  font-weight: lighter;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+    background: $brand-primary;
+    color: white;
+    opacity: 1;
+  }
+
+}
+
+legend {
+  font-size: 15px;
+}
