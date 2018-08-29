@@ -26,6 +26,18 @@ class TracksController < ApplicationController
     end
   end
 
+  def downvote
+    vote = Vote.new
+    vote.track = Track.find(params[:format])
+    vote.user = current_user
+    vote.status = 'down'
+    if vote.save
+      redirect_to opinion_path(Track.find(params[:opinion_id]))
+    else
+      render 'opinions/show'
+    end
+  end
+
   private
 
   def track_params
