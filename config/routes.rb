@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     # !!!!!! add update and destroy for admin only
     resources :tracks, only: [:index, :create]
     # !!!!!! add update and destroy for admin only
-    get 'upvotes', to: 'tracks#upvote'
+    post 'upvote', to: 'tracks#upvote'
+    post 'downvote', to: 'tracks#downvote'
   end
 
   resources :genres, only: [:show]
