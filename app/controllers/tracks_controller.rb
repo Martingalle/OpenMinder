@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_opinion, only: [:create, :update, :destroy]
-  before_action :set_track, only: [:create, :update, :destroy]
+  before_action :set_track, only: [:update, :destroy]
 
   def create
     track = Track.new(track_params)
@@ -42,7 +42,7 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:audio_url, :genre_id, :argument)
+    params.require(:track).permit(:name, :photo, :audio_url, :genre_id, :argument)
   end
 
   def set_opinion
