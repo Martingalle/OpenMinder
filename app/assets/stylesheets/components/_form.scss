@@ -6,8 +6,10 @@
   }
   label {
     float: left;
-    width: 100px;
+    // width: 100px;
     font-weight: 400;
+    font-size: 15px;
+    padding-right: 10px;
   }
 }
 
@@ -91,7 +93,7 @@ label.collection_check_boxes {
     cursor: pointer;
   }
   &.active {
-    background: $brand-primary;
+    background: $yellow;
     color: white;
     opacity: 1;
   }
@@ -99,5 +101,10 @@ label.collection_check_boxes {
 }
 
 legend {
-  font-size: 15px;
+  font-size: 19px;
+}
+
+.a-links {
+  font-size: 14px;
+  padding-top: 20px;
 }
