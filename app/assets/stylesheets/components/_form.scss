@@ -1,0 +1,110 @@
+.simple_form {
+  div.input {
+    margin-bottom: 10px;
+    clear: both;
+    /* Required for Webkit, but not for Gecko */
+  }
+  label {
+    float: left;
+    // width: 100px;
+    font-weight: 400;
+    font-size: 15px;
+    padding-right: 10px;
+  }
+}
+
+.form-group {
+    margin-bottom: 35px;
+}
+
+div.boolean label {
+  float: none;
+  margin: 0;
+}
+
+label.collection_radio_buttons {
+  float: none;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form {
+  .error {
+    clear: left;
+    color: black;
+    display: block;
+    margin-left: 120px;
+  }
+  .hint {
+    clear: left;
+    margin-left: 120px;
+    color: #555;
+    display: block;
+    font-style: italic;
+  }
+}
+
+input {
+  &.radio {
+    margin-right: 5px;
+    vertical-align: -3px;
+  }
+  &.check_boxes {
+    margin-left: 3px;
+    vertical-align: -3px;
+  }
+}
+
+label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+.form-control {
+    height: auto;
+    font-weight: lighter;
+}
+
+.category-choices {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.category-choice {
+  background: $purple;
+  padding: 13px;
+  color: white;
+  opacity: 0.6;
+  flex: 0 0 30%;
+  text-align: center;
+  font-weight: lighter;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+    background: $yellow;
+    color: white;
+    opacity: 1;
+  }
+
+}
+
+legend {
+  font-size: 19px;
+}
+
+.a-links {
+  font-size: 14px;
+  padding-top: 20px;
+}
