@@ -63,6 +63,21 @@ PHOTOS_URL = [
   'https://picsum.photos/900/300?image=836',
 ]
 
+YOUTUBE_ID = [
+  "cWGE9Gi0bB0",
+  "CduA0TULnow",
+  "B0jMPI_pUec",
+  "s3Q80mk7bxE",
+  "SXQe68dOc-Q",
+  "cWGE9Gi0bB0",
+  "EzURpTF5c8",
+  "BUCTrcSGvsU",
+  "rsWmrGuuWuE",
+  "lS-af9Q-zvQ",
+  "BGBM5vWiBLo",
+  "bESGLojNYSo",
+]
+
 50.times do
   user = User.order('RANDOM()').first
   opinion = Opinion.create!(
@@ -84,6 +99,7 @@ PHOTOS_URL = [
       argument: Faker::Lorem.paragraph(2),
       photo: "http://www.mind-test.fr/wp-content/uploads/2018/08/openminder"<<rand(100..200).to_s<<".jpg",
       audio_url: 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com',
+      youtube_id: YOUTUBE_ID.sample,
       creator_id: user.id,
       genre_id: genre.id,
       opinion_id: opinion.id
