@@ -14,21 +14,18 @@ class OpinionsController < ApplicationController
 
 
     # ---- search ----
-
-    @search_query = 'no search'
+    @opinions = policy_scope(Opinion).order(created_at: :desc)
     if params[:query].present?
       @search_query = params[:query]
-      @opinions = Opinion.where(main_genre: params[:query])
-    else
-      @opinions = policy_scope(Opinion).order(created_at: :desc)
+      @opinions = @opinions.select do |opinion|
+        opinion.main_genre.name == params[:query]
+      end
     end
-
     # ----------------
 
 
 
 
-    @opinions = policy_scope(Opinion).order(created_at: :desc)
     @random_opinions = @opinions.sample(6)
     @opinion_new = Opinion.new
   end
