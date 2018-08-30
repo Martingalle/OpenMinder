@@ -6,7 +6,7 @@ class Track < ApplicationRecord
 
   has_many :users_voting, through: :votes,  :source => 'user'
 
-  before_create :set_genre, :set_audio_url
+  before_create :set_genre, :set_name
 
   def upvotes
     self.votes.select { |vote| vote.status == 'up' }.count
