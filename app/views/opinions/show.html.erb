@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %>>
   <%= render 'shared/banner',
   photo: @opinion.photo,
   author:@opinion.fake_author,
@@ -9,22 +9,43 @@
   Launch demo modal
 </button>
 <p>if at new = true, faire péter la modale !</p>
-
   <div class="opinion-description">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor  reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt  culpa qui officia deserunt mollit anim id est laborum</p>
   </div>
   <div class="opinion-player">
+  <hr>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+          <div id="search">
+            <%= form_tag api_search_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type in a song title"
+            %>
+          <% end %>
+        </div>
+        <div id="results">
+        </div>
+      </div>
+      <div class="results">
+      </div>
+    </div>
+  <hr>
+
     <div class="opinion-player-title">
       <h2>Still Dubious ?</h2>
       <h2>Listen to these songs to make up your mind ! </h2>
     </div>
+
+
     <div class="opinion-player-details">
       <div class="opinion-tracks">
         <% @opinion.tracks.each do |track| %>
           <%= render 'shared/track-upvote',
-          photo:@opinion.photo,
+          photo:track.photo,
           artist:"artist_name to be completed",
-          song:"song to be completed",
+          song:track.name,
           upvotes: track.upvotes,
           downvotes: track.downvotes,
           opinion: @opinion,
