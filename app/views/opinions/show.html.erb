@@ -1,14 +1,21 @@
-<div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %>>
+<div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
   <%= render 'shared/banner',
   photo: @opinion.photo,
   author:@opinion.fake_author,
   city:@opinion.fake_city,
   name:@opinion.name %>
 
+<hr>
+  <h1>here is the player</h1>
+<hr>
+
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
 <p>if at new = true, faire péter la modale !</p>
+
+
   <div class="opinion-description">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor  reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt  culpa qui officia deserunt mollit anim id est laborum</p>
   </div>
@@ -39,6 +46,7 @@
     </div>
 
 
+
     <div class="opinion-player-details">
       <div class="opinion-tracks">
         <% @opinion.tracks.each do |track| %>
@@ -53,6 +61,61 @@
           %>
         <% end %>
       </div>
+      <div id="player" data-songs-id=<%= @youtube_ids.to_json %>></div>
+
+      <script>
+
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      const videoId = document.getElementById("player").dataset.songsId;
+      // const videoId='M7lc1UVf-VE';
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '180',
+          width: '320',
+          videoId: videoId,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+
+
+
+
+
+
+
+
       <div class="opinion-right-column">
         <div class="opinion-genres">
           <h1>Genres related to the Tracks !</h1>
