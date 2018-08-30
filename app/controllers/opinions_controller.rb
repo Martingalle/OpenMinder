@@ -10,7 +10,6 @@ class OpinionsController < ApplicationController
     # - creating a new opinion
     # ---------------------------------------------------------
     @opinions = policy_scope(Opinion).order(created_at: :desc)
-    @random_opinions = @opinions.sample(6)
     @opinion_new = Opinion.new
   end
 

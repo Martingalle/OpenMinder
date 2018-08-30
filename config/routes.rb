@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'opinions#index'
+  root to: 'pages#home'
 
   resources :opinions, only: [:index, :show, :create, :update, :destroy] do
     resources :tracks, only: [:index, :create, :update, :destroy]
