@@ -4,7 +4,7 @@
     <div class='track-count'><%= upvotes %></div>
   </div>
   <div class="track-upvote">
-    <%= link_to "", opinion_upvotes_path(opinion, track), class:"track-arrow-down" %>
+    <%= link_to "", opinion_upvote_path(opinion, track), class:"track-arrow-down" %>
     <div class='track-count'><%= downvotes %></div>
   </div>
   <%= image_tag photo, alt: "alttext", class:"track-image hidden-xs" %>
