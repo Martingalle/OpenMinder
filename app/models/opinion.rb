@@ -1,6 +1,6 @@
 class Opinion < ApplicationRecord
   belongs_to :creator, class_name: 'User'
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
   has_many :genres, through: :tracks
 
   def genres_occurrences
