@@ -43,9 +43,9 @@
       <div class="opinion-tracks">
         <% @opinion.tracks.each do |track| %>
           <%= render 'shared/track-upvote',
-          photo:@opinion.photo,
+          photo:track.photo,
           artist:"artist_name to be completed",
-          song:"song to be completed",
+          song:track.name,
           upvotes: track.upvotes,
           downvotes: track.downvotes,
           opinion: @opinion,
