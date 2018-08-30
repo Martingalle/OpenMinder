@@ -82,7 +82,7 @@ PHOTOS_URL = [
       artist_location: Faker::Address.city,
       album: Faker::Music.album,
       argument: Faker::Lorem.paragraph(2),
-      photo: '',
+      photo: "http://www.mind-test.fr/wp-content/uploads/2018/08/openminder"<<rand(100..200).to_s<<".jpg",
       audio_url: 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com',
       creator_id: user.id,
       genre_id: genre.id,
