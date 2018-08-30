@@ -58,8 +58,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 5
-  px;
+  padding: 05px;
 }
 
 /* Navbar link */
@@ -98,6 +97,10 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+
+  a {
+    color: #999 !important;
+  }
 }
 
 .navbar-wagon-dropdown-menu div {
@@ -107,11 +110,18 @@
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+
+  &:hover {
+    color: $blue;
+  }
 }
 .navbar-wagon-dropdown-menu div > a:hover {
   background: transparent !important;
+  color: $blue;
+  text-decoration: none;
   color: #444 !important;
 }
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
@@ -126,3 +136,84 @@
   color: #fff;
 }
 
+.navbar-link-border-bottom:hover {
+  border-bottom: 2px solid $blue;
+}
+
+// for mobile
+
+.navbar-wagon-dropdown-menu li {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+
+  a {
+    font-weight: lighter !important;
+    padding: 0px;
+  }
+}
+.navbar-wagon-dropdown-menu li > a:hover {
+  background: transparent !important;
+  font-weight: lighter !important;
+  color: #444 !important;
+}
+
+.dropdown-toggle-mobile {
+  font-size: 30px;
+}
+
+
+// spinning button
+
+.spinning-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.spinme {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 5px 0px;
+  border-radius: 50%;
+  z-index: 3;
+
+  border: 2px solid $purple;
+
+  position: absolute;
+  animation: spinani 1.8s infinite linear;
+  transition: transform 0.4s ease;
+      border-top: 0;
+    border-right: 0;
+  animation: spin 3s infinite linear;
+
+
+}
+
+@keyframes spin {
+    0%   {transform: rotate(0deg)}
+    100% { transform: rotate(360deg)}
+}
+
+.login-text{
+  postition: absolute;
+  z-index: 3;
+  font-size: 0.7em;
+  color: $purple;
+  margin-top: 7px;
+
+  a {
+    color: $purple;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $purple;
+  }
+}
