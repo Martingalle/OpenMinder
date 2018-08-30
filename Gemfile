@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'faker'
 gem 'awesome_print'
 gem 'flutie'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
