@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'opinions#index'
+  root to: 'pages#home'
 
-  resources :opinions, only: [:index, :show, :create] do
-    # !!!!!! add update and destroy for admin only
-    resources :tracks, only: [:index, :create]
-    # !!!!!! add update and destroy for admin only
+  resources :opinions, only: [:index, :show, :create, :update, :destroy] do
+    resources :tracks, only: [:index, :create, :update, :destroy]
     post 'upvote', to: 'tracks#upvote'
     post 'downvote', to: 'tracks#downvote'
   end
 
-  resources :genres, only: [:show]
-  # !!!!!! add update and destroy for admin only
+  resources :genres, only: [:show, :create, :update, :destroy]
 
   namespace :user do
     get 'dashboard', to: 'dashboards#show'
     resources :tracks, only: :index
+  end
+
+  namespace :api do
+    get 'search', to: 'searches#show'
   end
 
   namespace :admin do

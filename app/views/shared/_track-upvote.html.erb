@@ -7,7 +7,13 @@
     <%= link_to "", opinion_upvote_path(opinion, track), class:"track-arrow-down" %>
     <div class='track-count'><%= downvotes %></div>
   </div>
-  <%= image_tag photo, alt: "alttext", class:"track-image hidden-xs" %>
+
+  <% if track.photo.nil? %>
+    <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
+    <% else %>
+    <%= image_tag photo, class:"track-image hidden-xs"%>
+    <% end %>
+
   <div class='track-body'>
     <h3><%= artist %></h3>
     <p><%= song %></p>

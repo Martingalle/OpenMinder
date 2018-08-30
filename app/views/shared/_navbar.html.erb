@@ -1,72 +1,61 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <!-- <div class="container"> -->
-    <div class="navbar-wagon">
-
-      <!-- Right Navigation -->
-      <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-        <% if user_signed_in? %>
+  <div class="navbar-wagon">
 
 
-          <!-- Avatar with dropdown menu -->
+      <% if user_signed_in? %>
 
-          <div class="navbar-wagon-item">
-            <div class="dropdown">
-              <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
 
-              <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                <div class="flex-nabar-display">
-                  <div><img src="https://avatars3.githubusercontent.com/u/40064197?s=400&u=53c95378a60c3dae2d21758baeeaab037df9453d&v=4" class="avatar"></div>
-                  <div><%= current_user.username %></div>
-                  <div><a href="#">Profile</a></div>
-                  <div>
-                    <%= link_to destroy_user_session_path, method: :delete do %>
-                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                    <% end %>
-                  </div>
-                  <div><%= link_to 'Back to the home', opinions_path %></div>
-                  <div><a href="#page-top"><i class="fas fa-arrow-up"></i></a></div>
+        <!-- Avatar with dropdown menu -->
+
+        <div class="navbar-wagon-item hidden-xs hidden-sm">
+          <div class="dropdown">
+            <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+
+            <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <div class="flex-nabar-display">
+                <div><img src="https://avatars3.githubusercontent.com/u/40064197?s=400&u=53c95378a60c3dae2d21758baeeaab037df9453d&v=4" class="avatar"></div>
+                <div class="navbar-link-border-bottom"><%= current_user.username %></div>
+                <div class="navbar-link-border-bottom">
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
                 </div>
+                <div class="navbar-link-border-bottom"><%= link_to 'Back to the home', opinions_path %></div>
+                <div><a href="#page-top"><i class="fas fa-arrow-up"></i></a></div>
               </div>
-
-
             </div>
           </div>
-
-        <% else %>
-          <!-- Login link (when logged out) -->
-          <div class="navbar-wagon-item">
-            <div class="dropdown">
-              <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
-              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-                <li><%= link_to 'Back to the home', opinions_path %></li>
-              </ul>
-            </div>
-          </div>
-
-        <% end %>
-
-
-
-
-
-
-
-
-
-      <!-- Dropdown list appearing on mobile only -->
-      <div class="navbar-wagon-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Some mobile link</a></li>
-            <li><a href="#">Other one</a></li>
-            <li><a href="#">Other one</a></li>
-          </ul>
         </div>
-      </div>
-    <!-- </div> -->
 
-</div>
+        <div class="navbar-wagon-item hidden-md hidden-lg">
+          <div class="dropdown">
+             <i class="fas fa-align-justify dropdown-toggle dropdown-toggle-mobile" data-toggle="dropdown"></i>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li><%= current_user.username %></li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
+                </li>
+                <li><%= link_to 'Back to the home', opinions_path %></li>
+                <li><a href="#page-top"><i class="fas fa-arrow-up"></i></a></li>
+            </ul>
+          </div>
+         </div>
+
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <div class="navbar-wagon-item">
+
+            <div class="spinning-button-container">
+              <div class="spinme"></div>
+              <div class="login-text"><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></div>
+            </div>
+
+          </div>
+        </div>
+
+      <% end %>
+
+  </div>
 </nav>
