@@ -13,7 +13,7 @@
 
           <div class="form-inputs">
             <%= f.input :password,
-                        label: "New password",
+                        label: "New password", label: false, placeholder: "New Password",
                         required: true,
                         autofocus: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

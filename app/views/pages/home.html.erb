@@ -84,8 +84,8 @@
       <div class="form-opinion">
         <h3>Ajoutez vos clichés musicaux!</h3>
         <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, placeholder: "Donnez un titre à votre cliché" %>
-          <%= f.input :description, placeholder: "Décrivez le cliché" %>
+          <%= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
+          <%= f.input :description, label:false, placeholder: "Décrivez le cliché" %>
           <!-- <%= f.association :genres, as: :check_boxes %> -->
 
           <!-- <fieldset class="form-group">

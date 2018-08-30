@@ -9,7 +9,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :email,
+            <%= f.input :email, label: false, placeholder: "Please enter your email",
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" } %>
