@@ -164,3 +164,56 @@
 .dropdown-toggle-mobile {
   font-size: 30px;
 }
+
+
+// spinning button
+
+.spinning-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.spinme {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 5px 0px;
+  border-radius: 50%;
+  z-index: 3;
+
+  border: 2px solid $purple;
+
+  position: absolute;
+  animation: spinani 1.8s infinite linear;
+  transition: transform 0.4s ease;
+      border-top: 0;
+    border-right: 0;
+  animation: spin 3s infinite linear;
+
+
+}
+
+@keyframes spin {
+    0%   {transform: rotate(0deg)}
+    100% { transform: rotate(360deg)}
+}
+
+.login-text{
+  postition: absolute;
+  z-index: 3;
+  font-size: 0.7em;
+  color: $purple;
+  margin-top: 7px;
+
+  a {
+    color: $purple;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $purple;
+  }
+}
