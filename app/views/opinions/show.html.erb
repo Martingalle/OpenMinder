@@ -10,7 +10,6 @@
   Launch demo modal
 </button>
 <p>if at new = true, faire péter la modale !</p>
-
   <div class="opinion-description">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor  reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt  culpa qui officia deserunt mollit anim id est laborum</p>
   </div>
@@ -18,10 +17,17 @@
   <hr>
     <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
-        <form action="">
-          <p><input type="text" id="search" placeholder="type a song name" autocompolete="off" class="form-control"></p>
-          <p><input type="submit" value="Let's go twingo" class="form-control btn btn-primary"></p>
-        </form>
+          <div id="search">
+            <%= form_tag api_search_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type in a song title"
+            %>
+          <% end %>
+        </div>
+        <div id="results">
+        </div>
       </div>
       <div class="results">
       </div>

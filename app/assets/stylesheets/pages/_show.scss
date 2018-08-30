@@ -13,7 +13,6 @@
     margin: 40px 0;
 }
 
-
 .opinion-player-details {
   display: flex;
 }
@@ -55,5 +54,23 @@
   width: 100%;
 }
 
+.track-search-result-display {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  list-decoration: none;
+  margin: 5px 0;
+  padding: 10px 0;
+  background-color: #GGGGGG;
+  img {
+  width: 100px;
+  border-radius: 5px;
+  margin-left: 5px;
+  }
+  p {
+  font-size: 12px;
+  padding-left: 20px;
+  }
+}
 
 
