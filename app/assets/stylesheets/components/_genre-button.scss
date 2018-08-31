@@ -1,0 +1,40 @@
+.genres {
+  display: flex;
+  align-items: center;
+}
+
+.main-genre-button {
+  background-color: rgb(45%, 51%, 75%);
+  border-radius: 10px;
+  padding: 2px 0px;
+  width: 4em;
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 100;
+  margin-right: 10px;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+
+.secondary-genre-button {
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  padding: 2px 0px;
+  width: 4em;
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 100;
+  margin-right: 5px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
