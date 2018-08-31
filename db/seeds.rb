@@ -90,47 +90,47 @@ puts 'CREATING GENRES'
 
 classical = Genre.create(
   name: 'classique',
-  photo: 'https://cdn.pixabay.com/photo/2016/11/19/09/57/classical-music-1838390_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 electro = Genre.create(
   name: 'electro',
-  photo: 'https://cdn.pixabay.com/photo/2018/08/29/02/09/sound-table-3638995_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 rock = Genre.create(
   name: 'rock',
-  photo: 'https://cdn.pixabay.com/photo/2017/09/02/18/52/musician-2708190_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 jazz = Genre.create(
   name: 'jazz',
-  photo: 'https://cdn.pixabay.com/photo/2013/10/22/23/21/jazz-199547_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 rap = Genre.create(
   name: 'rap',
-  photo: 'https://cdn.pixabay.com/photo/2016/11/21/13/36/man-1845432_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 folk = Genre.create(
   name: 'folk',
-  photo: 'https://cdn.pixabay.com/photo/2015/05/07/11/02/guitar-756326_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 pop = Genre.create(
   name: 'pop',
-  photo: 'https://cdn.pixabay.com/photo/2016/01/19/17/56/concert-1149979_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 metal = Genre.create(
   name: 'metal',
-  photo: 'https://cdn.pixabay.com/photo/2016/10/17/16/35/concert-1748102_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 chanson = Genre.create(
   name: 'chanson',
-  photo: 'https://cdn.pixabay.com/photo/2014/09/22/00/56/lead-singer-455750_960_720.jpg'
+  photo: 'genres/electro.jpg'
 )
 
 opinions = [
