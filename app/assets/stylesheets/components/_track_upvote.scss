@@ -1,11 +1,25 @@
 .track {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 3px;
   transition: all 0.15s ease;
-  background-color: lightblue;
-  margin: 5px auto;
+  margin: 5px 50px;
+  transition-duration: 1s;
+  p {
+    font-size: 12px;
+    color: black;
+    opacity:0.8;
+    transition-duration: 0.5s;
+  }
+  h3 {
+    color: black;
+    font-size: 16px;
+  }
+  img {
+    width: 60px;
+    transition-duration: 0.5s;
+  }
 }
 
 /* Body design */
@@ -14,7 +28,6 @@
 }
 .track-body h3 {
   font-weight: bold;
-  font-size: 23px;
   margin-top: 0;
 }
 .track-body p {
@@ -90,8 +103,20 @@
 
 /* Hover effects */
 .track:hover {
-  background: #f7f7fa;
+  background: #3757D1;
   cursor: pointer;
+  p {
+    font-size: 20px;
+    color: white;
+    opacity:0.8;
+  }
+  h3 {
+    color: white;
+  }
+  img {
+    width: 100px;
+  }
+
 }
 .track-upvote:hover, .track-upvote.track-upvote-upvoted {
   color: #5898f1;
