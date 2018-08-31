@@ -1,12 +1,5 @@
 <div class="track">
-  <div class='track-upvote'>
-    <div class="track-arrow-up"></div>
-    <div class='track-count'><%= upvotes %></div>
-  </div>
-  <div class="track-upvote">
-    <%= link_to "", opinion_upvote_path(opinion, track), class:"track-arrow-down" %>
-    <div class='track-count'><%= downvotes %></div>
-  </div>
+
 
   <% if track.photo.nil? %>
     <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
@@ -15,12 +8,21 @@
     <% end %>
 
   <div class='track-body'>
-    <h3><%= artist %></h3>
-    <p><%= song %></p>
+    <h3><%= song %></h3>
+    <p>Added : <%= added %></p>
   </div>
   <ul class="list-inline track-controls hidden-sm hidden-xs">
     <li><a href=""><i class="fa fa-heart"></i></a></li>
     <li><a href=""><i class="fa fa-share"></i></a></li>
     <li><a href=""><i class="fa fa-star"></i></a></li>
   </ul>
+
+    <div class='track-upvote'>
+
+    <%= link_to opinion_upvote_path(opinion, track) do %>
+      <i class="fas fa-caret-up" style="font-size: 18px"></i>
+      <div class='track-count'><%= upvotes %></div>
+      <% end %>
+    </div>
+
 </div>
