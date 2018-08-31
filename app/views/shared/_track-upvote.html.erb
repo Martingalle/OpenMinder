@@ -18,11 +18,11 @@
   </ul>
 
     <div class='track-upvote'>
-    <div class="track-arrow-up"></div>
-    <div class='track-count'><%= upvotes %></div>
-  </div>
-  <div class="track-upvote">
-    <%= link_to "", opinion_upvote_path(opinion, track), class:"track-arrow-down" %>
-    <div class='track-count'><%= downvotes %></div>
-  </div>
+
+    <%= link_to opinion_upvote_path(opinion, track) do %>
+      <i class="fas fa-caret-up" style="font-size: 18px"></i>
+      <div class='track-count'><%= upvotes %></div>
+      <% end %>
+    </div>
+
 </div>

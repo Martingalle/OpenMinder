@@ -21,7 +21,7 @@
           <p>Playlist</p>
           <h2>Recently Added</h2>
         </div>
-        <% @opinion.tracks.each do |track| %>
+        <% @tracks_desc.each do |track| %>
           <%= render 'shared/track-upvote',
           photo:track.photo,
           song:track.name,

@@ -30,6 +30,7 @@ class OpinionsController < ApplicationController
     @track_new = Track.new
     @new = params[:new] || false # will be 'true' if the opinion has just been created
     @youtube_ids = @opinion.tracks.pluck(:youtube_id)
+    @tracks_desc = @opinion.tracks.order(created_at: :desc)
   end
 
   def create
