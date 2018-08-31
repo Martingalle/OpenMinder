@@ -4,6 +4,7 @@ class TracksController < ApplicationController
 
   def create
     track = Track.new(track_params)
+    authorize track
     track.opinion = @opinion
     track.creator = current_user
     if track.save
