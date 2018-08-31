@@ -1,0 +1,2 @@
+<%= render 'devise/shared/session_new', resource: (active == "sign_in" ?  resource : User.new) %>
+<%= render 'devise/shared/registration_new', resource: (active == "sign_up" ?  resource : User.new)%>
