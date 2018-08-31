@@ -10,6 +10,8 @@
     font-weight: 400;
     font-size: 15px;
     padding-right: 10px;
+    color: $light-gray;
+    font-weight: 300;
   }
 }
 
@@ -37,14 +39,14 @@ label.collection_radio_buttons {
 .simple_form {
   .error {
     clear: left;
-    color: black;
+    color: $white;
     display: block;
     margin-left: 120px;
   }
   .hint {
     clear: left;
     margin-left: 120px;
-    color: #555;
+    color: $white;
     display: block;
     font-style: italic;
   }
@@ -70,7 +72,7 @@ label.collection_check_boxes {
 
 .form-control {
     height: auto;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 .category-choices {
@@ -107,13 +109,20 @@ legend {
 .a-links {
   font-size: 14px;
   padding-top: 20px;
+  a {
+    color: #C0C0C0;
+    text-decoration: none;
+  }
+
+  a:hover {
+  }
 }
 
 input[type="text"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $blue;
+  border-bottom: 1px solid $light-gray;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
@@ -129,7 +138,7 @@ input[type="email"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $blue;
+  border-bottom: 1px solid $light-gray;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
@@ -145,7 +154,7 @@ input[type="password"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $blue;
+  border-bottom: 1px solid $light-gray;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;

@@ -19,6 +19,28 @@ button {
   }
 }
 
+.button-white {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  padding: 15px 25px !important;
+  box-shadow: inset 0 0 0 2px #0076ff;
+  color: #0076ff;
+  font-size: inherit;
+  // font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 .button {
   background: none;
   border: 0;
