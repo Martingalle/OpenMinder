@@ -11,21 +11,23 @@
     <h3><%= song %></h3>
     <p>Added : <%= added %></p>
   </div>
-  <ul class="list-inline track-controls hidden-sm hidden-xs">
+<!--   <ul class="list-inline track-controls hidden-sm hidden-xs">
     <li><a href=""><i class="fa fa-heart"></i></a></li>
     <li><a href=""><i class="fa fa-share"></i></a></li>
     <li><a href=""><i class="fa fa-star"></i></a></li>
-  </ul>
+  </ul> -->
 
-  <div class='track-upvote'>
-
-  <%#= link_to "vote", opinion_upvote_path(opinion, params: {track: track}), method: :post  %>
-
-   <%= link_to opinion_upvote_path(opinion, params: {track: track}), method: :post do %>
-        <i class="fas fa-heart" style="font-size: 18px"></i>
-        <div class='track-count'><%= upvotes %></div>
+  <ul class='list-inline  track-controls'>
+    <li><%= link_to opinion_upvote_path(opinion, params: {track: track}), method: :post do %>
+        <% if track.votes.select { |vote| vote.user == current_user }.any? %>
+                <i class="fas fa-heartbeat" style="font-size: 18px; color: red"></i>
+        <% else %>
+          <i class="fas fa-heart" style="font-size: 18px"></i>
+        <% end %>
     <% end %>
+    </li>
+    <li><%= upvotes %></li>
 
-  </div>
+  </ul>
 
 </div>
