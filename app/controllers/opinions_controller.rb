@@ -84,6 +84,9 @@ class OpinionsController < ApplicationController
   def render_show
     @track_new = Track.new
     @new = params[:new] || false
+    @opinion = Opinion.find(params[:id])
+    @youtube_ids = @opinion.tracks.pluck(:youtube_id)
+    @tracks_desc = @opinion.tracks.order(created_at: :desc)
     render :show
   end
 end
