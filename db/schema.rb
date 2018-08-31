@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_102037) do
+ActiveRecord::Schema.define(version: 2018_08_31_114540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo", default: [], array: true
   end
 
   create_table "opinions", force: :cascade do |t|
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_102037) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "approved", default: 0
+    t.string "youtube_id", default: ""
     t.index ["creator_id"], name: "index_tracks_on_creator_id"
     t.index ["genre_id"], name: "index_tracks_on_genre_id"
     t.index ["opinion_id"], name: "index_tracks_on_opinion_id"

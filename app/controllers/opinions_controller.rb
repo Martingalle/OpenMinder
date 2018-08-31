@@ -15,6 +15,7 @@ class OpinionsController < ApplicationController
 
     # ---- search ----
     @opinions = policy_scope(Opinion).order(created_at: :desc)
+
     if params[:query].present?
       @search_query = params[:query]
       @opinions = @opinions.select do |opinion|
@@ -27,6 +28,7 @@ class OpinionsController < ApplicationController
 
 
     @random_opinions = @opinions.sample(6)
+
     @opinion_new = Opinion.new
   end
 
@@ -46,6 +48,8 @@ class OpinionsController < ApplicationController
     # ---------------------------------------------------------
     @track_new = Track.new
     @new = params[:new] || false # will be 'true' if the opinion has just been created
+    @youtube_ids = @opinion.tracks.pluck(:youtube_id)
+    @tracks_desc = @opinion.tracks.order(created_at: :desc)
   end
 
   def create

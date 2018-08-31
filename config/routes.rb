@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'opinions#index'
+  root to: 'pages#home'
 
   resources :opinions, only: [:index, :show, :create, :update, :destroy] do
     resources :tracks, only: [:index, :create, :update, :destroy]
@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   namespace :user do
     get 'dashboard', to: 'dashboards#show'
     resources :tracks, only: :index
+  end
+
+  namespace :api do
+    get 'search', to: 'searches#show'
   end
 
   namespace :admin do

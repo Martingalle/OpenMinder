@@ -6,7 +6,7 @@ class Track < ApplicationRecord
 
   has_many :users_voting, through: :votes,  :source => 'user'
 
-  before_create :set_genre, :set_name
+  before_validation :set_genre#, :set_name
 
   def upvotes
     self.votes.select { |vote| vote.status == 'up' }.count
@@ -23,12 +23,12 @@ class Track < ApplicationRecord
   private
 
   def set_genre
-    self.genre = Genre.order('RANDOM()').first
+    self.genre = Genre.order('RANDOM()').first if self.genre.nil?
   end
 
-  require 'faker'
+  # require 'faker'
 
-  def set_name
-    self.name = Faker::Pokemon.move
-  end
+  # def set_name
+  #   self.name = Faker::Pokemon.move
+  # end
 end

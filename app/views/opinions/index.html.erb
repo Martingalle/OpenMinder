@@ -1,108 +1,49 @@
-<<div class="banner video-banner">
-  <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
-  <div class="banner-content video-banner-content">
-    <h1>Open Minder</h1>
-    <h4>New musical horizons</h4>
-  </div>
-</div>
-
-<div class="wrapper">
-  <div class="container main-info">
-    <div class="row">
-      <div class="card main-title">
-        <h3>Pourquoi Open Minder</h3>
-      </div>
-    </div>
-    <div class="container openminded-icons">
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"compact-disc.png"%>
-          </div>
-          <div class="text-information">
-            <h4>ECOUTEZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"idea.png"%>
-          </div>
-          <div class="text-information">
-            <h4>DÉCOUVREZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"share.png"%>
-          </div>
-          <div class="text-information">
-            <h4>PARTAGEZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<h1>This is the opinion's index</h1>
 
 
-
-<div class="container container-opinions">
+<div class="container">
   <div class="row">
-    <div class="card secondary-title">
-      <h3>Découvrez quelques clichés musicaux</h3>
-    </div>
-  </div>
-  <div class="row">
-      <!-- insert <div class="card"> -->
-        <% @random_opinions.each do |opinion| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
-          <div class="card-category"><%= opinion.main_genre %></div>
-          <div class="card-description">
-            <p>Here is an opinion</p>
-            <p><%= opinion.name %></p>
+    <% @opinions.each do |opinion| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+
+
+        <%= link_to opinion_path(opinion) do %>
+
+          <div class="cards">
+        <!-- ---------- cards V2 ---------- -->
+            <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; height: 400px; overflow: hidden; border-radius: 10px;">
+
+              <img src="<%= opinion.main_genre.photo %>" alt="Genre photo" style=" border-radius: 10px 10px 0px 0px;"
+                  class="d-block w-full">
+
+              <div class="px-2 py-2">
+                <div class="genres">
+                  <p class="main-genre-button">
+                    <%= opinion.main_genre.name.capitalize%>
+                  </p>
+
+                  <p class="secondary-genre-button">
+                    <%= opinion.secondary_genre.name.capitalize%>
+                  </p>
+                </div>
+
+                <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                  <%= opinion.name %>
+                </p>
+
+              </div>
+
+              <a href="#0" class="d-inline-block font-weight-medium text-center styled-link">
+                Read More
+              </a>
+
+            </div>
+    <!-- <----------------------------------------->
           </div>
-          <a class="card-link" href="#" ></a>
-          </div>
-        </div>
-        <% end %>
-  </div>
-</div>
-
-
-<div class="container container-form">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
-
-      <div class="form-opinion">
-        <h3>Ajoutez vos clichés musicaux!</h3>
-        <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, placeholder: "Donnez un titre à votre cliché" %>
-          <%= f.input :description, placeholder: "Décrivez le cliché" %>
-          <!-- <%= f.association :genres, as: :check_boxes %> -->
-
-          <!-- <fieldset class="form-group">
-            <legend class="col-form-label pt-0">Main genre</legend>
-            <input type="hidden" name="opinion[genre_ids][]" value="" />
-            <div class="category-choices">
-              <% Genre.all.each do |genre| %>
-                <input type="checkbox" class="hidden" value="<%= genre.id %>" name="post[genre_ids][]" id="post_genre_ids_<%= genre.id %>">
-                <label class="category-choice" for="post_genre_ids_<%= genre.id %>">
-                  <%= genre.name %>
-                  <i class="fa fa-music"></i>
-                </label>
-              <% end %>
-          </fieldset> -->
-          <%= f.button :button, class: "draw meet" %>
         <% end %>
       </div>
-    </div>
+
+    <% end %>
   </div>
 </div>

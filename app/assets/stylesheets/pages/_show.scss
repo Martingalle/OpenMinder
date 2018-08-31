@@ -1,3 +1,19 @@
+
+// -------------------------------------------
+// PLAYER
+// -------------------------------------------
+
+.opinion-youtube-player {
+  background-color : #EEEEEE;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// -------------------------------------------
+
 .opinion-description p {
   padding: 50px 40px;
   text-align: center;
@@ -13,23 +29,32 @@
     margin: 40px 0;
 }
 
-
 .opinion-player-details {
   display: flex;
 }
 
-.opinion-tracks {
-  width: 70%;
-  padding: 0 20px;
+.opinion-tracks-title {
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 20px;
+  p {
+    font-size: 12px;
+    color: black;
+    opacity:0.8;
+    margin: 0;
+  }
+  h2 {
+    text-align: left;
+    margin: 0 0 10px 0;
+  }
 }
 
 .opinion-genres {
   width: 100%;
   border-radius: 5px;
-  margin: 5px;
+  margin: 20px 0;
   padding: 20px;
   border: 1px solid #CCCCCC;
-  box-shadow: 1px 0px 0px grey;
   h1 {
     font-size: 18px;
     opacity: 0.8;
@@ -48,12 +73,31 @@
 }
 
 .opinion-add-track {
-  margin: 20px 5px;
+  margin: 20px 0;
   padding: 20px;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
-  width: 100%;
+
 }
 
+.track-search-result-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  list-decoration: none;
+  margin: 5px 0;
+  padding: 10px 0;
+  background-color: #GGGGGG;
+  img {
+  width: 100px;
+  border-radius: 5px;
+  margin-left: 5px;
+  }
+  p {
+  font-size: 12px;
+  padding-left: 20px;
+  }
+}
 
 

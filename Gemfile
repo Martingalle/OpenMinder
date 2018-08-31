@@ -21,6 +21,7 @@ gem 'faker'
 gem 'awesome_print'
 gem 'flutie'
 gem 'pg_search'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
