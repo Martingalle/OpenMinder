@@ -90,47 +90,47 @@ puts 'CREATING GENRES'
 
 classical = Genre.create(
   name: 'classique',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/classical1.jpg', 'genres/classical2.jpg', 'genres/classical3.jpg']
 )
 
 electro = Genre.create(
   name: 'electro',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/electro1.jpg', 'genres/electro2.jpg', 'genres/electro3.jpg']
 )
 
 rock = Genre.create(
   name: 'rock',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/rock1.jpg', 'genres/rock2.jpg', 'genres/rock3.jpg']
 )
 
 jazz = Genre.create(
   name: 'jazz',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/jazz1.jpg', 'genres/jazz2.jpg', 'genres/jazz3.jpg']
 )
 
 rap = Genre.create(
   name: 'rap',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/rap1.jpg', 'genres/rap2.jpg', 'genres/rap3.jpg']
 )
 
 folk = Genre.create(
   name: 'folk',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/folk1.jpg', 'genres/folk2.jpg', 'genres/folk3.jpg']
 )
 
 pop = Genre.create(
   name: 'pop',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/pop1.jpg', 'genres/pop2.jpg', 'genres/pop3.jpg']
 )
 
 metal = Genre.create(
   name: 'metal',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/metal1.jpg', 'genres/metal2.jpg', 'genres/metal3.jpg']
 )
 
 chanson = Genre.create(
   name: 'chanson',
-  photo: 'genres/electro.jpg'
+  photo: ['genres/chanson1.jpg', 'genres/chanson2.jpg', 'genres/chanson3.jpg']
 )
 
 opinions = [
@@ -223,7 +223,7 @@ opinions.size.times do |count|
       artist_location: Faker::Address.city,
       album: Faker::Music.album,
       argument: Faker::Lorem.paragraph(2),
-      photo: "http://www.mind-test.fr/wp-content/uploads/2018/08/openminder" << rand(100..200).to_s << ".jpg",
+      photo: 'http://www.mind-test.fr/wp-content/uploads/2018/08/openminder' << rand(100..200).to_s << '.jpg',
       audio_url: 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com',
       youtube_id: YOUTUBE_ID.sample,
       creator_id: user.id,
@@ -231,7 +231,7 @@ opinions.size.times do |count|
       opinion_id: opinion.id,
       approved: rand(-1..1)
     )
-    print " T "
+    print " 🎹 "
     rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
       user = User.order('RANDOM()').first
       vote = Vote.create!(
@@ -239,7 +239,7 @@ opinions.size.times do |count|
         track_id: track.id,
         status: ['up', 'down'].sample
       )
-    print '.'
+    print [' 💙 ', ' 💜 ', ' 💛 '].sample
     end
   end
   puts ''
