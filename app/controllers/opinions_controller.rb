@@ -58,6 +58,7 @@ class OpinionsController < ApplicationController
     # - creating a new opinion
     # ---------------------------------------------------------
     opinion = Opinion.new(opinion_params)
+    authorize opinion
     opinion.creator = current_user
     @new = true
     if opinion.save
