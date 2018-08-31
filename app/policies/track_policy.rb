@@ -19,4 +19,9 @@ class TrackPolicy < ApplicationPolicy
     # only admin
     user.admin
   end
+
+  def upvote?
+    # only connected user
+    user.present?
+  end
 end

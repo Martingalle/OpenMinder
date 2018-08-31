@@ -4,7 +4,8 @@
   left: 0;
   right: 0;
   height: $footer-height;
-  background: linear-gradient(115.86848027565588deg, rgba(160, 0, 239,1) 25.90234375%,rgba(159, 0, 238,1) 25.90234375%,rgba(33, 0, 91,1) 77.62109375%);
+  // background: linear-gradient(115.86848027565588deg, rgba(160, 0, 239,1) 25.90234375%,rgba(159, 0, 238,1) 25.90234375%,rgba(33, 0, 91,1) 77.62109375%);
+  background:white;
 
   // display: flex;
   // align-items: center;
@@ -19,7 +20,7 @@
 
   li {
     list-style: none;
-    color: white;
+    color: #444;
     opacity: 0.8;
   }
 
@@ -30,5 +31,13 @@
 
   .mentions-legales {
     width: 400px;
+  }
+}
+
+.mango {
+  opacity: 0;
+
+  &:hover {
+  opacity: 1;
   }
 }
