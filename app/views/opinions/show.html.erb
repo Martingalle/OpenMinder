@@ -2,7 +2,7 @@
 
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
   <%= render 'shared/banner',
-  photo: @opinion.photo,
+  photo: @opinion.main_genre.photo.sample,
   author:@opinion.fake_author,
   city:@opinion.fake_city,
   name:@opinion.name %>
@@ -27,7 +27,6 @@
           photo:track.photo,
           song:track.name,
           upvotes: track.upvotes,
-          downvotes: track.downvotes,
           opinion: @opinion,
           track: track,
           added:track.created_at.strftime("%B %e, %Y"),
