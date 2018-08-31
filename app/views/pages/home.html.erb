@@ -75,18 +75,25 @@
           <% end %>
         <% end %>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="see-more-display">
+        <%= link_to "See More", opinions_path, class: "button draw meet" %>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 
 <div class="container container-form">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
-
-      <div class="form-opinion">
+      <div class="form-opinion blur-bg">
         <h3>Ajoutez vos clichés musicaux!</h3>
         <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, placeholder: "Donnez un titre à votre cliché" %>
-          <%= f.input :description, placeholder: "Décrivez le cliché" %>
+          <%= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
+          <%= f.input :description, as: :text, label:false, placeholder: "Décrivez le cliché" %>
           <!-- <%= f.association :genres, as: :check_boxes %> -->
 
           <!-- <fieldset class="form-group">
@@ -101,7 +108,7 @@
                 </label>
               <% end %>
           </fieldset> -->
-          <%= f.button :button, class: "draw meet" %>
+          <%= f.button :button, class: "draw meet button-white" %>
         <% end %>
       </div>
     </div>

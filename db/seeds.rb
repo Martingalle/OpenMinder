@@ -213,7 +213,8 @@ opinions.size.times do |count|
     approved: rand(-1..1)
   )
   opinion.id < 10 ? space = ' ' : space = ''
-  print "OPINION #{space}#{opinion.id} |"
+  puts "OPINION #{space}#{opinion.id}"
+  puts '.................................'
   rand(TRACKS_BY_OPINION_MIN..TRACKS_BY_OPINION_MAX).times do
     user = User.order('RANDOM()').first
     genre = rand(1..6) > 1 ? Genre.find(opinions[count][:main_genre_id]) : Genre.order('RANDOM()').first
@@ -236,11 +237,11 @@ opinions.size.times do |count|
       user = User.order('RANDOM()').first
       vote = Vote.create!(
         user_id: user.id,
-        track_id: track.id,
-        status: ['up', 'down'].sample
+        track_id: track.id
       )
-    print [' 💙 ', ' 💜 ', ' 💛 '].sample
+      print [' 💙 ', ' 💜 ', ' 💛 '].sample
     end
+    puts ''
   end
   puts ''
 end
