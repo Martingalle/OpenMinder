@@ -1,1 +1,52 @@
 <h1>This is the opinion's index</h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @opinions.each do |opinion| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+
+
+        <%= link_to opinion_path(opinion) do %>
+
+          <div class="cards">
+        <!-- ---------- cards V2 ---------- -->
+            <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; height: 360px; overflow: hidden; border-radius: 1px;">
+
+
+
+
+
+              <div class="d-block w-full" style="background-image:<%= opinion.main_genre.photo %>; ">
+
+              <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                <%= opinion.name %>
+              </p>
+
+              </div>
+
+              <div class="px-2 py-2">
+                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                  <%= opinion.main_genre.name.capitalize%>
+                </p>
+
+                <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                  <%= opinion.name %>
+                </p>
+
+              </div>
+
+              <a href="#0" class="d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                Read More
+              </a>
+
+            </div>
+    <!-- <----------------------------------------->
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
