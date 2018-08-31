@@ -14,17 +14,8 @@
         <!-- ---------- cards V2 ---------- -->
             <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; height: 360px; overflow: hidden; border-radius: 1px;">
 
-
-
-
-
-              <div class="d-block w-full" style="background-image:<%= opinion.main_genre.photo %>; ">
-
-              <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
-                <%= opinion.name %>
-              </p>
-
-              </div>
+              <img src="<%= opinion.main_genre.photo %>" alt="Genre photo"
+                  class="d-block w-full">
 
               <div class="px-2 py-2">
                 <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
