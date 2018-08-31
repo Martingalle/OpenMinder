@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-      <div class="form-opinion">
+      <div class="form-opinion blur-bg">
         <h2>Change your password</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -13,7 +13,7 @@
 
           <div class="form-inputs">
             <%= f.input :password,
-                        label: "New password",
+                        label: "New password", label: false, placeholder: "New Password",
                         required: true,
                         autofocus: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -22,7 +22,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :button, "Change my password", class: "draw meet" %>
+            <%= f.button :button, "Change my password", class: "draw meet button-white" %>
           </div>
         <% end %>
 
