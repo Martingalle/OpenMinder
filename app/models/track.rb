@@ -23,7 +23,7 @@ class Track < ApplicationRecord
   private
 
   def set_genre
-    self.genre = Genre.order('RANDOM()').first
+    self.genre = Genre.order('RANDOM()').first if self.genre.nil?
   end
 
   # require 'faker'
