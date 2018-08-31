@@ -62,16 +62,17 @@
   <div class="row">
       <!-- insert <div class="card"> -->
         <% @random_opinions.each do |opinion| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
-          <div class="card-category"><%= opinion.main_genre %></div>
-          <div class="card-description">
-            <p>Here is an opinion</p>
-            <p><%= opinion.name %></p>
-          </div>
-          <a class="card-link" href="#" ></a>
-          </div>
-        </div>
+          <%= link_to opinion_path(opinion) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+              <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= opinion.main_genre.photo %>);">
+              <div class="card-category"><%= opinion.main_genre.name%></div>
+              <div class="card-description">
+                <p>Here is an opinion</p>
+                <p><%= opinion.name %></p>
+              </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
   </div>
 </div>
