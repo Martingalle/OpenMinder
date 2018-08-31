@@ -44,6 +44,13 @@
 .see-more-display {
   text-align: center;
   margin: 50px;
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 
