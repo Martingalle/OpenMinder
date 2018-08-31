@@ -41,10 +41,22 @@
 //   }
 // }
 
+.cards {
+  a {
+    text-decoration: none;
+  }
 
-.ff-serif {
-  font-family: 'Montserrat', serif;
+  a:hover {
+    text-decoration: none;
+  }
+
+  p {
+    text-decoration: none;
+    border-radius: 10px;
+  }
 }
+
+
 
 .font-weight-normal {
   font-weight: lighter;
@@ -112,6 +124,8 @@
   outline: none;
   color: $blue;
   transition: all 0.25s ease-in;
+  position: relative;
+  margin-left: 20px;
 }
 .styled-link:hover,
 .styled-link:focus,
@@ -146,8 +160,6 @@
 .float-right{
   float: right;
 }
-
-
 
 
 
