@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Vote.destroy_all
+Track.destroy_all
+Opinion.destroy_all
+Genre.destroy_all
+User.destroy_all
 
 USERS_COUNT = 20
 TRACKS_BY_OPINION_MIN = 5
