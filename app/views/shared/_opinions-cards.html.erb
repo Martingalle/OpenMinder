@@ -8,34 +8,37 @@
         <%= link_to opinion_path(opinion) do %>
 
           <div class="cards">
-        <!-- ---------- cards V2 ---------- -->
+
             <div class="card">
+                <div class="card-top">
+                <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
 
-              <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
-
-
-              <div class="genres">
-                <p class="main-genre-button">
-                  <%= opinion.main_genre.name.capitalize%>
-                </p>
-
-                <p class="secondary-genre-button">
-                  <%= opinion.secondary_genre.name.capitalize%>
+                <p class="card-heading">
+                  <%= opinion.name %>
                 </p>
               </div>
 
-              <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1">
-                <%= opinion.name %>
-              </p>
+              <div class="card-bottom">
+                <div class="genres">
+                  <p class="main-genre-button">
+                    <%= opinion.main_genre.name.capitalize%>
+                  </p>
+
+                  <p class="secondary-genre-button">
+                    <%= opinion.secondary_genre.name.capitalize%>
+                  </p>
+                </div>
+              </div>
 
 
 
-              <a href="#0" class="d-inline-block font-weight-medium text-center styled-link">
+
+              <a href="#0" class="styled-link">
                 Read More
               </a>
 
             </div>
-    <!-- <----------------------------------------->
+
           </div>
         <% end %>
       </div>

@@ -36,6 +36,9 @@
   }
 }
 
+.card-top {
+  display: block;
+}
 
 .card-genre-photo {
   border-radius: 10px 10px 0px 0px;
@@ -44,11 +47,8 @@
   display: block;
 }
 
-.genres {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.card-genre-photo::after {
+background: linear-gradient(90deg, rgba(243, 72, 104,1) 20.09375%,rgba(242, 71, 104,1) 20.09375%,rgba(158, 0, 236,1) 80.09375%);
 }
 
 .card-heading {
@@ -59,11 +59,23 @@
   padding-bottom: 2rem;
   line-height: 1.25;
   font-weight: lighter;
-  margin-top: 0;
+  margin-top: -240px;
   margin-bottom: 1rem;
-
+  color: white;
 }
 
+.card-bottom {
+  display: block;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.genres {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
 .styled-link {
   text-decoration: none;
@@ -71,7 +83,6 @@
   color: $light-blue;
   transition: all 0.25s ease-in;
   margin-left: 20px;
-  position: relative;
   display: inline-block;
   font-weight: lighter;
   text-align: center;
