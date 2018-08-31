@@ -14,8 +14,7 @@
         <!-- ---------- cards V2 ---------- -->
             <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; height: 400px; overflow: hidden; border-radius: 10px;">
 
-              <img src="<%= opinion.main_genre.photo %>" alt="Genre photo" style=" border-radius: 10px 10px 0px 0px;"
-                  class="d-block w-full">
+              <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:"d-block w-full card-genre-photo" %>
 
               <div class="px-2 py-2">
                 <div class="genres">
