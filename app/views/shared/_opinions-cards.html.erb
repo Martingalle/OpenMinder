@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <% opinions.each do |opinion| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-">
+
+
+        <%= link_to opinion_path(opinion) do %>
+
+          <div class="cards">
+        <!-- ---------- cards V2 ---------- -->
+            <div class="card">
+
+              <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
+
+
+              <div class="genres">
+                <p class="main-genre-button">
+                  <%= opinion.main_genre.name.capitalize%>
+                </p>
+
+                <p class="secondary-genre-button">
+                  <%= opinion.secondary_genre.name.capitalize%>
+                </p>
+              </div>
+
+              <p class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1">
+                <%= opinion.name %>
+              </p>
+
+
+
+              <a href="#0" class="d-inline-block font-weight-medium text-center styled-link">
+                Read More
+              </a>
+
+            </div>
+    <!-- <----------------------------------------->
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
