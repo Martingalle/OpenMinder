@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'faker'
 gem 'awesome_print'
 gem 'flutie'
+gem 'pg_search'
 gem 'rest-client'
 
 group :development do
