@@ -109,8 +109,20 @@
   h3 {
     color: white;
   }
-
 }
+
+.opinion-track-selected {
+  background: #3757D1;
+  cursor: pointer;
+  p {
+    color: white;
+  }
+  h3 {
+    color: white;
+  }
+}
+
+
 .track-upvote:hover, .track-upvote.track-upvote-upvoted {
   color: #5898f1;
   cursor: pointer;

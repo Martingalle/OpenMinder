@@ -1,4 +1,4 @@
-<div class="opinion-main-content">
+<div class="opinion-main-content" onload="initElement();>
 
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
   <%= render 'shared/banner',
@@ -22,6 +22,7 @@
           <h2>Recently Added</h2>
         </div>
         <% @tracks_desc.each do |track| %>
+        <div data-youtube-id=<%= track.youtube_id %>>
           <%= render 'shared/track-upvote',
           photo:track.photo,
           song:track.name,
@@ -29,8 +30,10 @@
           downvotes: track.downvotes,
           opinion: @opinion,
           track: track,
-          added:track.created_at.strftime("%B %e, %Y")
+          added:track.created_at.strftime("%B %e, %Y"),
+          youtube_id: track.youtube_id
           %>
+          </div>
         <% end %>
       </div>
 
@@ -42,9 +45,6 @@
         </div>
         <div class="opinion-youtube-player">
           <div id="player" data-songs-id=<%= @youtube_ids.to_json %>>
-            <button onclick="youTubePlayerPlay()">Play</button>
-            <button onclick="youTubePlayerPause()">Pause</button>
-            <button onclick="youTubePlayerStop()">Stop</button>
           </div>
         </div>
 
@@ -59,11 +59,12 @@
         // 3. This function creates an <iframe> (and YouTube player)
         //    after the API code downloads.
         var player;
-        const videoId = document.getElementById("player").dataset.songsId;
+        // var youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+;
         // const videoId='M7lc1UVf-VE';
         function onYouTubeIframeAPIReady() {
           player = new YT.Player('player', {
-            videoId: "cWGE9Gi0bB0",
+            videoId: youtubeId,
             height: "240",
             width: "360",
             events: {

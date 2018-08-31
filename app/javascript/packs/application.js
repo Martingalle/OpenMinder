@@ -5,6 +5,23 @@ import '../openminder/youtube_playlist'
 
 // PLAYER
 
-// 2. This code loads the IFrame Player API code asynchronously.
+// on page load je sélectionne le 1er
+const first = document.querySelector(".tracks-js");
+first.classlist.add("opinion-track-selected");
 
+const array = document.querySelectorAll(".tracks-js");
 
+array.forEach((element) => {
+
+  element.addEventListener("click", () => {
+    array.forEach((div) => {
+    if (div.classList.contains("opinion-track-selected")) {
+      div.classList.remove("opinion-track-selected");
+    }
+
+    });
+
+    element.classList.add("opinion-track-selected");
+  });
+
+});
