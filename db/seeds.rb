@@ -12,10 +12,33 @@ puts 'CREATING GENRES'
 
 GENRES = %w[rock jazz rap folk pop metal]
 
+PHOTOS_URL = [
+  'https://picsum.photos/900/300?image=1082',
+  'https://picsum.photos/900/300?image=1078',
+  'https://picsum.photos/900/300?image=1077',
+  'https://picsum.photos/900/300?image=1071',
+  'https://picsum.photos/900/300?image=1070',
+  'https://picsum.photos/900/300?image=1065',
+  'https://picsum.photos/900/300?image=1060',
+  'https://picsum.photos/900/300?image=1059',
+  'https://picsum.photos/900/300?image=1045',
+  'https://picsum.photos/900/300?image=1038',
+  'https://picsum.photos/900/300?image=1033',
+  'https://picsum.photos/900/300?image=1014',
+  'https://picsum.photos/900/300?image=999',
+  'https://picsum.photos/900/300?image=995',
+  'https://picsum.photos/900/300?image=965',
+  'https://picsum.photos/900/300?image=964',
+  'https://picsum.photos/900/300?image=961',
+  'https://picsum.photos/900/300?image=960',
+  'https://picsum.photos/900/300?image=839',
+  'https://picsum.photos/900/300?image=836'
+]
+
 GENRES.each do |genre|
   Genre.create(
     name: genre,
-    photo: ''
+    photo: PHOTOS_URL.sample
   )
 end
 
@@ -40,28 +63,6 @@ puts ''
 puts '-------------------------------------------------------------------------'
 puts 'CREATING OPINIONS AND TRACKS'
 
-PHOTOS_URL = [
-  'https://picsum.photos/900/300?image=1082',
-  'https://picsum.photos/900/300?image=1078',
-  'https://picsum.photos/900/300?image=1077',
-  'https://picsum.photos/900/300?image=1071',
-  'https://picsum.photos/900/300?image=1070',
-  'https://picsum.photos/900/300?image=1065',
-  'https://picsum.photos/900/300?image=1060',
-  'https://picsum.photos/900/300?image=1059',
-  'https://picsum.photos/900/300?image=1045',
-  'https://picsum.photos/900/300?image=1038',
-  'https://picsum.photos/900/300?image=1033',
-  'https://picsum.photos/900/300?image=1014',
-  'https://picsum.photos/900/300?image=999',
-  'https://picsum.photos/900/300?image=995',
-  'https://picsum.photos/900/300?image=965',
-  'https://picsum.photos/900/300?image=964',
-  'https://picsum.photos/900/300?image=961',
-  'https://picsum.photos/900/300?image=960',
-  'https://picsum.photos/900/300?image=839',
-  'https://picsum.photos/900/300?image=836',
-]
 
 YOUTUBE_ID = [
   "cWGE9Gi0bB0",
@@ -75,7 +76,7 @@ YOUTUBE_ID = [
   "rsWmrGuuWuE",
   "lS-af9Q-zvQ",
   "BGBM5vWiBLo",
-  "bESGLojNYSo",
+  "bESGLojNYSo"
 ]
 
 50.times do
