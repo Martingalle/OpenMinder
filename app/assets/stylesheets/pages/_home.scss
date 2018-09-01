@@ -41,6 +41,18 @@
   height: 300px;
 }
 
+.see-more-display {
+  text-align: center;
+  margin: 50px;
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 
 
 .container-form {
@@ -48,6 +60,7 @@
   margin-bottom: 55px;
   // background-color: white;
   background-image: url('https://images.unsplash.com/photo-1512573844933-6b51e0bbc3a3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4cafdcc50682f005e6a76460a12d82d9&auto=format&fit=crop&w=1650&q=80'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  background-position: center;
   border-radius: 3px;
   padding-bottom: 30px;
   padding-top: 30px;
@@ -65,13 +78,27 @@
   }
 }
 
+
 .form-opinion {
-  background: white;
-  opacity: 0.9;
+  // background: white;
+  // opacity: 0.9;
   padding: 30px;
   border-radius: 3px;
+  h2 {
+    margin-bottom: 36px;
+    color: $white;
+  }
   h3 {
     margin-bottom: 35px;
     margin-top: 0px;
+    color: $white;
   }
+}
+
+.blur-bg {
+  background-image: url('../images/Blur-pic.png'), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

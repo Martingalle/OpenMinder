@@ -1,0 +1,19 @@
+<div class="searchbar-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class ="col-xs-12 col-sm-12 searchbar-master">
+
+      <%= form_tag opinions_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control searchbar",
+          placeholder: "enter genre name"
+        %>
+      <% end %>
+
+      <i class="fas fa-search loupe"></i>
+
+      </div>
+    </div>
+  </div>
+</div>

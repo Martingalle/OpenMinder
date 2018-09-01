@@ -1,4 +1,4 @@
-<<div class="banner video-banner">
+<div class="banner video-banner">
   <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
   <div class="banner-content video-banner-content">
     <h1>Open Minder</h1>
@@ -59,20 +59,17 @@
       <h3>Découvrez quelques clichés musicaux</h3>
     </div>
   </div>
+
+<%= render 'shared/opinions-cards',
+opinions: @random_opinions %>
+
   <div class="row">
-      <!-- insert <div class="card"> -->
-        <% @random_opinions.each do |opinion| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% opinion.main_genre.photo %>);">
-          <div class="card-category"><%= opinion.main_genre %></div>
-          <div class="card-description">
-            <p>Here is an opinion</p>
-            <p><%= opinion.name %></p>
-          </div>
-          <a class="card-link" href="#" ></a>
-          </div>
-        </div>
-        <% end %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="see-more-display">
+        <%= link_to "See More", opinions_path, class: "button draw meet" %>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -80,12 +77,11 @@
 <div class="container container-form">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
-
-      <div class="form-opinion">
+      <div class="form-opinion blur-bg">
         <h3>Ajoutez vos clichés musicaux!</h3>
         <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, placeholder: "Donnez un titre à votre cliché" %>
-          <%= f.input :description, placeholder: "Décrivez le cliché" %>
+          <%= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
+          <%= f.input :description, as: :text, label:false, placeholder: "Décrivez le cliché" %>
           <!-- <%= f.association :genres, as: :check_boxes %> -->
 
           <!-- <fieldset class="form-group">
@@ -100,7 +96,7 @@
                 </label>
               <% end %>
           </fieldset> -->
-          <%= f.button :button, class: "draw meet" %>
+          <%= f.button :button, class: "draw meet button-white" %>
         <% end %>
       </div>
     </div>

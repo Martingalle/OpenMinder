@@ -9,7 +9,26 @@ class OpinionsController < ApplicationController
     # - displaying random opinions
     # - creating a new opinion
     # ---------------------------------------------------------
+
+
+
+
+    # ---- search ----
     @opinions = policy_scope(Opinion).order(created_at: :desc)
+
+    if params[:query].present?
+      @search_query = params[:query]
+      @opinions = @opinions.select do |opinion|
+        opinion.main_genre.name == params[:query]
+      end
+    end
+    # ----------------
+
+
+
+
+    @random_opinions = @opinions.sample(6)
+
     @opinion_new = Opinion.new
   end
 
@@ -29,6 +48,8 @@ class OpinionsController < ApplicationController
     # ---------------------------------------------------------
     @track_new = Track.new
     @new = params[:new] || false # will be 'true' if the opinion has just been created
+    @youtube_ids = @opinion.tracks.pluck(:youtube_id)
+    @tracks_desc = @opinion.tracks.order(created_at: :desc)
   end
 
   def create
@@ -37,6 +58,7 @@ class OpinionsController < ApplicationController
     # - creating a new opinion
     # ---------------------------------------------------------
     opinion = Opinion.new(opinion_params)
+    authorize opinion
     opinion.creator = current_user
     @new = true
     if opinion.save
@@ -82,6 +104,9 @@ class OpinionsController < ApplicationController
   def render_show
     @track_new = Track.new
     @new = params[:new] || false
+    @opinion = Opinion.find(params[:id])
+    @youtube_ids = @opinion.tracks.pluck(:youtube_id)
+    @tracks_desc = @opinion.tracks.order(created_at: :desc)
     render :show
   end
 end
