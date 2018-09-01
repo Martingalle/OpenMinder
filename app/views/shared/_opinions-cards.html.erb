@@ -10,34 +10,47 @@
           <div class="cards">
 
             <div class="card">
-              <div class="card-top">
-                <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
 
-                <p class="card-heading">
-                  <%= opinion.name %>
-                </p>
+              <!-- <div class="card-front"> -->
+                <div class="card-top">
+                  <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
 
-                <div class="genres">
-                  <p class="main-genre-button">
-                    <%= opinion.main_genre.name.capitalize%>
+                  <p class="card-heading">
+                    <%= opinion.name %>
                   </p>
 
-                  <p class="secondary-genre-button">
-                    <%= opinion.secondary_genre.name.capitalize%>
-                  </p>
+                  <div class="genres">
+                    <p class="main-genre-button">
+                      <%= opinion.main_genre.name.capitalize%>
+                    </p>
+
+                    <p class="secondary-genre-button">
+                      <%= opinion.secondary_genre.name.capitalize%>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="card-bottom">
+                <div class="card-bottom">
 
+                  <p class="card-description">
+                    <%= opinion.description[0...125] %>...
+                  </p>
+
+                  <a href="#0" class="styled-link">
+                    Read More
+                  </a>
+                </div>
+              <!-- </div> -->
+
+<!--               <div class="card-back">
                 <p class="card-description">
-                  <%= opinion.description[0...125] %>...
+                  <%#= opinion.description[0...500] %>...
                 </p>
 
                 <a href="#0" class="styled-link">
-                  Read More
+                  Read less
                 </a>
-              </div>
+              </div> -->
 
             </div>
 
