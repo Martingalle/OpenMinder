@@ -58,10 +58,15 @@
   display: block;
 }
 
-// .card-genre-photo::after {
-//   content: "";
-//   background: linear-gradient(90deg, rgba(243, 72, 104,1) 20.09375%,rgba(242, 71, 104,1) 20.09375%,rgba(158, 0, 236,1) 80.09375%);
-// }
+.card-genre-photo::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  z-index: 1000;
+  background: linear-gradient(90deg, rgba(243, 72, 104,1) 20.09375%,rgba(242, 71, 104,1) 20.09375%,rgba(158, 0, 236,1) 80.09375%);
+}
 
 .card-heading {
   font-size: 2.25rem;
@@ -93,11 +98,11 @@
 .card-description {
   font-weight: lighter;
   position: absolute;
-  margin-left: 5px;
   margin-top: 15px;
-  padding: 5px;
+  padding: 5px 10px;
   color: #999;
   text-decoration: italic;
+  background-color: #fff;
 }
 
 .styled-link {
@@ -129,6 +134,7 @@
 }
 
 .card.flipped {
+  background: white;
   transform: rotateY( 180deg );
 }
 
