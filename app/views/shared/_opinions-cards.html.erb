@@ -11,7 +11,7 @@
 
             <div class="card">
 
-              <!-- <div class="card-front"> -->
+              <div class="front">
                 <div class="card-top">
                   <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
 
@@ -36,21 +36,21 @@
                     <%= opinion.description[0...125] %>...
                   </p>
 
-                  <a href="#0" class="styled-link">
+                  <a href="#0" class="styled-link" onclick="flip()">
                     Read More
                   </a>
                 </div>
-              <!-- </div> -->
+              </div>
 
-<!--               <div class="card-back">
+              <div class="back">
                 <p class="card-description">
-                  <%#= opinion.description[0...500] %>...
+                  <%= opinion.description[0...500] %>...
                 </p>
 
-                <a href="#0" class="styled-link">
+                <a href="#0" class="styled-link" onclick="flip()">
                   Read less
                 </a>
-              </div> -->
+              </div>
 
             </div>
 

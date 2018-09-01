@@ -1,5 +1,7 @@
 .cards {
 
+  perspective: 800px;
+
   a {
     text-decoration: none;
   }
@@ -29,6 +31,14 @@
   height: 400px;
   overflow: hidden;
   border-radius: 10px;
+
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  div {
+    backface-visibility: hidden;
+  }
 
   &:hover {
     transform: translateY(-5px);
@@ -108,3 +118,17 @@
     text-decoration: underline;
   }
 }
+
+.front {
+  background: white;
+}
+
+.back {
+  background: white;
+  transform: rotateY( 180deg );
+}
+
+.card.flipped {
+  transform: rotateY( 180deg );
+}
+
