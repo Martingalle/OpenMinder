@@ -10,15 +10,13 @@
           <div class="cards">
 
             <div class="card">
-                <div class="card-top">
+              <div class="card-top">
                 <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
 
                 <p class="card-heading">
                   <%= opinion.name %>
                 </p>
-              </div>
 
-              <div class="card-bottom">
                 <div class="genres">
                   <p class="main-genre-button">
                     <%= opinion.main_genre.name.capitalize%>
@@ -30,12 +28,16 @@
                 </div>
               </div>
 
+              <div class="card-bottom">
 
+                <p class="card-description">
+                  <%= opinion.description[0...125] %>...
+                </p>
 
-
-              <a href="#0" class="styled-link">
-                Read More
-              </a>
+                <a href="#0" class="styled-link">
+                  Read More
+                </a>
+              </div>
 
             </div>
 
