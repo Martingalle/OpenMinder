@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-      <div class="form-opinion blur-bg">
+      <div class="form form-opinion blur-bg">
         <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -29,7 +29,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :button, "Update", class: "draw meet button-white" %>
+            <%= f.button :button, "Update", class: "button" %>
           </div>
         <% end %>
 

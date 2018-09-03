@@ -1,0 +1,81 @@
+body {
+  height: 100%;
+  // overflow: hidden;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.backRight {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #3498db url(https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7865708f96a88cd2853be1e9ef6b14a5&auto=format&fit=crop&w=1567&q=80);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.backLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #e74c3c url(https://images.unsplash.com/photo-1431069767777-c37892aa0a07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c3a556a7c67a4fe290e9336a9703ed61&auto=format&fit=crop&w=1953&q=80);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -999;
+}
+
+#slideBox {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50%;
+  // position: absolute;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.topLayer {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  left: -100%;
+  position:relative;
+}
+
+.left {
+    width: 50%;
+    height: 100vh;
+    background: #424147;
+    left: 0;
+    position: absolute;
+  }
+
+.right {
+    width: 50%;
+    height: 100vh;
+    background: #424147;
+    right: 0;
+    position: absolute;
+
+}
+
+.content {
+    width: 300px;
+    margin: 0 auto;
+    top: 20%;
+    position: absolute;
+    left: 50%;
+    margin-left: -140px;
+}
+
+#goLeft {
+  font-weight: 400;
+}
