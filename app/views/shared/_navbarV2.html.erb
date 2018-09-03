@@ -11,12 +11,12 @@
   <% if user_signed_in? %>
     <ul>
       <li class="menu-item mi-1">
-        <%= link_to root_path, class: "bubble-link", method: :delete do %>
+        <%= link_to opinions_path, class: "bubble-link" do %>
             <i class="menu-item-icon fa fa-home"></i>
         <% end %>
       </li>
       <li class="menu-item mi-2">
-        <%= link_to user_dashboard_path, class: "bubble-link", method: :delete do %>
+        <%= link_to user_dashboard_path, class: "bubble-link" do %>
             <i class="fas fa-user-alt"></i>
         <% end %>
       </li>
@@ -31,7 +31,7 @@
 
   <ul>
       <li class="menu-item mi-1">
-        <%= link_to opinions_path, class: "bubble-link", method: :delete do %>
+        <%= link_to root_path, class: "bubble-link" do %>
             <i class="menu-item-icon fa fa-home"></i>
         <% end %>
       </li>
