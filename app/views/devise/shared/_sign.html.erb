@@ -1,6 +1,6 @@
 <div id="back">
-      <div class="backRight"></div>
-      <div class="backLeft"></div>
+  <div class="backRight"></div>
+  <div class="backLeft"></div>
 </div>
 
 <div id="slideBox">
@@ -9,12 +9,10 @@
       <div class="content">
         <%= render 'devise/shared/registration_new', resource: (active == "sign_up" ?  resource : User.new)%>
       </div>
-
     </div>
     <div class="right">
       <div class="content">
         <%= render 'devise/shared/session_new', resource: (active == "sign_in" ?  resource : User.new) %>
-        
       </div>
     </div>
   </div>
