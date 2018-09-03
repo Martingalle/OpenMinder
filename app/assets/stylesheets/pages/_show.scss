@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 // -------------------------------------------
@@ -35,17 +36,30 @@
 
 .opinion-tracks-title {
   margin-bottom: 40px;
-  text-align: left;
   margin-left: 20px;
   p {
-    font-size: 12px;
-    color: black;
-    opacity:0.8;
-    margin: 0;
+    background-color: #EB5757;
+    color: white;
+    text-align: center;
+    line-height: 19px;
+    font-size: 16px;
+    font-weight:200;
+    font-family: Roboto;
+    width: 150px;
+    margin: 15px auto 0 auto;
+    padding: 7px;
+    border-radius: 50px;
   }
   h2 {
-    text-align: left;
     margin: 0 0 10px 0;
+    color: #EB5757;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    font-style: medium;
+    font-family: Roboto;
+
+;
   }
 }
 
