@@ -19,7 +19,9 @@ class OpinionsController < ApplicationController
     if params[:query].present?
       @search_query = params[:query]
       @opinions = @opinions.select do |opinion|
-        opinion.main_genre.name == params[:query]
+        if opinion.main_genre != nil
+          opinion.main_genre.name == params[:query]
+        end
       end
     end
     # ----------------
