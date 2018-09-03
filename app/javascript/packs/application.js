@@ -4,3 +4,4 @@ import '../openminder/category-choice.js';
 import '../openminder/youtube_playlist';
 import '../openminder/player.js';
 import '../openminder/slider.js';
+import '../openminder/modal.js';
