@@ -4,8 +4,8 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add your own opinion</h5>
           <%= simple_form_for @opinion_new do |f| %>
-            <%= f.input :name, label:false, placeholder: "Give a title (max 140 caracters)" %>
-            <%= f.input :description, as: :text, label:false, placeholder: "Describe your opinions" %>
+            <%= f.input :name, label:false, placeholder: "Give a title (max 140 caracters)", class:"modal-input" %>
+            <%= f.input :description, label:false, placeholder: "Describe your opinions", class:"modal-input" %>
             <%= f.button :submit, class: "button-small" %>
           <% end %>
       </div>
