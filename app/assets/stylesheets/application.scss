@@ -14,18 +14,3 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
-
-.upvoted {
-  font-weight: bold;
-  color: green;
-}
-
-.downvoted {
-  font-weight: bold;
-  color: red;
-}
-
-.unvoted {
-  font-weight: bold;
-  color: gray;
-}

@@ -11,7 +11,7 @@
   color: $light-blue;
   text-align: center;
   font-size: 0.7em;
-  font-weight: 100;
+  font-weight: 400;
   margin-right: 10px;
   transition: 0.5s ease-in-out;
 
@@ -31,7 +31,7 @@
   color: #d1d1d1;
   text-align: center;
   font-size: 0.7em;
-  font-weight: 100;
+  font-weight: 400;
   margin-right: 10px;
   transition: 0.5s ease-in-out;
 
@@ -40,4 +40,20 @@
     background-color: #d1d1d1;
     color: white;
   }
+}
+
+
+.main-genre-button-big {
+  background-color: white;
+  border-radius: 25px;
+  padding: 7px 10px;
+  min-width: 4em;
+  max-width: 100px;
+  color: white;
+  background-color: $light-blue;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  margin-right: 10px;
+  transition: 0.5s ease-in-out;
 }

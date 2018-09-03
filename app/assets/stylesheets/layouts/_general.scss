@@ -1,11 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
 }
 
 .main-content {
   position: relative;
-  z-index: 1;
-  box-shadow: 0 20px 10px -15px #999;
+  // z-index: 1;
+  box-shadow: 0 20px 10px -15px #dddddd;
   background: #F4F4F4;
   margin-bottom: $footer-height;
   padding: 20px;
