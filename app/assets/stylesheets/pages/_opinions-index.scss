@@ -1,0 +1,51 @@
+.index-title {
+
+  margin-top: 30px;
+  margin-bottom: 45px;
+
+  h1 {
+  font-family: 'Montserrat';
+  color: $dark-gray;
+  font-weight: bold;
+  }
+}
+
+.hereare {
+  margin-top: 80px;
+}
+
+.underlined-title {
+       text-decoration: none;
+       position: relative;
+       z-index: 1;
+       margin-top: 30px;
+     }
+
+    .underlined-title:before {
+        position: absolute;
+        content: '';
+        height: 20px;
+        bottom: -4px;
+        z-index: -2;
+        width: 50%;
+        background: $light-blue;
+
+      /* optional animation */
+      // -o-transition:.5s;
+      //   -ms-transition:.5s;
+      //   -moz-transition:.5s;
+      //   -webkit-transition:.5s;
+      //   transition:.5s;
+    }
+.add-track-button {
+  position: fixed;
+  z-index: 300;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+}

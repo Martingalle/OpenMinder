@@ -1,0 +1,54 @@
+<nav class="bomb-menu right-menu chameleon-menu">
+
+  <button class="menu-toggle-btn">
+    <svg class="menu-icon" viewBox="0, 0, 52, 52">
+      <line class="line line1" x1="13" y1="18" x2="39" y2="18" stroke="#666" stroke-width="3" />
+      <line class="line line2" x1="13" y1="26" x2="39" y2="26" stroke="#666" stroke-width="3" />
+      <line class="line line3" x1="13" y1="34" x2="39" y2="34" stroke="#666" stroke-width="3" />
+    </svg>
+  </button>
+
+  <% if user_signed_in? %>
+    <ul>
+      <li class="menu-item mi-1">
+        <%= link_to opinions_path, class: "bubble-link" do %>
+            <i class="menu-item-icon fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-2">
+        <%= link_to user_dashboard_path, class: "bubble-link" do %>
+            <i class="fas fa-user-alt"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-3">
+        <%= link_to destroy_user_session_path, class: "bubble-link", method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+    </ul>
+
+  <% else %>
+
+  <ul>
+      <li class="menu-item mi-1">
+        <%= link_to root_path, class: "bubble-link" do %>
+            <i class="menu-item-icon fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-2">
+        <a href="#about" title="About">
+          <i class="menu-item-icon fa fa-question"></i>
+        </a>
+      </li>
+      <li class="menu-item mi-3">
+        <a href="#contact" title="Log out">
+          <!-- <i class="menu-item-icon fa fa-paper-plane"></i> -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "bubble-link" %>
+        </a>
+      </li>
+    </ul>
+
+  <% end %>
+
+</nav>
+

@@ -1,4 +1,4 @@
-<<div class="banner video-banner">
+<div class="banner video-banner">
   <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
   <div class="banner-content video-banner-content">
     <h1>Open Minder</h1>
@@ -59,22 +59,10 @@
       <h3>Découvrez quelques clichés musicaux</h3>
     </div>
   </div>
-  <div class="row">
-      <!-- insert <div class="card"> -->
-        <% @random_opinions.each do |opinion| %>
-          <%= link_to opinion_path(opinion) do %>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-              <div class="card opinion-card-random" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= opinion.main_genre.photo %>);">
-              <div class="card-category"><%= opinion.main_genre.name%></div>
-              <div class="card-description">
-                <p>Here is an opinion</p>
-                <p><%= opinion.name %></p>
-              </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-  </div>
+
+<%= render 'shared/opinions-cards',
+opinions: @random_opinions %>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="see-more-display">
@@ -86,31 +74,31 @@
 </div>
 
 
-<div class="container container-form">
+<!-- <div class="container container-form">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
       <div class="form-opinion blur-bg">
-        <h3>Ajoutez vos clichés musicaux!</h3>
-        <%= simple_form_for @opinion_new do |f| %>
-          <%= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
-          <%= f.input :description, as: :text, label:false, placeholder: "Décrivez le cliché" %>
-          <!-- <%= f.association :genres, as: :check_boxes %> -->
+        <h3>Ajoutez vos clichés musicaux!</h3> -->
+        <%#= simple_form_for @opinion_new do |f| %>
+          <%#= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
+          <%#= f.input :description, as: :text, label:false, placeholder: "Décrivez le cliché" %>
+          <%#= f.association :genres, as: :check_boxes %>
 
           <!-- <fieldset class="form-group">
             <legend class="col-form-label pt-0">Main genre</legend>
             <input type="hidden" name="opinion[genre_ids][]" value="" />
-            <div class="category-choices">
-              <% Genre.all.each do |genre| %>
-                <input type="checkbox" class="hidden" value="<%= genre.id %>" name="post[genre_ids][]" id="post_genre_ids_<%= genre.id %>">
-                <label class="category-choice" for="post_genre_ids_<%= genre.id %>">
-                  <%= genre.name %>
-                  <i class="fa fa-music"></i>
-                </label>
-              <% end %>
-          </fieldset> -->
-          <%= f.button :button, class: "draw meet button-white" %>
-        <% end %>
-      </div>
+            <div class="category-choices"> -->
+              <%# Genre.all.each do |genre| %>
+                <!-- <input type="checkbox" class="hidden" value="<%#= genre.id %>" name="post[genre_ids][]" id="post_genre_ids_<%#= genre.id %>">
+                <label class="category-choice" for="post_genre_ids_<%#= genre.id %>"> -->
+                  <%#= genre.name %>
+                  <!-- <i class="fa fa-music"></i>
+                </label> -->
+              <%# end %>
+          <!-- </fieldset> -->
+          <%#= f.button :button, class: "draw meet button-white" %>
+        <%# end %>
+<!--       </div>
     </div>
   </div>
-</div>
+</div> -->
