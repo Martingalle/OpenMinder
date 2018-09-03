@@ -1,10 +1,7 @@
 <div class="opinion-main-content" onload="initElement();">
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
 
-    <!-- 1 - Banner  -->
-
-
-    <!-- 2 - Opinion Description  -->
+    <!-- 1 - Opinion Description  -->
     <div class="opinion-banner">
       <div class="opinion-description-quote">
         <div class="quote">
@@ -15,8 +12,10 @@
           <i class="fas fa-quote-right"></i>
         </div>
         <div class="admin-update-button">
-          <% if current_user.admin == true %>
-            <h4 class="green-button">Update</h4>
+          <% if current_user %>
+            <% if current_user.admin == true %>
+              <h4 class="green-button">Update</h4>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -35,7 +34,7 @@
       </div>
     </div>
     <hr>
-    <!-- 3 - songs and player  -->
+    <!-- 2- songs and player  -->
     <div class="opinion-player">
       <div class="row">
         <div class="col-xs-12 col-sm-8 opinion-tracks">
@@ -69,6 +68,11 @@
         </div>
       </div>
     </div>
+
+    <!-- 3- player  -->
+    <div class="player">
+    </div>
+
   </div> <!-- End of container  -->
 </div>
 </div>
