@@ -13,7 +13,7 @@ const inputSearchResult = (data) => {
           <img src=${item.snippet.thumbnails.medium.url} alt="">
           <p class="track-name">${item.snippet.title}</p>
           <p>
-            <a rel="nofollow" data-method="post" href="/opinions/${opinionId}/tracks?track[name]=${item.snippet.title}&amp;track[photo]=${item.snippet.thumbnails.medium.url}&amp;track[audio_url]=${youtube_url}">add</a>
+            <a rel="nofollow" data-method="post" href="/opinions/${opinionId}/tracks?track[name]=${item.snippet.title}&amp;track[photo]=${item.snippet.thumbnails.medium.url}&amp;track[audio_url]=${youtube_url}&amp;track[youtube_id]=${item.id.videoId}">add</a>
           </p>
         </li>`);
   });
