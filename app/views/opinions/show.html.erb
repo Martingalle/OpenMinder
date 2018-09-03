@@ -1,59 +1,80 @@
-<div class="opinion-main-content" onload="initElement();>
-
+<div class="opinion-main-content" onload="initElement();">
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
-  <%= render 'shared/banner',
-  photo: @opinion.main_genre.photo.sample,
-  author:@opinion.fake_author,
-  city:@opinion.fake_city,
-  name:@opinion.name %>
+
+    <!-- 1 - Banner  -->
 
 
-<!-- Search bar => goes on Youtube and retrieve infos.On add, add song to playlist  -->
-  <div class="opinion-description">
-    <p><%= @opinion.description %></p>
-  </div>
-  <div class="opinion-player">
-
-<!-- List of songs linked to an opinion -->
-  <div class="row">
-      <div class="col-xs-12 col-sm-8 opinion-tracks">
-        <div class="opinion-tracks-title">
-          <p>Playlist</p>
-          <h2>Recently Added</h2>
+    <!-- 2 - Opinion Description  -->
+    <div class="opinion-banner">
+      <div class="opinion-description-quote">
+        <div class="quote">
+          <i class="fas fa-quote-left"></i>
         </div>
-        <% @tracks_desc.each do |track| %>
-        <div data-youtube-id=<%= track.youtube_id %>>
-          <%= render 'shared/track-upvote',
-          photo:track.photo,
-          song:track.name,
-          upvotes: track.upvotes,
-          opinion: @opinion,
-          track: track,
-          added:track.created_at.strftime("%B %e, %Y"),
-          youtube_id: track.youtube_id
-          %>
-          </div>
-        <% end %>
-      </div>
-
-
-      <div class="col-xs-12 col-sm-4 opinion-right-column">
-        <div class="opinion-tracks-title">
-          <p>Playlist</p>
-          <h2>Recently Added</h2>
+        <h1><%= @opinion.name %></h1>
+        <div class="quote-right">
+          <i class="fas fa-quote-right"></i>
         </div>
-        <div class="opinion-youtube-player">
-          <div id="player" data-songs-id=<%= @youtube_ids.to_json %>>
-          </div>
-        </div>
-
-        <div class="opinion-genres">
-          <h1>Genres related to the Tracks !</h1>
-          <% @opinion.genres_occurrences_desc.each do |k,v| %>
-              <div class="opinion-genre-name"><%= k[:genre].name %></div>
+        <div class="admin-update-button">
+          <% if current_user.admin == true %>
+            <h4 class="green-button">Update</h4>
           <% end %>
         </div>
+      </div>
+      <div class="opinion-description">
+        <p><%= @opinion.description %></p>
+        <h6><a href="">see related opinions</a></h6>
+      </div>
 
+      <div class="opinion-genres">
+        <% @opinion.genres_occurrences_desc.each do |k,v| %>
+          <div class="opinion-genre-name"><%= k[:genre].name %></div>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <!-- 3 - songs and player  -->
+    <div class="opinion-player">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 opinion-tracks">
+          <div class="opinion-tracks-title">
+            <h2>Got the perfect track to beat this opinion ?</h2>
+            <p class="button-red beat-button" data-toggle="modal" data-target="#addATrack">add a track</p>
+
+          </div>
+          <!-- List of songs linked to an opinion -->
+
+          <div class="scrollbar">
+            <% @tracks_desc.each do |track| %>
+              <div data-youtube-id=<%= track.youtube_id %>>
+                <%= render 'shared/track-upvote',
+                photo:track.photo,
+                song:track.name,
+                upvotes: track.upvotes,
+                opinion: @opinion,
+                track: track,
+                added:track.created_at.strftime("%B %e, %Y"),
+                youtube_id: track.youtube_id
+                %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 opinion-right-column">
+          <div class="opinion-youtube-player">
+            <div id="player" data-songs-id=<%= @youtube_ids.to_json %>></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End of container  -->
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addATrack" tabindex="-10" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
         <div class="opinion-add-track">
           <p>Add a track !</p>
           <div id="search">
@@ -64,33 +85,11 @@
             placeholder: "Type in a song title" %>
           <% end %>
         </div>
-        <div id="results"></div>
-        </div>
-
+          <div id="results"></div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a song to your cliché !</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <%= simple_form_for ([@opinion, @track_new]) do |f| %>
-            <%= f.input :audio_url, placeholder: "Type in a song" %>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= f.button :submit%>
-          <% end %>
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
