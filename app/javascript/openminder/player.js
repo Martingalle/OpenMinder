@@ -1,7 +1,8 @@
 import YouTubePlayer from 'youtube-player';
 
-// on page load je sélectionne le 1er
+// toutes les
 document.addEventListener('DOMContentLoaded', () => {
+  // Select only the first
   const first = document.querySelector(".tracks-js");
 
   if (first) {
@@ -24,20 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
+    // gets youtubeId in variable to pass to the player
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     console.log(youtubeId);
 
-    // const videoId='M7lc1UVf-VE';
-    // onYouTubeIframeAPIReady(youtubeId);
 
-
-
+    // use youtube-player from YARN
     let player;
 
+    // display player on div with id="player"
     player = YouTubePlayer('player');
-
     playVideo(youtubeId);
 
     // // 'loadVideoById' is queued until the player is ready to receive API calls.
@@ -58,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function playVideo(youtubeId) {
     console.log('load and play')
     player.loadVideoById(youtubeId);
-    player.playVideo();
+    player.playVideo(youtubeId);
   }
 });
 
