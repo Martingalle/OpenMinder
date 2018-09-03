@@ -1,0 +1,17 @@
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-title {
+  font-family: 'montserrat';
+  font-weight: 400;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2em;
+  color: $light-blue;
+}
+
+.modal-input {
+  border-bottom: 2px solid $dark-gray
+}
