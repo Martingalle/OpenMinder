@@ -31,26 +31,22 @@
        <p class="detail_info">Partagez les clichés sur les réseaux sociaux et challengez vos ami.e.s en leur défiant de battre un cliché concernant un genre musical vénéré... ou de découvrir un genre détesté !</p>
     </div>
   </div>
-  <hr>
-  <h4>Les dernières opinions ajoutées...</h4>
-  <div class="row">
-    <% @random_opinions[0..2].each do |opinion| %>
-      <div class="col-xs-4">
-        <%= render 'shared/home_card', opinion: opinion %>
-      </div>
-    <% end %>
-  </div>
   <div class="details-buttons">
-    <a href="<%= opinions_path %>">
-      <button class="button-light">See more...</button>
-    </a>
-    <a href="#sign">
-      <button class="button">Sign in</button>
+    <a href="#cards">
+      <button class="button">Lasts cards</button>
     </a>
   </div>
 </div>
 
-<div class="sign" id="sign">
-  <hr>
-  <p>Sign</p>
+<div class="last-cards" id="cards">
+  <h2 class="underlined-title">Last cards</h2>
+  <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
+  <div class="details-buttons">
+    <%= link_to opinions_path do  %>
+      <button class="button-light">See more...</button>
+    <% end %>
+    <%= link_to new_user_session_path do  %>
+      <button class="button">Sign up</button>
+    <% end %>
+  </div>
 </div>

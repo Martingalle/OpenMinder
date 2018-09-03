@@ -1,61 +1,54 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="navbar-wagon">
+<nav class="bomb-menu right-menu chameleon-menu">
 
+  <button class="menu-toggle-btn">
+    <svg class="menu-icon" viewBox="0, 0, 52, 52">
+      <line class="line line1" x1="13" y1="18" x2="39" y2="18" stroke="white" stroke-width="3" />
+      <line class="line line2" x1="13" y1="26" x2="39" y2="26" stroke="white" stroke-width="3" />
+      <line class="line line3" x1="13" y1="34" x2="39" y2="34" stroke="white" stroke-width="3" />
+    </svg>
+  </button>
 
-      <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <ul>
+      <li class="menu-item mi-1">
+        <%= link_to opinions_path, class: "bubble-link" do %>
+            <i class="menu-item-icon fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-2">
+        <%= link_to user_dashboard_path, class: "bubble-link" do %>
+            <i class="fas fa-user-alt"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-3">
+        <%= link_to destroy_user_session_path, class: "bubble-link", method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+    </ul>
 
+  <% else %>
 
-        <!-- Avatar with dropdown menu -->
+  <ul>
+      <li class="menu-item mi-1">
+        <%= link_to root_path, class: "bubble-link" do %>
+            <i class="menu-item-icon fa fa-home"></i>
+        <% end %>
+      </li>
+      <li class="menu-item mi-2">
+        <a href="#about" title="About">
+          <i class="menu-item-icon fa fa-question"></i>
+        </a>
+      </li>
+      <li class="menu-item mi-3">
+        <a href="#contact" title="Log out">
+          <!-- <i class="menu-item-icon fa fa-paper-plane"></i> -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "bubble-link" %>
+        </a>
+      </li>
+    </ul>
 
-        <div class="navbar-wagon-item hidden-xs hidden-sm">
-          <div class="dropdown">
-            <i class="fas fa-align-justify dropdown-toggle navbar-logo" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+  <% end %>
 
-            <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <div class="flex-nabar-display">
-                <div><img src="https://avatars3.githubusercontent.com/u/40064197?s=400&u=53c95378a60c3dae2d21758baeeaab037df9453d&v=4" class="avatar"></div>
-                <div class="navbar-link-border-bottom"><%= current_user.username %></div>
-                <div class="navbar-link-border-bottom">
-                  <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                  <% end %>
-                </div>
-                <div class="navbar-link-border-bottom"><%= link_to 'Back to the home', opinions_path %></div>
-                <div><a href="#page-top"><i class="fas fa-arrow-up"></i></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-wagon-item hidden-md hidden-lg">
-          <div class="dropdown">
-             <i class="fas fa-align-justify dropdown-toggle dropdown-toggle-mobile" data-toggle="dropdown"></i>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                <li><%= current_user.username %></li>
-                <li>
-                  <%= link_to destroy_user_session_path, method: :delete do %>
-                    <%= t(".sign_out", default: "Log out") %>
-                  <% end %>
-                </li>
-                <li><%= link_to 'Back to the home', opinions_path %></li>
-                <li><a href="#page-top"><i class="fas fa-arrow-up"></i></a></li>
-            </ul>
-          </div>
-         </div>
-
-      <% else %>
-        <!-- Login link (when logged out) -->
-        <div class="navbar-wagon-item">
-
-            <div class="spinning-button-container">
-              <div class="spinme"></div>
-              <div class="login-text"><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></div>
-            </div>
-
-          </div>
-        </div>
-
-      <% end %>
-
-  </div>
 </nav>
+

@@ -1,29 +1,25 @@
+<div class="form form-opinion-login">
+  <h2>Log in</h2>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-        <div class="form form-opinion-login">
-          <h2>Log in</h2>
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email, label:false, placeholder: "Email",
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password, label:false, placeholder: "Password",
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
-            <div class="form-inputs">
-              <%= f.input :email, label:false, placeholder: "Email",
-                          required: false,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" } %>
-              <%= f.input :password, label:false, placeholder: "Password",
-                          required: false,
-                          input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            </div>
+    <div class="form-actions">
+      <%= f.button :button, "Log in", class: "button" %>
+      <!-- <button id="goRight" class="off draw meet btn-slider">Sign Up</button> -->
+      <button id="goRight" class="off draw meet btn-slider">Sign Up</button>
 
-            <div class="form-actions">
-              <%= f.button :button, "Log in", class: "button" %>
-              <!-- <button id="goRight" class="off draw meet btn-slider">Sign Up</button> -->
-              <button id="goRight" class="off draw meet btn-slider">Sign Up</button>
-
-            </div>
-          <% end %>
-          <p class="a-links"><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
-
-
-
-        </div>
+    </div>
+  <% end %>
+  <p class="a-links"><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+</div>
