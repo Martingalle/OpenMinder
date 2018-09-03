@@ -26,9 +26,12 @@
       </div>
 
       <div class="opinion-genres">
-        <% @opinion.genres_occurrences_desc.each do |k,v| %>
-          <div class="opinion-genre-name"><%= k[:genre].name %></div>
-        <% end %>
+        <button class="button">
+          <%= @opinion.main_genre.name %>
+        </button>
+        <button class="button-small">
+          <%= @opinion.secondary_genre.name %>
+        </button>
       </div>
     </div>
     <hr>
