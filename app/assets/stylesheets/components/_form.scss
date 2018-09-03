@@ -132,6 +132,7 @@ input[type="text"]:focus,
 select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
+  color: $blue;
 }
 
 input[type="email"],
@@ -191,9 +192,20 @@ select.form-control:focus {
 }
 
 .blur-bg {
-  background-image: url('../images/Blur-pic.png'), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  background-image: url('blur.png'), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2));
   background-position: center;
   background-repeat:no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.container-form {
+  width: 100vw;
+  height: 100vh;
+  // background-color: white;
+  background-image: url('https://images.unsplash.com/5/unsplash-kitsune-4.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc01c83c3da0425e9baa6c7a9204af81&auto=format&fit=crop&w=1950&q=80'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  background-position: center;
+  border-radius: 3px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
