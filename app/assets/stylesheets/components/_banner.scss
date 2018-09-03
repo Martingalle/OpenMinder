@@ -1,12 +1,8 @@
 .banner {
   position: relative;
-  background-color: black;
   width: calc(100% + 40px);
   height: 100vh;
   margin: -20px -20px 0px -20px;
-  * {
-    border: solid 1px red;
-  }
   .landing_background {
     text-align: center;
     height: 100vh;
@@ -46,6 +42,7 @@
     text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.15);
   }
   button{
+    margin-left: 150px;
     margin-top: 200px;
     font-size: 30px;
     font-weight: normal;

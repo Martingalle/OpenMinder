@@ -41,7 +41,16 @@
     <% end %>
   </div>
   <div class="details-buttons">
-    <button class="button">See more</button>
-    <button class="button">Sign in</button>
+    <a href="<%= opinions_path %>">
+      <button class="button-light">See more...</button>
+    </a>
+    <a href="#sign">
+      <button class="button">Sign in</button>
+    </a>
   </div>
+</div>
+
+<div class="sign" id="sign">
+  <hr>
+  <p>Sign</p>
 </div>
