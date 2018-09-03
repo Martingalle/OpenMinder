@@ -2,13 +2,15 @@
   position: sticky !important;
   top: 0 !important;
   z-index: 1000;
-  background-color: #f4f4f4;
+  background-color: white;
   opacity: 0.97;
-  box-shadow: 0px 1px 1px #777;
+  // box-shadow: 0px 1px 1px #777;
   height: 30px;
+  margin: 0 50px;
   padding: 25px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid black;
 
 }
 
