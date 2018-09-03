@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body class="body_class">
+  <body class="<%= body_class %>">
     <%= render 'shared/navbarV2' %>
     <%= render 'shared/flashes' %>
 
@@ -19,7 +19,7 @@
 
 
     <!-- modals -->
-    <%= render 'shared/add_an_opinion_modale'%>
+    <%#= render 'shared/add_an_opinion_modale'%>
 
 
     <!-- footer -->
