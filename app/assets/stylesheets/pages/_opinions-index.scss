@@ -4,9 +4,8 @@
   margin-bottom: 45px;
 
   h1 {
-  font-family: 'Montserrat';
   color: $dark-gray;
-  font-weight: bold;
+  font-weight: 900;
   }
 }
 
@@ -18,7 +17,7 @@
        text-decoration: none;
        position: relative;
        z-index: 1;
-       margin-top: 30px;
+       // margin-top: 30px;
      }
 
     .underlined-title:before {
@@ -29,6 +28,7 @@
         z-index: -2;
         width: 50%;
         background: $light-blue;
+        max-width: 45%;
 
       /* optional animation */
       // -o-transition:.5s;
