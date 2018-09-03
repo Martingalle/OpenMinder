@@ -1,104 +1,56 @@
-<div class="banner video-banner">
-  <%= video_tag 'Cheer-Up.mp4', autoplay: :autoplay, loop: :loop, mute: :mute, poster: "Cheer-Up.jpg" %>
-  <div class="banner-content video-banner-content">
-    <h1>Open Minder</h1>
-    <h4>New musical horizons</h4>
-  </div>
-</div>
-
-<div class="wrapper">
-  <div class="container main-info">
-    <div class="row">
-      <div class="card main-title">
-        <h3>Pourquoi Open Minder</h3>
-      </div>
-    </div>
-    <div class="container openminded-icons">
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"compact-disc.png"%>
-          </div>
-          <div class="text-information">
-            <h4>ECOUTEZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
+<div class="banner">
+  <div class="landing_background" style="background-image: url(<%= asset_path 'banner_3.jpg' %>)">
+    <div class="landing_infos">
+      <div class="rotate">
+        <div class="beat">
+          <h1>Open Minder</h1>
         </div>
+        <p>New musical horizons</p>
       </div>
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"idea.png"%>
-          </div>
-          <div class="text-information">
-            <h4>DÉCOUVREZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 openminded-icons-infobox">
-          <div class="icon-information">
-            <%= image_tag"share.png"%>
-          </div>
-          <div class="text-information">
-            <h4>PARTAGEZ</h4>
-            <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I can be incorruptible, I can be everlasting.</p>
-          </div>
-        </div>
+      <div class="call-to-action">
+        <a href="#details">
+          <button class="button-red">Discover</button>
+        </a>
       </div>
     </div>
   </div>
 </div>
 
-
-
-<div class="container container-opinions">
+<div class="container details" id="details">
   <div class="row">
-    <div class="card secondary-title">
-      <h3>Découvrez quelques clichés musicaux</h3>
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_discover' %>
+      <p class="detail_info">Découvrez de nouveaux contenus musicaux de manière originale : sélectionnez un cliché auquel vous croyez, et laisser les autres vous prouver que vous aviez tort d'y croire !</p>
+    </div>
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_suggest' %>
+      <p class="detail_info">Participez vous aussi ! Proposez des musiques qui vont à l'encontre des opinions reçues et tentez de battre le record d'utilisateurs et utilisatrices convaincu.e.s !</p>
+    </div>
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_share' %>
+       <p class="detail_info">Partagez les clichés sur les réseaux sociaux et challengez vos ami.e.s en leur défiant de battre un cliché concernant un genre musical vénéré... ou de découvrir un genre détesté !</p>
     </div>
   </div>
-
-<%= render 'shared/opinions-cards',
-opinions: @random_opinions %>
-
+  <hr>
+  <h4>Les dernières opinions ajoutées...</h4>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="see-more-display">
-        <%= link_to "See More", opinions_path, class: "button draw meet" %>
+    <% @random_opinions[0..2].each do |opinion| %>
+      <div class="col-xs-4">
+        <%= render 'shared/home_card', opinion: opinion %>
       </div>
-    </div>
-
+    <% end %>
+  </div>
+  <div class="details-buttons">
+    <a href="<%= opinions_path %>">
+      <button class="button-light">See more...</button>
+    </a>
+    <a href="#sign">
+      <button class="button">Sign in</button>
+    </a>
   </div>
 </div>
 
-
-<!-- <div class="container container-form">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
-      <div class="form-opinion blur-bg">
-        <h3>Ajoutez vos clichés musicaux!</h3> -->
-        <%#= simple_form_for @opinion_new do |f| %>
-          <%#= f.input :name, label:false, placeholder: "Donnez un titre à votre cliché" %>
-          <%#= f.input :description, as: :text, label:false, placeholder: "Décrivez le cliché" %>
-          <%#= f.association :genres, as: :check_boxes %>
-
-          <!-- <fieldset class="form-group">
-            <legend class="col-form-label pt-0">Main genre</legend>
-            <input type="hidden" name="opinion[genre_ids][]" value="" />
-            <div class="category-choices"> -->
-              <%# Genre.all.each do |genre| %>
-                <!-- <input type="checkbox" class="hidden" value="<%#= genre.id %>" name="post[genre_ids][]" id="post_genre_ids_<%#= genre.id %>">
-                <label class="category-choice" for="post_genre_ids_<%#= genre.id %>"> -->
-                  <%#= genre.name %>
-                  <!-- <i class="fa fa-music"></i>
-                </label> -->
-              <%# end %>
-          <!-- </fieldset> -->
-          <%#= f.button :button, class: "draw meet button-white" %>
-        <%# end %>
-<!--       </div>
-    </div>
-  </div>
-</div> -->
+<div class="sign" id="sign">
+  <hr>
+  <p>Sign</p>
+</div>
