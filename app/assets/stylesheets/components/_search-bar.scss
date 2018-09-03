@@ -1,26 +1,38 @@
+.searchbar-master{
+  padding: 0px;
+}
+
 .searchbar-wrapper {
   position: sticky !important;
   top: 0 !important;
   z-index: 1000;
   background-color: white;
-  opacity: 0.97;
-  // box-shadow: 0px 1px 1px #777;
   height: 30px;
-  margin: 0 50px;
-  padding: 25px;
+  padding: 70px 0px 50px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
-
 }
 
 .searchbar-input {
  background-color: transparent;
+ margin-left: 20px;
+}
+
+.searchbar {
+  border: 1px solid #bababa !important;
+  border-radius: 10px !important;
+  background: white;
+  width: 95%;
+  font-weight: 100 !important;
+}
+
+.searchbar-placeholder{
+  margin-left: 20px;
 }
 
 .loupe {
   margin-top: -32px;
-  margin-left: 450px;
+  margin-left: 1065px;
   font-size: 25px;
   position: absolute;
   color: #bababa;
