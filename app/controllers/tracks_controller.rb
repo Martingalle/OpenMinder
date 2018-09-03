@@ -65,7 +65,7 @@ class TracksController < ApplicationController
   end
 
   def set_track
-    @track = Track.find(params[:track])
+    @track = Track.find(params[:id])
     authorize @track
   end
 

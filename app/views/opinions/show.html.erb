@@ -14,6 +14,11 @@
         <div class="quote-right">
           <i class="fas fa-quote-right"></i>
         </div>
+        <div class="admin-update-button">
+          <% if current_user.admin == true %>
+            <h4 class="green-button">Update</h4>
+          <% end %>
+        </div>
       </div>
       <div class="opinion-description">
         <p><%= @opinion.description %></p>
@@ -38,7 +43,7 @@
           </div>
           <!-- List of songs linked to an opinion -->
 
-          <div class="scroll">
+          <div class="scrollbar">
             <% @tracks_desc.each do |track| %>
               <div data-youtube-id=<%= track.youtube_id %>>
                 <%= render 'shared/track-upvote',

@@ -11,6 +11,9 @@
     <h3><%= song %></h3>
     <p>Added : <%= added %></p>
   </div>
+  <div class="user-admin-delete">
+    <%= link_to "Delete Track", opinion_track_path(opinion, track), method: :delete, data: {confirm: "sure?"} %>
+  </div>
 <!--   <ul class="list-inline track-controls hidden-sm hidden-xs">
     <li><a href=""><i class="fa fa-heart"></i></a></li>
     <li><a href=""><i class="fa fa-share"></i></a></li>
