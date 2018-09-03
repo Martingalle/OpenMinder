@@ -1,6 +1,11 @@
 .details {
-  width: 90%;
+  position: relative;
+  width: calc(100% + 40px);
   height: 100vh;
+  margin-top: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 0;
   padding: 100px;
   .detail {
     padding: 20px;
@@ -10,20 +15,9 @@
     width: 150px;
     height: 150px;
   }
-  .card {
-    width: auto;
-    height: 180px;
-  }
-  .card-heading {
-    margin-top: -160px;
-    font-weight: normal;
-  }
-  .card-genre-photo {
-    height: 180px;
-  }
   .details-buttons {
-    font-size: 25px;
-    margin-top: 50px;
+    font-size: 20px;
+    margin-top: 100px;
     text-align: center;
   }
   .details-buttons button {
