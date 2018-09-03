@@ -73,6 +73,7 @@
   outline:none;
   padding: 0.5em 2em;
   transition: 0.3s ease-in-out;
+  cursor:pointer;
 
   &:hover {
     background-color: $white;
@@ -130,6 +131,7 @@
   outline:none;
   padding: 0.2em 1em;
   transition: 0.3s ease-in-out;
+  cursor:pointer;
 
   &:hover {
     background-color: $white;
@@ -199,6 +201,62 @@
 
 
 .button-light:before {
+  width:100%;
+  height:50%;
+  position:absolute;
+  content:'';
+  top:0;
+  z-index:0;
+  animation: slide 3s cubic-bezier(.23,.74,.38,.85) infinite;
+  transform:rotate(45deg);
+  background-color: rgba(255,255,255,0.2);
+
+}
+
+@keyframes slide {
+  0% {
+    opacity:0;
+    left:-140px;
+    right:0;
+  }
+
+  50% {
+    opacity:1;
+  }
+
+  100% {
+    opacity:0;
+    right:0px;
+    left:140px;
+  }
+}
+
+.button-small-light {
+  font-size: 0.9em;
+  font-weight: 100;
+  min-width: 6em;
+  text-align: center;
+  background-color: white;
+  border: 1px solid $light-blue !important;
+  color:$light-blue;
+  border:none;
+  border-radius: 2em;
+  position:relative;
+  overflow:hidden;
+  outline:none;
+  padding: 0.2em 1em;
+  transition: 0.3s ease-in-out;
+  cursor:pointer;
+
+  &:hover {
+    background-color: $light-blue;
+    border: 1px solid $light-blue;
+    color: white;
+  }
+}
+
+
+.button-small:before {
   width:100%;
   height:50%;
   position:absolute;
