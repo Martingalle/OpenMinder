@@ -57,7 +57,7 @@ class TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:name, :photo, :audio_url, :genre_id, :argument)
+    params.require(:track).permit(:name, :photo, :audio_url, :genre_id, :argument, :youtube_id)
   end
 
   def set_opinion
@@ -65,7 +65,7 @@ class TracksController < ApplicationController
   end
 
   def set_track
-    @track = Track.find(params[:track])
+    @track = Track.find(params[:id])
     authorize @track
   end
 
