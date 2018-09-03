@@ -1,8 +1,10 @@
 .banner {
   position: relative;
-  width: calc(100% + 40px);
   height: 100vh;
-  margin: -20px -20px 0px -20px;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
   .landing_background {
     text-align: center;
     height: 100vh;
@@ -10,13 +12,13 @@
     background-position: center;
   }
   .landing_infos{
-    width: 45%;
-    padding-top: 200px;
+    width: 42%;
+    padding-top: 180px;
   }
   .rotate {
     text-align: right;
     opacity: 0.5;
-    transform: perspective(1000px) rotateY(35deg) rotateZ(-3deg) scale(1);
+    transform: perspective(1000px) rotateY(35deg) rotateZ(-1deg) scale(1);
   }
   .beat{
     animation: scale;
@@ -27,7 +29,7 @@
   h1{
     font-family: $body-font;
     letter-spacing: -10px;
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 900;
     color: #222;
     animation: scale_shadow;
@@ -42,9 +44,9 @@
     text-shadow: 20px 20px 10px rgba(0, 0, 0, 0.15);
   }
   button{
-    margin-left: 150px;
-    margin-top: 200px;
-    font-size: 30px;
+    margin-left: 120px;
+    margin-top: 120px;
+    font-size: 20px;
     font-weight: normal;
   }
 }
