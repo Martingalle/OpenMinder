@@ -37,3 +37,15 @@
       //   -webkit-transition:.5s;
       //   transition:.5s;
     }
+.add-track-button {
+  position: fixed;
+  z-index: 300;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+}
