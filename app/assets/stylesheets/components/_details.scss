@@ -11,18 +11,17 @@
     height: 150px;
   }
   .card {
-    height: 270px;
+    width: auto;
+    height: 150px;
   }
   .card-heading {
-    margin-top: -110px;
+    margin-top: -130px;
+    font-weight: normal;
   }
   .card-genre-photo {
-    height: 110px;
+    height: 150px;
   }
-  .genres {
-    display: none;
-  }
-  .card-description, .card-heading, .genres, .styled-link {
-    font-weight: normal;
+  .details-buttons {
+    text-align: center;
   }
 }
