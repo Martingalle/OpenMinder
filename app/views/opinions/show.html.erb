@@ -68,14 +68,26 @@
         </div>
       </div>
     </div>
-
     <!-- 3- player  -->
-    <div class="player">
-    </div>
-
   </div> <!-- End of container  -->
 </div>
-</div>
+
+<% content_for :player do %>
+  <%= render 'shared/player' %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="addATrack" tabindex="-10" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
