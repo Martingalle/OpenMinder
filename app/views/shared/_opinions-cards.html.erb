@@ -11,47 +11,35 @@
 
             <div class="card">
 
-              <div class="front">
-                <div class="card-top">
-                  <%= image_tag opinion.main_genre.photo.sample, alt: "genre photo", class:" card-genre-photo" %>
+              <div class="card-top">
 
-                  <p class="card-heading">
-                    <%= opinion.name %>
-                  </p>
-
-                  <div class="genres">
-                    <p class="main-genre-button">
-                      <%= opinion.main_genre.name.capitalize%>
-                    </p>
-
-                    <p class="secondary-genre-button">
-                      <%= opinion.secondary_genre.name.capitalize%>
-                    </p>
-                  </div>
+                <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path(opinion.main_genre.photo.sample) %>');">
                 </div>
 
-                <div class="card-bottom">
-
-                  <p class="card-description">
-                    <%= opinion.description[0...125] %>...
-                  </p>
-
-                  <a href="#0" class="styled-link" onclick="flip()">
-                    Read More
-                  </a>
-                </div>
-              </div>
-
-              <div class="back">
-                <p class="card-description">
-                  <%= opinion.description[0...500] %>...
+                <p class="card-heading">
+                  <%= opinion.name %>
                 </p>
 
-                <a href="#0" class="styled-link" onclick="flip()">
-                  Read less
-                </a>
+                <div class="genres">
+                  <p class="main-genre-button">
+                    <%= opinion.main_genre.name.capitalize%>
+                  </p>
+
+                  <p class="secondary-genre-button">
+                    <%= opinion.secondary_genre.name.capitalize%>
+                  </p>
+                </div>
               </div>
 
+              <div class="card-bottom">
+
+                <p class="card-description">
+                  <%= opinion.description[0...125] %>...
+                </p>
+
+                <%= link_to 'Discover the opinion', opinion_path(opinion), class:'styled-link' %>
+
+              </div>
             </div>
 
           </div>
