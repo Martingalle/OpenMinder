@@ -1,7 +1,11 @@
 const input = document.querySelector('#search');
 const results = document.querySelector('#results');
-const opinionId = document.getElementById("opinionShow").dataset.opinionId
+const opinionShow = document.getElementById("opinionShow")
 const youtube = "https://www.youtube.com/watch?v"
+
+if (opinionShow) {
+  const opinionId = opinionShow.dataset.opinionId
+}
 
 const inputSearchResult = (data) => {
   console.log(data)

@@ -1,2 +1,22 @@
-<%= render 'devise/shared/session_new', resource: (active == "sign_in" ?  resource : User.new) %>
-<%= render 'devise/shared/registration_new', resource: (active == "sign_up" ?  resource : User.new)%>
+<div id="back">
+      <div class="backRight"></div>
+      <div class="backLeft"></div>
+</div>
+
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <%= render 'devise/shared/registration_new', resource: (active == "sign_up" ?  resource : User.new)%>
+        <button id="goLeft" class="off draw meet">Login</button>
+      </div>
+
+    </div>
+    <div class="right">
+      <div class="content">
+        <%= render 'devise/shared/session_new', resource: (active == "sign_in" ?  resource : User.new) %>
+        <button id="goRight" class="off draw meet">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
