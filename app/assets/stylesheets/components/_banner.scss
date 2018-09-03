@@ -1,22 +1,21 @@
 .banner {
+  position: relative;
+  background-color: black;
+  width: calc(100% + 40px);
+  height: 100vh;
+  margin: -20px -20px 0px -20px;
   * {
-    // border: solid 1px red;
+    border: solid 1px red;
   }
   .landing_background {
     text-align: center;
-    width: calc(100% + 40px);
     height: 100vh;
-    background-size: auto !important;
+    background-size: cover !important;
     background-position: center;
-    display: flex;
-    align-items: top;
-    justify-content: left;
-    margin: -20px;
   }
   .landing_infos{
-    width: 40%;
-    margin-left: 30px;
-    margin-top: 150px;
+    width: 45%;
+    padding-top: 200px;
   }
   .rotate {
     text-align: right;

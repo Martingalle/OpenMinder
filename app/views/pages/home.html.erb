@@ -8,10 +8,32 @@
         <p>New musical horizons</p>
       </div>
       <div class="call-to-action">
-        <button class="button-red">Discover</button>
+        <a href="#details">
+          <button class="button-red">Discover</button>
+        </a>
       </div>
     </div>
-  <div>
+  </div>
+</div>
+
+<div class="container details" id="details">
+  <div class="row">
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_discover' %>
+      <p class="detail_info">Découvrez de nouveaux contenus musicaux de manière originale : sélectionnez un cliché auquel vous croyez, et laisser les autres vous prouver que vous aviez tort d'y croire !</p>
+    </div>
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_suggest' %>
+      <p class="detail_info">Participez vous aussi ! Proposez des musiques qui vont à l'encontre des opinions reçues et tentez de battre le record d'utilisateurs et utilisatrices convaincu.e.s !</p>
+    </div>
+    <div class="col-xs-4 detail">
+      <%= render 'shared/svg_share' %>
+       <p class="detail_info">Partagez les clichés sur les réseaux sociaux et challengez vos ami.e.s en leur défiant de battre un cliché concernant un genre musical vénéré... ou de découvrir un genre détesté !</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Les dernières opinions ajoutées...</h4>
+  <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
 </div>
 
 

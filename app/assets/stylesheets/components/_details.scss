@@ -1,0 +1,28 @@
+.details {
+  width: 90%;
+  height: 100vh;
+  padding: 50px;
+  .detail {
+    padding: 20px;
+    text-align: center;
+  }
+  svg {
+    width: 150px;
+    height: 150px;
+  }
+  .card {
+    height: 270px;
+  }
+  .card-heading {
+    margin-top: -110px;
+  }
+  .card-genre-photo {
+    height: 110px;
+  }
+  .genres {
+    display: none;
+  }
+  .card-description, .card-heading, .genres, .styled-link {
+    font-weight: normal;
+  }
+}
