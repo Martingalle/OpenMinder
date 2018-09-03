@@ -5,10 +5,21 @@
 
 
     <!-- 2 - Opinion Description  -->
-    <div class="opinion-description">
-      <h1><%= @opinion.name %></h1>
-      <p><%= @opinion.description %></p>
-      <a href="">see related opinions</a>
+    <div class="opinion-banner">
+      <div class="opinion-description-quote">
+        <div class="quote">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <h1><%= @opinion.name %></h1>
+        <div class="quote-right">
+          <i class="fas fa-quote-right"></i>
+        </div>
+      </div>
+      <div class="opinion-description">
+        <p><%= @opinion.description %></p>
+        <h6><a href="">see related opinions</a></h6>
+      </div>
+
       <div class="opinion-genres">
         <% @opinion.genres_occurrences_desc.each do |k,v| %>
           <div class="opinion-genre-name"><%= k[:genre].name %></div>
@@ -22,7 +33,7 @@
         <div class="col-xs-12 col-sm-8 opinion-tracks">
           <div class="opinion-tracks-title">
             <h2>Got the perfect track to beat this opinion ?</h2>
-            <p data-toggle="modal" data-target="#addATrack">add a track</p>
+            <p class="button-red beat-button" data-toggle="modal" data-target="#addATrack">add a track</p>
           </div>
           <!-- List of songs linked to an opinion -->
           <% @tracks_desc.each do |track| %>
