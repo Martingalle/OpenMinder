@@ -1,6 +1,5 @@
 import YouTubePlayer from 'youtube-player';
 
-// toutes les
 let player;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (first) {
     // if there is a first song, i add the selected css
     first.classList.add("opinion-track-selected");
-
+    addInfosToPlayer ()
     // i can select any div from song tracks
     const array = document.querySelectorAll(".tracks-js");
 
@@ -42,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         element.classList.add("opinion-track-selected");
-        playVideo(element.dataset.youtubeId);
+        loadVideoById();
+        playVideo();
       });
     }); // end of iteration on div array with id "tracks-js"
 
@@ -118,8 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } //end if (first)
 
+  function changePlayToPause () {
+    const play = document.querySelector(".play-button")
+    const pause = document.querySelector(".pause-button");
+      play.classList.add("hidden");
+      pause.classList.remove("hidden");
+  }
+
+  function addInfosToPlayer () {
+    const title = document.querySelector(".player-title h1");
+    const added = document.querySelector(".player-title p");
+    let name = document.querySelector(".opinion-track-selected").dataset.songName;
+    let date = document.querySelector(".opinion-track-selected").dataset.addedDate;
+
+    title.innerHTML = name;
+    added.innerHTML = date;
+  }
+
   function playVideo() {
     console.log(player);
+    changePlayToPause ();
+    addInfosToPlayer();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.playVideo(youtubeId);
   }
@@ -135,15 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
     player.stopVideo(youtubeId);
   }
 
-
   function pauseVideo() {
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.pauseVideo(youtubeId);
   }
 
-  function onPlayerStateChange() {
 
-  }
+  // function onPlayerStateChange(event) {
+  //   if (event.data == YT.PlayerState.PLAYING) {
+  //     let playing = true;
+  //   }
+  // }
 
   // // javascript to change play button in pause button and reverse
   // const play_all = document.querySelectorAll(".play");
