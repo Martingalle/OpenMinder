@@ -3,7 +3,6 @@ import YouTubePlayer from 'youtube-player';
 // toutes les
 let player;
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
   function updatePlayerControls() {
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // when getting to /show/:id, I want to select the 1st song
+  // when getting to /show/:id, I select the 1st song
   const first = document.querySelector(".tracks-js");
   if (first) {
     // if there is a first song, i add the selected css
@@ -47,11 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }); // end of iteration on div array with id "tracks-js"
 
+
   const play = document.querySelector(".play-button");
   play.addEventListener("click", () => {
-    console.log("j'ai cliqué sur play")
+    const pause = document.querySelector(".pause-button");
+      play.classList.add("hidden");
+      pause.classList.remove("hidden");
+    // let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    // player.playVideo(youtubeId);
     playVideo();
-      // playVideo("cWGE9Gi0bB0");
+        // playVideo("cWGE9Gi0bB0");
+  });
+
+  const pause_button = document.querySelector(".pause-button");
+  pause_button.addEventListener("click", () => {
+    const play_button = document.querySelector(".play-button");
+      pause_button.classList.add("hidden");
+      play_button.classList.remove("hidden");
+    pauseVideo();
   });
 
   const forward = document.querySelector(".right-arrow");
@@ -61,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let next = selected.parentNode.nextElementSibling.firstElementChild;
     selected.classList.remove("opinion-track-selected");
     next.classList.add("opinion-track-selected");
+    loadVideoById();
     playVideo();
       // playVideo("cWGE9Gi0bB0");
   });
@@ -72,16 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let previous = selected.parentNode.previousElementSibling.firstElementChild;
     selected.classList.remove("opinion-track-selected");
     previous.classList.add("opinion-track-selected");
+    loadVideoById();
     playVideo();
       // playVideo("cWGE9Gi0bB0");
   });
-
-
-
-
-
-
-
 
 
     // gets youtubeId in variable to pass to the player
@@ -99,19 +106,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 'stopVideo' is queued after 'playVideo'.
     player
-        .stopVideo()
+        .pauseVideo()
         .then(() => {
             // Every function returns a promise that is resolved after the target function has been executed.
         });
+
+    player
+    .stopVideo()
+    .then(() => {
+        // Every function returns a promise that is resolved after the target function has been executed.
+    });
   } //end if (first)
 
   function playVideo() {
-    updatePlayerControls();
+    console.log(player);
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
-    player.loadVideoById(youtubeId);
     player.playVideo(youtubeId);
   }
 
+  function loadVideoById () {
+    updatePlayerControls();
+    let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    player.loadVideoById(youtubeId);
+  }
+
+  function stopVideo() {
+    let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    player.stopVideo(youtubeId);
+  }
+
+
+  function pauseVideo() {
+    let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    player.pauseVideo(youtubeId);
+  }
+
+  function onPlayerStateChange() {
+
+  }
 
   // // javascript to change play button in pause button and reverse
   // const play_all = document.querySelectorAll(".play");
