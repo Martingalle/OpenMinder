@@ -1,31 +1,63 @@
-<h4>Tracks you added</h4>
 
-<% @tracks_added.each do |track| %>
-  <div class="user-track">
-    <div>
-      <p>
-        <%= track.name %>
-        <% unless track.upvotes.zero? %>
-          <span style="color: red;"> ♥ <%= track.upvotes %></span>
-        <% end %>
-      </p>
-    </div>
-    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-  </div>
-<% end %>
+  <div class="flex-wrapper">
+    <div class="profile-dashboard">
+      <div class="row">
+        <div class="added-tracks">
+          <h4>Tracks you added</h4>
+
+          <% @tracks_added.each_with_index do |track, i| %>
+            <div class="user-track <%= 'hidden' if i > 3 %>">
+              <div>
+                <p>
+                  <%= track.name %>
+                  <% unless track.upvotes.zero? %>
+                    <span style="color: red;"> ♥ <%= track.upvotes %></span>
+                  <% end %>
+                </p>
+              </div>
+              <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
+            </div>
+          <% end %>
+          <button id="show-tracks" type="button" name="button" class="button">See all</button>
+        </div>
+
+<hr>
+        <div class="voted-tracks">
+          <h4>Tracks you voted for</h4>
+
+          <% @tracks_voted.each_with_index do |track,i| %>
+            <div class="user-track <%= 'hidden-tracks' if i > 3 %>">
+              <div>
+              <p>
+                <%= track.name %>
+                <% unless track.upvotes.zero? %>
+                  <span style="color: red;"> ♥ <%= track.upvotes %></span>
+                <% end %>
+              </p>
+              </div>
+              <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
+            </div>
+          <% end %>
+          <button id="show-voted-tracks" type="button" name="button" class="button">See all</button>
+        </div>
 
 <hr>
 
-<h4>Tracks you voted for</h4>
-
-<% @tracks_voted.each do |track| %>
-  <div class="user-track">
-    <p>
-      <%= track.name %>
-      <% unless track.upvotes.zero? %>
-        <span style="color: red;"> ♥ <%= track.upvotes %></span>
-      <% end %>
-    </p>
-    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
+        <div class="opinions-to-discover">
+          <h4>Opinions you might be interested in</h4>
+        </div>
+      </div>
   </div>
-<% end %>
+</div>
+
+
+
+
+      <div class="main">
+
+        <img src='<%= image_path 'profile-picture' %>' class="avatar-large"/>
+        <h4>Profile Information</h4>
+        <p>Email</p>
+        <p>Password</p>
+        <p>Location</p>
+      </div>
