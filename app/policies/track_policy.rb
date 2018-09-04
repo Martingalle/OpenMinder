@@ -5,6 +5,10 @@ class TrackPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def create?
     # only connected user
     user.present?
@@ -18,10 +22,5 @@ class TrackPolicy < ApplicationPolicy
   def destroy?
     # only admin
     user.admin
-  end
-
-  def upvote?
-    # only connected user
-    user.present?
   end
 end

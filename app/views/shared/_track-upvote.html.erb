@@ -1,11 +1,10 @@
-<div class="track tracks-js" data-youtube-id=<%= track.youtube_id %>>
-
+<div class="track tracks-js" data-youtube-id=<%= track.youtube_id %> data-track=<%= track.id %>>
 
   <% if track.photo.nil? %>
     <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
-    <% else %>
+  <% else %>
     <%= image_tag photo, class:"track-image hidden-xs"%>
-    <% end %>
+  <% end %>
 
   <div class='track-body'>
     <h3><%= song %></h3>
@@ -25,15 +24,21 @@
   </ul> -->
 
   <ul class='list-inline  track-controls'>
-    <li><%= link_to opinion_upvote_path(opinion, params: {track: track}), method: :post do %>
-        <% if track.votes.select { |vote| vote.user == current_user }.any? %>
-                <i class="fas fa-heartbeat" style="font-size: 18px; color: red"></i>
-        <% else %>
-          <i class="fas fa-heart" style="font-size: 18px"></i>
+    <li class="kill-click">
+      <% if track.votes.select { |vote| vote.user == current_user }.any? %>
+        <% vote = track.votes.select { |vote| vote.user == current_user }.first %>
+        <%= link_to vote_path(vote, params: {track: track}), method: :delete, remote: true, class: 'vote' do %>
+          <i class="fas fa-heart voted""></i>
         <% end %>
-    <% end %>
+      <% else %>
+        <%= link_to votes_path(params: {track: track}), method: :post, remote: true, class: 'vote' do %>
+          <i class="far fa-heart unvoted"></i>
+        <% end %>
+      <% end %>
     </li>
-    <li><%= upvotes %></li>
+    <li class="upvotes">
+      <%= upvotes %>
+    </li>
 
   </ul>
 

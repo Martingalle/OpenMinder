@@ -1,0 +1,26 @@
+console.log('vote');
+
+
+const track_html = `<%= j render 'shared/track-upvote',
+  photo: @vote.track.photo,
+  song: @vote.track.name,
+  upvotes: @vote.track.upvotes,
+  opinion: @opinion,
+  track: @vote.track,
+  added: @vote.track.created_at.strftime("%B %e, %Y"),
+  youtube_id: @vote.track.youtube_id
+%>`;
+
+console.log(track_html);
+
+// function vote(html) {
+
+  // const trackElt = document.querySelector("[data-track=\"#{@track.id}\"]");
+  // console.log(trackElt);
+
+// <% unless @vote.errors.any? %>
+//   console.log('vote success');
+//   vote();
+// <% else %>
+//   console.log('vote fail');
+// <% end %>
