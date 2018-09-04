@@ -1,0 +1,243 @@
+.button-youtube-list {
+  background: $red;
+  color: white;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+}
+
+.youtube-player-times {
+  color: white;
+  transition: all 0.7s ease-in-out;
+  font-size: 20px;
+  margin-left: -2px;
+
+  &:hover {
+    transform: rotate(270deg);
+  }
+}
+
+
+.youtube-dropdown {
+  background: transparent;
+  box-shadow: none;
+  border: 0px solid transparent;
+
+  ul {
+    display: flex;
+    margin-left: -380px;
+    margin-top: -5px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.button-list-title {
+  padding: 0px;
+  margin: 0px;
+  margin-left: -150px;
+  margin-top: -6px;
+}
+
+
+.genre-list-1 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  text-align: center;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-2 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-3 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-4 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-5 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-6 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.genre-list-7 {
+
+  background-color: $light-blue;
+  border-radius: 25px;
+  color: white;
+  align-elements: center;
+  min-width: 10em;
+  margin: 0px 0.3em;
+  padding: 4px 1em;
+  font-size: 10px;
+  opacity: 0.6;
+  font-weight: 100;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
