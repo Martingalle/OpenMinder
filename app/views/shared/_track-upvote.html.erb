@@ -1,7 +1,7 @@
 <div class="track-container">
 
 
-  <div class="track tracks-js" data-youtube-id=<%= track.youtube_id %> data-song-name=<%= song %> data-added-date=<%= added %>>
+  <div class="track tracks-js" data-youtube-id="<%= track.youtube_id %>" data-song-name="<%= song %>" data-added-date="<%= added %>">
     <% if track.photo.nil? %>
       <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
     <% else %>
