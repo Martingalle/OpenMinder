@@ -75,9 +75,10 @@
 
   p {
     font-size: 18px;
-    line-height: 23px;
+    // line-height: 23px;
     text-align: justify;
-    color: #BDBDBD;
+    color: $dark-gray;
+    font-weight: 200;
   }
 
   h6 {
