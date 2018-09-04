@@ -1,11 +1,10 @@
 <div class="track tracks-js" data-youtube-id=<%= track.youtube_id %>>
 
-
   <% if track.photo.nil? %>
     <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
-    <% else %>
+  <% else %>
     <%= image_tag photo, class:"track-image hidden-xs"%>
-    <% end %>
+  <% end %>
 
   <div class='track-body'>
     <h3><%= song %></h3>
@@ -24,17 +23,6 @@
     <li><a href=""><i class="fa fa-star"></i></a></li>
   </ul> -->
 
-  <ul class='list-inline  track-controls'>
-    <li><%= link_to opinion_upvote_path(opinion, params: {track: track}), method: :post do %>
-        <% if track.votes.select { |vote| vote.user == current_user }.any? %>
-                <i class="fas fa-heartbeat" style="font-size: 18px; color: red"></i>
-        <% else %>
-          <i class="fas fa-heart" style="font-size: 18px"></i>
-        <% end %>
-    <% end %>
-    </li>
-    <li><%= upvotes %></li>
-
-  </ul>
+  <%= render 'votes/heart', track: track %>
 
 </div>
