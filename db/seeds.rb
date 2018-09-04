@@ -5,84 +5,63 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts ''
+puts '-------------------------------------------------------------------------'
+puts 'CLEANING DATABASE'
+
 Vote.destroy_all
 Track.destroy_all
 Opinion.destroy_all
 Genre.destroy_all
 User.destroy_all
 
-USERS_COUNT = 20
-TRACKS_BY_OPINION_MIN = 5
-TRACKS_BY_OPINION_MAX = 15
+USERS_COUNT = 48
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 5
+VOTES_BY_TRACK_MAX = 30
 
 puts ''
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'
 
-user1 = User.create!(
-    email: 'user1@mail.com',
-    password: 'azerty',
-    username: 'Pierre',
+user = User.create!(
+    email: 'user@mail.com',
+    password: 'aaaaaa',
+    username: 'Peter Jack',
     birth_year: 1987,
     city: 'Lyon',
-    photo: '',
+    photo: 'avatar_1.png',
     admin: false
 )
 
-puts  "user1@mail.com  | azerty (ID: #{user1.id})"
+puts  "user@mail.com  | aaaaaa (ID: #{user.id})"
 
-user2 = User.create!(
-    email: 'user2@mail.com',
-    password: 'azerty',
-    username: 'Paul',
+admin = User.create!(
+    email: 'admin@mail.com',
+    password: 'aaaaaaa',
     username: 'Jane Doe',
     birth_year: 1987,
     city: 'Lyon',
-    photo: '',
-    admin: false
-)
-
-puts  "user2@mail.com  | azerty (ID: #{user2.id})"
-
-admin1 = User.create!(
-    email: 'admin1@mail.com',
-    password: 'azerty',
-    username: 'Paul',
-    username: 'Jane Doe',
-    birth_year: 1987,
-    city: 'Lyon',
-    photo: '',
+    photo: 'avatar_2.png',
     admin: true
 )
 
-puts  "admin1@mail.com | azerty (ID: #{admin1.id})"
+puts  "admin@mail.com | aaaaaa (ID: #{admin.id})"
 
-admin2 = User.create!(
-    email: 'admin2@mail.com',
-    password: 'azerty',
-    username: 'Jack',
-    birth_year: 1987,
-    city: 'Lyon',
-    photo: '',
-    admin: true
-)
-
-puts  "admin2@mail.com | azerty (ID: #{admin2.id})"
 
 puts ''
 puts '-------------------------------------------------------------------------'
 puts "CREATING #{USERS_COUNT} USERS"
 
-USERS_COUNT.times do
+USERS_COUNT.times do |count|
   User.create!(
     email: Faker::Internet.email << rand(0..9).to_s,
     password: 'azerty',
     username: Faker::Internet.username,
     birth_year: 1970,
     city: Faker::Address.city,
-    photo: "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1..50)}.jpg",
+    photo: "avatar_#{count + 2}.png",
     admin: false
   )
   print '#'
@@ -139,101 +118,129 @@ chanson = Genre.create(
 
 opinions = [
   {
-    name: "La chanson française, depuis Brassens, c'est vraiment toujours la même chose",
-    main_genre_id: chanson.id
-  },
-  {
     name: "Les paroles dans le rap sont vraiment pauvres",
-    main_genre_id: rap.id
+    description: "",
+    main_genre_id: rap.id,
+    tracks: [
+      { youtube: '2b9xNT7R1So', genre: rap }, # Toussa toussa
+      { youtube: 'iAE1vUTZ4-Y', genre: rap }, # Me faire la belle
+      { youtube: 'G52x5zyLAgY', genre: rap }, # Crépuscule d'apocalyspe
+      { youtube: 'FcHblRlbijc', genre: rap }, # Want it back
+      { youtube: 'QsNft5ftYSs', genre: rap }, # Fenêtre sur rue
+      { youtube: '4o3RnLxzExo', genre: rap }, # Chewing gum
+      { youtube: 'akFZtK0GVU4', genre: rap }, # Thé à la menthe
+    ]
   },
-  {
-    name: "Le jazz, c'est aussi ennuyeux que la musique d'ascenseur",
-    main_genre_id: jazz.id
-  },
-  {
-    name: "L'opéra, ce ne sont que des histoires tristes et datéés",
-    main_genre_id: classical.id
-  },
-  {
-    name: "Le rock, c'est toujours les mêmes trois accords",
-    main_genre_id: rock.id
-  },
-  {
-    name: "Le classique, il faut s'y connaître pour apprécier",
-    main_genre_id: classical.id
-  },
-  {
-    name: "Le rap, c'est par des mecs, pour des mecs",
-    main_genre_id: rap.id
-  },
-  {
-    name: "Le rap est toujours misogyne",
-    main_genre_id: rap.id
-  },
-  {
-    name: "Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation",
-    main_genre_id: jazz.id
-  },
-  {
-    name: "Le jazz n’a pas changé depuis les années 40",
-    main_genre_id: jazz.id
-  },
-  {
-    name: "La pop, c'est de la musique 'girly'",
-    main_genre_id: pop.id
-  },
-  {
-    name: "Le rock n’a pas changé depuis les années 70",
-    main_genre_id: rock.id
-  }
-]
-
-YOUTUBE_ID = [
-  'cWGE9Gi0bB0',
-  'CduA0TULnow',
-  'B0jMPI_pUec',
-  's3Q80mk7bxE',
-  'SXQe68dOc-Q',
-  'cWGE9Gi0bB0',
-  'EzURpTF5c8',
-  'BUCTrcSGvsU',
-  'rsWmrGuuWuE',
-  'lS-af9Q-zvQ',
-  'BGBM5vWiBLo',
-  'bESGLojNYSo'
+  # {
+  #   name: "La chanson française, depuis Brassens, c'est vraiment toujours la même chose",
+  #   description: "",
+  #   main_genre_id: chanson.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le jazz, c'est aussi ennuyeux que la musique d'ascenseur",
+  #   description: "",
+  #   main_genre_id: jazz.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "L'opéra, ce ne sont que des histoires tristes et datéés",
+  #   description: "",
+  #   main_genre_id: classical.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le rock, c'est toujours les mêmes trois accords",
+  #   description: "",
+  #   main_genre_id: rock.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le classique, il faut s'y connaître pour apprécier",
+  #   description: "",
+  #   main_genre_id: classical.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le rap, c'est par des mecs, pour des mecs",
+  #   description: "",
+  #   main_genre_id: rap.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le rap est toujours misogyne",
+  #   description: "",
+  #   main_genre_id: rap.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation",
+  #   description: "",
+  #   main_genre_id: jazz.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le jazz n’a pas changé depuis les années 40",
+  #   description: "",
+  #   main_genre_id: jazz.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "La pop, c'est de la musique 'girly'",
+  #   description: "",
+  #   main_genre_id: pop.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # },
+  # {
+  #   name: "Le rock n’a pas changé depuis les années 70",
+  #   description: "",
+  #   main_genre_id: rock.id,
+  #   tracks: [
+  #     { youtube: '', genre: '' }
+  #   ]
+  # }
 ]
 
 puts '-------------------------------------------------------------------------'
-puts "CREATING #{opinions.size} OPINIONS AND #{TRACKS_BY_OPINION_MIN} TO #{TRACKS_BY_OPINION_MAX} TRACKS BY OPINION AND #{VOTES_BY_TRACK_MIN} TO #{VOTES_BY_TRACK_MAX} VOTES BY TRACK"
+puts "CREATING #{opinions.size} OPINIONS AND RELATED TRACKS AND #{VOTES_BY_TRACK_MIN} TO #{VOTES_BY_TRACK_MAX} VOTES BY TRACK"
 
-opinions.size.times do |count|
+opinions.each do |opinion|
   user = User.order('RANDOM()').first
-  opinion = Opinion.create!(
-    name: opinions[count][:name],
-    description: Faker::Lorem.paragraph(8, true, 4),
-    fake_author: Faker::FunnyName.two_word_name,
-    fake_city: Faker::Address.city,
-    creator_id: user.id,
-    approved: rand(-1..1)
+  opinion_instance = Opinion.create!(
+    name: opinion[:name],
+    description: opinion[:description],
+    creator_id: user.id
   )
-  opinion.id < 10 ? space = ' ' : space = ''
-  puts "OPINION #{space}#{opinion.id}"
+  opinion_instance.id < 10 ? space = ' ' : space = ''
+  puts "OPINION #{space}#{opinion_instance.id}"
   puts '.................................'
-  rand(TRACKS_BY_OPINION_MIN..TRACKS_BY_OPINION_MAX).times do
+  opinion[:tracks].each do |track|
     user = User.order('RANDOM()').first
-    genre = rand(1..6) > 1 ? Genre.find(opinions[count][:main_genre_id]) : Genre.order('RANDOM()').first
-    track = Track.create!(
-      name: Faker::Pokemon.move,
-      artist: Faker::Music.band,
-      artist_location: Faker::Address.city,
-      album: Faker::Music.album,
-      argument: Faker::Lorem.paragraph(2),
-      photo: 'http://www.mind-test.fr/wp-content/uploads/2018/08/openminder' << rand(100..200).to_s << '.jpg',
-      audio_url: 'www.audio-' << rand(1..9).to_s << rand(1..9).to_s << '.com',
-      youtube_id: YOUTUBE_ID.sample,
+    track_instance = Track.create!(
+      youtube_id: track[:youtube],
       creator_id: user.id,
-      genre_id: genre.id,
-      opinion_id: opinion.id,
+      genre_id: track[:genre].id,
+      opinion_id: opinion_instance.id,
       approved: rand(-1..1)
     )
     print " 🎹 "
@@ -241,7 +248,7 @@ opinions.size.times do |count|
       user = User.order('RANDOM()').first
       vote = Vote.create!(
         user_id: user.id,
-        track_id: track.id
+        track_id: track_instance.id
       )
       print [' 💙 ', ' 💜 ', ' 💛 '].sample
     end
