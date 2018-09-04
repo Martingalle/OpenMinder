@@ -1,7 +1,16 @@
+.opinion-tracks {
+  width: 50%;
+}
+
+.opinion-right-column {
+  width: 50%;
+}
+
 .track-container {
   display: flex;
   align-items: center;
-  margin: 10px 100px;
+  margin: 10px 0px;
+  width: 100%;
 }
 
 .track {
@@ -19,7 +28,7 @@
     opacity:0.8;
   }
   h3 {
-    color: black;
+    color: $dark-gray;
     font-size: 16px;
   }
   img {
@@ -32,7 +41,7 @@
   flex: 1 1 auto;
 }
 .track-body h3 {
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 0;
 }
 .track-body p {
@@ -87,7 +96,7 @@
 
 /* Hover effects */
 .track:hover {
-  background: #3757D1;
+  background: $light-blue;
   cursor: pointer;
   p {
     color: white;
@@ -98,7 +107,7 @@
 }
 
 .opinion-track-selected {
-  background: #3757D1;
+  background: $light-blue;
   cursor: pointer;
   p {
     color: white;

@@ -21,7 +21,7 @@
 
 .opinion-banner {
   width: 80%;
-  margin: 20px auto;
+  margin: 20px 0px 20px 0px;
   position: relative;
 
 }
@@ -31,13 +31,13 @@
   position: relative;
 
   h1 {
-  font-weight: 800;
+  font-weight: 700;
+  color: $dark-gray;
   font-size: 20px;
   line-height: 23px;
   text-align: justify;
-  color: #333333;
   align-items: end;
-  padding: 20px 20px;
+  padding: 15px 15px;
   }
   p {
   padding: 50px 40px;
@@ -85,11 +85,14 @@
     text-align: justify;
     color: #BDBDBD;
   }
+
   h6 {
-    color: #395BCE;
-    font-size: 14px;
-    margin-bottom: 0;
-    margin-top: 10px;
+    color: $light-blue;
+    font-weight: 200;
+  }
+
+  a {
+    color: $light-blue;
   }
 }
 
@@ -128,7 +131,7 @@
 
 .opinion-player h2 {
   margin: 20px;
-  text-align: center;
+  // text-align: center;
   font-size: 24px;
 }
 
@@ -137,7 +140,7 @@
 }
 
 .opinion-player-details {
-  display: flex;
+  // display: flex;
 }
 
 .opinion-tracks-title {
@@ -151,12 +154,11 @@
   }
   h2 {
     margin: 20px 0 10px 0;
-    color: #EB5757;
+    color: $red;
     text-align: center;
     line-height: 16px;
     font-size: 14px;
     font-style: medium;
-    font-family: Roboto;
   }
 }
 .opinion-add-track {
@@ -174,7 +176,7 @@
 }
 .track-search-result-display {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: space-between;
   border-radius: 5px;
   list-decoration: none;
