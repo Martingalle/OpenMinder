@@ -1,10 +1,17 @@
+.track-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 100px;
+}
+
 .track {
+  flex: 1;
   display: flex;
   align-items: center;
   padding: 10px;
+  margin-right: 10px;
   border-radius: 5px;
   transition: all 0.15s ease;
-  margin: 5px 50px;
   transition-duration: 0.5s;
   p {
     font-size: 12px;
@@ -105,7 +112,7 @@
 .track-controls {
   width: 25px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   align-items: center;
   text-align: center;
   margin: 0px;

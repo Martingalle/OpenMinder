@@ -1,7 +1,7 @@
 <!-- track -->
 
 <ul data-track=<%= track.id %> class='list-inline  track-controls'>
-  <li class="kill-click">
+  <li>
     <% if track.votes.select { |vote| vote.user == current_user }.any? %>
       <% vote = track.votes.select { |vote| vote.user == current_user }.first %>
       <%= link_to vote_path(vote, params: {track: track}), method: :delete, remote: true, class: 'vote' do %>
