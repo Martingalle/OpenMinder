@@ -1,6 +1,5 @@
 import YouTubePlayer from 'youtube-player';
 
-// toutes les
 let player;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (first) {
     // if there is a first song, i add the selected css
     first.classList.add("opinion-track-selected");
-
+    addInfosToPlayer ()
     // i can select any div from song tracks
     const array = document.querySelectorAll(".tracks-js");
 
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         element.classList.add("opinion-track-selected");
-        console.log(element.dataset.youtubeId);
         loadVideoById();
         playVideo();
       });
@@ -127,9 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
       pause.classList.remove("hidden");
   }
 
+  function addInfosToPlayer () {
+    const title = document.querySelector(".player-title h1");
+    const added = document.querySelector(".player-title p");
+    let name = document.querySelector(".opinion-track-selected").dataset.songName;
+    let date = document.querySelector(".opinion-track-selected").dataset.addedDate;
+
+    title.innerHTML = name;
+    added.innerHTML = date;
+  }
+
   function playVideo() {
     console.log(player);
     changePlayToPause ();
+    addInfosToPlayer();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.playVideo(youtubeId);
   }
