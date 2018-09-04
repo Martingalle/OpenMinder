@@ -19,43 +19,6 @@
 // -------------------------------------------
 
 
-.opinion-banner {
-  width: 80%;
-  margin: 20px 0px 20px 0px;
-  position: relative;
-
-}
-.opinion-description-quote  {
-  display: flex;
-  justify-content: start;
-  position: relative;
-
-  h1 {
-  font-weight: 700;
-  color: $dark-gray;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: justify;
-  align-items: end;
-  padding: 15px 15px;
-  }
-  p {
-  padding: 50px 40px;
-  text-align: center;
-
-  }
-  i {
-    font-size: 24px;
-    opacity: 0.6;
-    height: 100%;
-    position: relative;
-  }
-}
-
-.quote-right {
-  position: relative;
-  top: 100px;
-}
 
 .green-button {
   background-color: #27AE60;
@@ -76,25 +39,6 @@
 
 // -------------------------------------------
 
-.opinion-description {
-
-  margin: 40px 40px 0 40px;
-  p {
-    font-size: 18px;
-    line-height: 23px;
-    text-align: justify;
-    color: #BDBDBD;
-  }
-
-  h6 {
-    color: $light-blue;
-    font-weight: 200;
-  }
-
-  a {
-    color: $light-blue;
-  }
-}
 
 .admin-update-button {
 
@@ -176,7 +120,7 @@
 }
 .track-search-result-display {
   display: flex;
-  // align-items: center;
+  align-items: center;
   justify-content: space-between;
   border-radius: 5px;
   list-decoration: none;
@@ -191,6 +135,7 @@
   p {
   font-size: 12px;
   padding-left: 20px;
+  color: $dark-gray;
   }
 }
 

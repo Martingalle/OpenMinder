@@ -4,13 +4,11 @@
     <!-- 1 - Opinion Description  -->
     <div class="opinion-banner">
       <div class="opinion-description-quote">
-        <div class="quote">
+        <h1>
           <i class="fas fa-quote-left"></i>
-        </div>
-        <h1><%= @opinion.name %></h1>
-        <div class="quote-right">
+          <%= @opinion.name %>
           <i class="fas fa-quote-right"></i>
-        </div>
+        </h1>
         <div class="admin-update-button">
           <% if current_user %>
             <% if current_user.admin == true %>
