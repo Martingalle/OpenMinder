@@ -129,10 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector(".player-title h1");
     const added = document.querySelector(".player-title p");
     let name = document.querySelector(".opinion-track-selected").dataset.songName;
-    let date = document.querySelector(".opinion-track-selected").dataset.addedDate;
-
     title.innerHTML = name;
-    added.innerHTML = date;
   }
 
   function playVideo() {
