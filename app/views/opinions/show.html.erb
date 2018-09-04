@@ -47,7 +47,7 @@
 
           <div class="scrollbar hello-tracks">
             <% @tracks_desc.each do |track| %>
-              <div>
+
                 <%= render 'shared/track-upvote',
                 photo:track.photo,
                 song:track.name,
@@ -57,7 +57,7 @@
                 added:track.created_at.strftime("%B %e, %Y"),
                 youtube_id: track.youtube_id
                 %>
-              </div>
+
             <% end %>
           </div>
         </div>
