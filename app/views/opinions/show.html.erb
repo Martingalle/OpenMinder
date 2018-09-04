@@ -25,15 +25,15 @@
       </div>
 
       <div class="opinion-genres">
-        <button class="button">
+        <button class="button-small">
           <%= @opinion.main_genre.name %>
         </button>
-        <button class="button-small">
+        <button class="button-small-light">
           <%= @opinion.secondary_genre.name %>
         </button>
       </div>
     </div>
-    <hr>
+    <!-- <hr> -->
     <!-- 2- songs and player  -->
     <div class="opinion-player">
       <div class="row">
@@ -45,9 +45,9 @@
           </div>
           <!-- List of songs linked to an opinion -->
 
-          <div class="scrollbar">
+          <div class="scrollbar hello-tracks">
             <% @tracks_desc.each do |track| %>
-              <div data-youtube-id=<%= track.youtube_id %>>
+
                 <%= render 'shared/track-upvote',
                 photo:track.photo,
                 song:track.name,
@@ -57,7 +57,7 @@
                 added:track.created_at.strftime("%B %e, %Y"),
                 youtube_id: track.youtube_id
                 %>
-              </div>
+
             <% end %>
           </div>
         </div>
@@ -75,16 +75,6 @@
 <% content_for :player do %>
   <%= render 'shared/player' %>
 <% end %>
-
-
-
-
-
-
-
-
-
-
 
 
 

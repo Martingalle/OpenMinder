@@ -1,10 +1,17 @@
+.track-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 100px;
+}
+
 .track {
+  flex: 1;
   display: flex;
   align-items: center;
   padding: 10px;
+  margin-right: 10px;
   border-radius: 5px;
   transition: all 0.15s ease;
-  margin: 5px 50px;
   transition-duration: 0.5s;
   p {
     font-size: 12px;
@@ -77,27 +84,6 @@
   margin: 0;
 }
 
-/* Controls design */
-.track-controls {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0px;
-}
-.track-controls a {
-  padding: 0 20px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.track-controls a:hover {
-  color: #D3473C !important
-}
-.track-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
 
 /* Hover effects */
 .track:hover {
@@ -122,20 +108,41 @@
   }
 }
 
+/* Controls design */
+.track-controls {
+  width: 25px;
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+  li {
+    flex: 1;
+  }
+}
 
-.track-upvote:hover, .track-upvote.track-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
+.opinion-track-selected {
+  .unvoted, .upvotes {
+    color: white;
+  }
+  .voted {
+    color: $red;
+  }
 }
-.track-upvote-upvoted .track-arrow {
-  border-bottom-color: #5898f1;
+
+.voted, .unvoted {
+  font-size: $font-size-base;
 }
-// .track:hover .track-upvote {
-//   transform: scale(1.2)
-// }
-.track:hover .track-controls-hidden a {
-  color: #E6E6E6;
+
+.upvotes {
+  font-size: $font-size-base * 0.7;
+  font-weight: bold;
 }
-.track-upvote:hover .track-arrow {
-  border-bottom: 9px solid #5898f1;
+
+.unvoted, .upvotes {
+  color: $gray;
+}
+
+.voted {
+  color: $red;
 }

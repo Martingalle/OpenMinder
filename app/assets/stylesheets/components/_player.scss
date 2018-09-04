@@ -7,6 +7,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: -20px;
+  position: fixed;
+  bottom: 0;
 }
 
 .player-infos {
@@ -42,12 +44,12 @@
     margin: 0 auto 10px auto;
     font-size: 30px;
     font-weight: 200;
-    .play-arrow {
+    .left-arrow, .right-arrow {
       width: 10px;
       margin:  0 10px;
-    }
-    .play-button {
-      width: 40px;
+      &:hover {
+      cursor: pointer;
+      }
     }
   }
   .player-status {
@@ -59,11 +61,35 @@
   }
 }
 
+.play-button, .pause-button {
+  margin:  0 10px;
+  width: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+  a {
+    width: 10px;
+    margin:  0 10px;
+  }
+}
+
+#play-button {
+  display: inline;
+}
+
+#left-arrow {
+  display: inline;
+}
+
+#right-arrow {
+  display: inline;
+}
+
 .player-share {
   text-align: right;
   margin-right: 40px;
 }
 
-// .hidden-xs {
-//   visibility: hidden;
-// }
+.hidden-arrow {
+  visibility: hidden;
+}

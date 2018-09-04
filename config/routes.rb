@@ -4,15 +4,17 @@ Rails.application.routes.draw do
 
   resources :opinions, only: [:index, :show, :create, :update, :destroy] do
     resources :tracks, only: [:index, :create, :update, :destroy]
-    post 'upvote', to: 'tracks#upvote'
-    post 'downvote', to: 'tracks#downvote'
   end
+
+  resources :tracks, only: [:show]
+
+  resources :votes, only: [:create, :destroy]
 
   resources :genres, only: [:show, :create, :update, :destroy]
 
   namespace :user do
     get 'dashboard', to: 'dashboards#show'
-    resources :tracks, only: :index
+    resources :tracks, only: [:index]
   end
 
   namespace :api do

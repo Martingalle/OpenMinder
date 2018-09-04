@@ -6,8 +6,8 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get update" do
-    get votes_update_url
+  test "should get destroy" do
+    get votes_destroy_url
     assert_response :success
   end
 

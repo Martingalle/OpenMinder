@@ -4,4 +4,12 @@ class VotePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    user.present?
+  end
+
+  def destroy?
+    record.user == user
+  end
 end

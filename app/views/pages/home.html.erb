@@ -8,7 +8,7 @@
         <p>New musical horizons</p>
       </div>
       <div class="call-to-action">
-        <a href="#details">
+        <a href="#details-page">
           <button class="button-red">Discover</button>
         </a>
       </div>
@@ -16,26 +16,26 @@
   </div>
 </div>
 
-<div class="container details" id="details">
-  <div class="row">
-    <div class="col-xs-4 detail">
+<div id="details-page">
+  <div class="details">
+    <div class="detail">
       <%= render 'shared/svg_discover' %>
       <p class="detail_info">Découvrez de nouveaux contenus musicaux de manière originale : sélectionnez un cliché auquel vous croyez, et laisser les autres vous prouver que vous aviez tort d'y croire !</p>
     </div>
-    <div class="col-xs-4 detail">
+    <div class="detail">
       <%= render 'shared/svg_suggest' %>
       <p class="detail_info">Participez vous aussi ! Proposez des musiques qui vont à l'encontre des opinions reçues et tentez de battre le record d'utilisateurs et utilisatrices convaincu.e.s !</p>
     </div>
-    <div class="col-xs-4 detail">
+    <div class="detail">
       <%= render 'shared/svg_share' %>
        <p class="detail_info">Partagez les clichés sur les réseaux sociaux et challengez vos ami.e.s en leur défiant de battre un cliché concernant un genre musical vénéré... ou de découvrir un genre détesté !</p>
     </div>
   </div>
-  <div class="details-buttons">
-    <a href="#cards">
-      <button class="button">Lasts cards</button>
-    </a>
-  </div>
+    <div class="next-button">
+      <a href="#cards">
+        <button class="button-red">Lasts cards</button>
+      </a>
+    </div>
 </div>
 
 <div class="last-cards" id="cards">
@@ -43,10 +43,10 @@
   <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
   <div class="details-buttons">
     <%= link_to opinions_path do  %>
-      <button class="button-light">See more...</button>
+      <button class="button-light-red">See more...</button>
     <% end %>
     <%= link_to new_user_session_path do  %>
-      <button class="button">Sign up</button>
+      <button class="button-red">Sign up</button>
     <% end %>
   </div>
 </div>
