@@ -213,6 +213,47 @@
 
 }
 
+
+.button-light-red {
+  font-size: 1em;
+  font-weight: 100;
+  min-width: 6em;
+  // max-width: 8em;
+  text-align: center;
+  background-color: $white;
+  border: 1px solid $red !important;
+  color:$red;
+  border:none;
+  border-radius: 2em;
+  position:relative;
+  overflow:hidden;
+  outline:none;
+  padding: 0.5em 2em;
+  cursor:pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $red;
+    border: 1px solid $red !important;
+    // border: 1px solid $white;
+    color: $white;
+  }
+}
+
+
+.button-light-red:before {
+  width:100%;
+  height:50%;
+  position:absolute;
+  content:'';
+  top:0;
+  z-index:0;
+  animation: slide 3s cubic-bezier(.23,.74,.38,.85) infinite;
+  transform:rotate(45deg);
+  background-color: rgba(255,255,255,0.2);
+
+}
+
 @keyframes slide {
   0% {
     opacity:0;

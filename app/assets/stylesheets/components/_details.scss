@@ -1,27 +1,35 @@
-.details {
+#details-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: calc(100% + 40px);
   height: 100vh;
   margin-top: 20px;
-  margin-left: -20px;
-  margin-right: -20px;
   margin-bottom: 0;
   padding: 100px;
+  .details {
+    display: flex;
+  }
   .detail {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
   }
   svg {
     width: 150px;
     height: 150px;
+    margin-bottom: 20px;
   }
-  .details-buttons {
+  .next-button {
     font-size: 20px;
     margin-top: 100px;
     text-align: center;
   }
-  .details-buttons button {
+  .next-button button {
     margin: 20px;
     font-weight: normal;
+  }
+  .detail_info {
+    color: $gray;
   }
 }
