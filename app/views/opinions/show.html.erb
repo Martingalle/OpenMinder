@@ -24,14 +24,18 @@
         <h6><a href="">see related opinions</a></h6>
       </div>
 
-      <div class="opinion-genres">
-        <button class="button-small">
-          <%= @opinion.main_genre.name %>
-        </button>
-        <button class="button-small-light">
-          <%= @opinion.secondary_genre.name %>
-        </button>
-      </div>
+      <% if @opinion.main_genre != nil %>
+        <div class="opinion-genres">
+          <button class="button-small">
+            <%= @opinion.main_genre.name %>
+          </button>
+          <button class="button-small-light">
+            <%= @opinion.secondary_genre.name %>
+          </button>
+        </div>
+      <% end %>
+
+
     </div>
     <!-- <hr> -->
     <!-- 2- songs and player  -->
