@@ -20,9 +20,10 @@ const inputSearchResult = (data) => {
 
           <div class="dropdown">
             <button class="btn button-youtube-list dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              +
+              <i class="fas fa-times youtube-player-times"></i>
             </button>
             <div class="dropdown-menu youtube-dropdown" aria-labelledby="dropdownMenuButton">
+              <p class="button-list-title">add a genre to your track !</p>
               <ul>
                 <li><a rel="nofollow" data-method="post" class="genre-list-1" href="/opinions/${opinionId}/tracks?track[name]=${item.snippet.title}&amp;track[photo]=${item.snippet.thumbnails.medium.url}&amp;track[audio_url]=${youtube_url}&amp;track[youtube_id]=${item.id.videoId}&amp;track[genre_name]">rock</a></li>
                 <li><a rel="nofollow" data-method="post" class="genre-list-2" href="/opinions/${opinionId}/tracks?track[name]=${item.snippet.title}&amp;track[photo]=${item.snippet.thumbnails.medium.url}&amp;track[audio_url]=${youtube_url}&amp;track[youtube_id]=${item.id.videoId}&amp;track[genre_name]">jazz</a></li>
