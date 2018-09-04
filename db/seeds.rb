@@ -118,19 +118,47 @@ chanson = Genre.create(
 
 opinions = [
   {
-    name: "Les paroles dans le rap sont vraiment pauvres",
-    description: "",
+    name: "Rap lyrics are so poor, they just mumble!",
+    description: "Why is rap so bad? This is an opinion. Rap Music is bad because people have preferences of music. Why is there no originality? This question implies a falsehood. There is plenty of originality in Rap Music. Perhaps everyone sounds similar because you’re not a close listener of the music. You have to become use to hearing it. Only until then will you be able to distinguish the different styles, which there are many of.",
     main_genre_id: rap.id,
     tracks: [
-      { youtube: '2b9xNT7R1So', genre: rap }, # Toussa toussa
-      { youtube: 'iAE1vUTZ4-Y', genre: rap }, # Me faire la belle
-      { youtube: 'G52x5zyLAgY', genre: rap }, # Crépuscule d'apocalyspe
-      { youtube: 'FcHblRlbijc', genre: rap }, # Want it back
-      { youtube: 'QsNft5ftYSs', genre: rap }, # Fenêtre sur rue
-      { youtube: '4o3RnLxzExo', genre: rap }, # Chewing gum
-      { youtube: 'akFZtK0GVU4', genre: rap }, # Thé à la menthe
+      { youtube: 'G52x5zyLAgY',
+        genre: rap,
+        name: "Crépuscule d'apocalyspe",
+        artist: 'Dooz Kawa'
+      },
+      { youtube: 'akFZtK0GVU4',
+        genre: rap,
+        name: 'Thé à la menthe',
+        artist: 'La caution'
+      },
+      { youtube: 'QsNft5ftYSs',
+        genre: rap,
+        name: 'Fenêtre sur rue',
+        artist: 'Hugo TSR'
+      },
+      { youtube: 'FcHblRlbijc',
+        genre: rap,
+        name: 'Want it back',
+        artist: 'Guts'
+      },
+      { youtube: '2b9xNT7R1So',
+        genre: rap,
+        name: 'Toussa Toussa',
+        artist: 'Disiz La Peste'
+      },
+      { youtube: 'iAE1vUTZ4-Y',
+        genre: rap,
+        name: 'Me faire la belle',
+        artist: 'Dooz Kawa'
+      },
+      { youtube: '4o3RnLxzExo',
+        genre: rap,
+        name: 'Chewing gum',
+        artist: 'Odezenne'
+      }
     ]
-  },
+  }
   # {
   #   name: "La chanson française, depuis Brassens, c'est vraiment toujours la même chose",
   #   description: "",
@@ -237,6 +265,9 @@ opinions.each do |opinion|
   opinion[:tracks].each do |track|
     user = User.order('RANDOM()').first
     track_instance = Track.create!(
+      name: track[:artist] << ' - ' << track[:name],
+      artist: track[:artist],
+      photo: "https://i.ytimg.com/vi/#{track[:youtube]}/mqdefault.jpg",
       youtube_id: track[:youtube],
       creator_id: user.id,
       genre_id: track[:genre].id,
