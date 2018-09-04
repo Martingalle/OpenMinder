@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         element.classList.add("opinion-track-selected");
-        playVideo(element.dataset.youtubeId);
+        console.log(element.dataset.youtubeId);
+        loadVideoById();
+        playVideo();
       });
     }); // end of iteration on div array with id "tracks-js"
 
@@ -118,8 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } //end if (first)
 
+  function changePlayToPause () {
+    const play = document.querySelector(".play-button")
+    const pause = document.querySelector(".pause-button");
+      play.classList.add("hidden");
+      pause.classList.remove("hidden");
+  }
+
   function playVideo() {
     console.log(player);
+    changePlayToPause ();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.playVideo(youtubeId);
   }
@@ -135,15 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
     player.stopVideo(youtubeId);
   }
 
-
   function pauseVideo() {
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.pauseVideo(youtubeId);
   }
 
-  function onPlayerStateChange() {
 
-  }
+  // function onPlayerStateChange(event) {
+  //   if (event.data == YT.PlayerState.PLAYING) {
+  //     let playing = true;
+  //   }
+  // }
 
   // // javascript to change play button in pause button and reverse
   // const play_all = document.querySelectorAll(".play");
