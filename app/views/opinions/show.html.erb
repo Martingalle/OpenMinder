@@ -45,9 +45,9 @@
           </div>
           <!-- List of songs linked to an opinion -->
 
-          <div class="scrollbar">
+          <div class="scrollbar hello-tracks">
             <% @tracks_desc.each do |track| %>
-              <div data-youtube-id=<%= track.youtube_id %>>
+              <div>
                 <%= render 'shared/track-upvote',
                 photo:track.photo,
                 song:track.name,
