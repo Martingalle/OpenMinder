@@ -11,6 +11,7 @@ const inputSearchResult = (data) => {
   console.log(data)
   results.innerHTML = '';
   data.items.forEach((item) => {
+    const opinionId = opinionShow.dataset.opinionId;
     var youtube_url = youtube + item.id.videoId
     results.insertAdjacentHTML('beforeend', `
         <li class="track-search-result-display">
