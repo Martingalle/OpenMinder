@@ -6,3 +6,4 @@ import '../openminder/player.js';
 import '../openminder/slider.js';
 import '../openminder/toggle_votes.js';
 import '../openminder/modal.js';
+import '../openminder/alert.js';
