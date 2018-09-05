@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
           {
           playerVars: {
             fs: '0',
-            disablekb: '1',
             modestbranding: '1'
           },
           height: '100%',
