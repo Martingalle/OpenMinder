@@ -1,3 +1,4 @@
+<div class = "header-blue"></div>
 <div class="opinion-main-content" onload="initElement();">
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >
 
@@ -19,20 +20,31 @@
       </div>
       <div class="opinion-description">
         <p><%= @opinion.description %></p>
-        <h6><a href="">see related opinions</a></h6>
+        <p id='relatedOpinions' value='hide/show' class="related-opinions"> See Related Opinions</p>
       </div>
 
       <% if @opinion.main_genre != nil %>
         <div class="opinion-genres">
-          <button class="button-small">
-            <%= @opinion.main_genre.name %>
-          </button>
-          <button class="button-small-light">
-            <%= @opinion.secondary_genre.name %>
-          </button>
+
+          <%= link_to :controller => 'opinions', :query => @opinion.main_genre.name  do%>
+            <button class="button-small"><%= @opinion.main_genre.name %></button>
+          <% end %>
+
+          <% if @opinion.secondary_genre != nil %>
+
+            <%= link_to :controller => 'opinions', :query => @opinion.secondary_genre.name  do%>
+              <button class="button-small-light"><%= @opinion.secondary_genre.name %></button>
+            <% end %>
+
+          <% end %>
+
         </div>
       <% end %>
 
+<div id='relatedOpinionsCards' style="display:none">
+  <%= render 'shared/opinions-cards',
+  opinions: @opinion.related_opinions %>
+</div>
 
     </div>
     <!-- <hr> -->
@@ -41,7 +53,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-8 opinion-tracks">
           <div class="opinion-tracks-title">
-            <h2>Here are the tracks that have been nicely proposed by our community to crush the opinions about this opinion</h2>
+            <h2>Here are the tracks that have been nicely proposed by our community to crush your vision of music</h2>
           </div>
           <!-- List of songs linked to an opinion -->
 

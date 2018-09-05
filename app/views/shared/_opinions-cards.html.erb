@@ -31,11 +31,15 @@
                 <% if opinion.main_genre != nil %>
                   <div class="genres">
                     <p class="main-genre-button">
-                      <%= opinion.main_genre.name.capitalize%>
+                      <%= link_to opinion.main_genre.name.capitalize, :controller => 'opinions', :query => opinion.main_genre.name %>
                     </p>
-                    <p class="secondary-genre-button">
-                      <%= opinion.secondary_genre.name.capitalize%>
-                    </p>
+
+                    <% if opinion.secondary_genre != nil %>
+                      <p class="secondary-genre-button">
+                        <%= link_to opinion.secondary_genre.name.capitalize, :controller => 'opinions', :query => opinion.secondary_genre.name%>
+                      </p>
+                    <% end %>
+
                   </div>
                 <% end %>
 

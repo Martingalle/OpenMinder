@@ -1,29 +1,8 @@
 .opinion-banner {
   width: 100%;
-  margin: 30px 0px 50px 0px;
+  margin: 30px 0px 120px 0px;
   // position: relative;
 }
-
-// .quote-left {
-//   height: 40px;
-//   z-index: 1;
-//   font-size: 45px;
-//   margin-left: -20px;
-//   opacity: 0.6;
-//   height: 100%;
-//   position: absolute;
-// }
-
-// .quote-right {
-//   top: 80px;
-//   z-index: 1;
-//   font-size: 45px;
-//   opacity: 0.6;
-//   height: 100%;
-//   margin-top: 145px;
-//   margin-left: -30px;
-//   position: static;
-// }
 
 
 .opinion-description-quote  {
@@ -71,14 +50,15 @@
 .opinion-description {
 
   margin-top: 40px;
-  width: 70%;
+  width: 95%;
 
   p {
     font-size: 18px;
     // line-height: 23px;
     text-align: justify;
     color: $dark-gray;
-    font-weight: 200;
+    font-weight: 400;
+    color: #a8a6a6;
   }
 
   h6 {
@@ -86,7 +66,18 @@
     font-weight: 200;
   }
 
-  a {
-    color: $light-blue;
+  .related-opinions {
+    color: $dark-gray;
   }
+}
+
+
+.opinion-genres {
+  text-align: right;
+}
+
+
+#relatedOpinions:hover {
+  color: $light-blue;
+  cursor: pointer;
 }
