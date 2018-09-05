@@ -472,6 +472,77 @@ OPINIONS.each do |opinion|
 end
 
 puts ''
+
+puts '-------------------------------------------------------------------------'
+puts "TESTING USER PROFILE"
+puts '-------------------------------------------------------------------------'
+
+# THE BLOCK BELOW SHOULD BE COMMENTED BEFORE SEEDING ---
+
+User.create!(
+  username: 'profile',
+  password: 'aaaaaa'
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'rap').first.id,
+  opinion_id: Opinion.last
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'rap').first.id,
+  opinion_id: Opinion.last
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'rap').first.id,
+  opinion_id: Opinion.last
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'classical').first.id,
+  opinion_id: Opinion.last
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'classical').first.id,
+  opinion_id: Opinion.last
+)
+
+Track.create!(
+  creator_id: User.last,
+  genre_id: Genre.where(name: 'rock').first.id,
+  opinion_id: Opinion.last
+)
+
+Vote.create!(
+  user_id: User.last,
+  track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).first.id
+)
+
+Vote.create!(
+  user_id: User.last,
+  track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).last.id
+)
+
+Vote.create!(
+  user_id: User.last,
+  track_id: Track.where(genre_id: Genre.where(name: 'rock').first.id).first.id
+)
+
+Vote.create!(
+  user_id: User.last,
+  track_id: Track.where(genre_id: Genre.where(name: 'folk').first.id).last.id
+)
+
+# --- END OF THE BLOCK TO COMMENT
+
+puts ''
 puts '-------------------------------------------------------------------------'
 puts 'SEED DONE'
 
