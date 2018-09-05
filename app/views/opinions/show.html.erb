@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@opinion.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @opinion.description %>
+<% content_for :meta_image, image_path(@opinion.main_genre.photo.sample) %>
+
 <div class = "header-blue"></div>
 <div class="opinion-main-content" onload="initElement();">
   <div class="container" id="opinionShow" data-opinion-id=<%= @opinion.id %> >

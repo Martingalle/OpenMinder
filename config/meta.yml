@@ -1,0 +1,5 @@
+meta_product_name: "OpenMinder"
+meta_title: "OpenMinder - Time to beat your prejudices"
+meta_description: "OpenMinder offer you a new way to discover music. You choose a prejudice you share or you hate, and you discover music that beats this prejudice, or add you're own!"
+meta_image: "banner.jpg"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path)
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
+
   private
 
   def skip_pundit?
@@ -22,7 +26,8 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-    def after_sign_in_path_for(resource)
-      request.env['omniauth.origin'] || stored_location_for(resource) || opinions_path
-    end
+
+  def after_sign_in_path_for(resource)
+    request.env['omniauth.origin'] || stored_location_for(resource) || opinions_path
+  end
 end
