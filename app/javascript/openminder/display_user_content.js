@@ -1,8 +1,16 @@
 $(document).ready(function() {
-  $('#show-tracks').on('click',function(){
-    $( ".user-track.added.hidden" ).removeClass( "hidden" );
+  $('#show-added-tracks').on('click',function(){
+    $( ".added-tracks-hidden" ).toggle( "added-tracks-displayed" );
+    $(this).text(function(i,text){
+      return text === "See all" ? "See less" : "See all";
+    })
   });
+
   $('#show-voted-tracks').on('click',function(){
-    $( ".user-track.voted.hidden" ).removeClass( "hidden" );
+    $( ".voted-tracks-hidden" ).toggle( "voted-tracks-displayed" );
+    $(this).text(function(i,text){
+      return text === "See all" ? "See less" : "See all";
+    })
   });
+
 });

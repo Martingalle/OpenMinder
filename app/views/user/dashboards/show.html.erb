@@ -1,82 +1,73 @@
+<%= render "profile" %>
 
-<div class="user-greeting">
-  <p class="greeting">Hello <%= current_user.username%>!</p>
-</div>
-<div class="flex-wrapper">
-  <div id="profile-info">
-    <% if current_user.photo.nil? %>
-    <!-- mettre une image par defaut  -->
-    <% else %>
-      <img src='<%= image_path "users/#{current_user.photo}" %>' class="avatar-large"/>
-    <% end %>
-    <p class="infos-title">Your profile information</p>
-    <p class="infos"><i class="fas fa-at"></i> Email</p>
-    <p><%= current_user.email %></p>
-    <p class="infos"><i class="fas fa-key"></i> Password </p>
-    <p><%= link_to "Edit your password", edit_user_registration_path, :target => "_blank" %></p>
-    <p class="infos"><i class="fas fa-map-marker-alt"></i> Location </p>
-    <% if current_user.city.nil? %>
-      <p> - </p>
-    <% else %>
-      <p><%= current_user.city %></p>
-    <% end %>
-  </div>
-  <div class="profile-dashboard">
+<div class="wrapper">
+
+  <% if @tracks_added.any? %>
+    <h4>Tracks you added</h4>
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-9 col-lg-12">
-      <% if @tracks_added.any? %>
-        <div class="added-tracks">
-          <h4>Tracks you added</h4>
-          <% @tracks_added.each_with_index do |track, i| %>
-            <div class="user-track added <%= 'hidden' if i > 3 %>">
-              <div>
-                <p>
-                  <%= track.name %>
-                  <% unless track.upvotes.zero? %>
-                    <span style="color: red;"> ♥ <%= track.upvotes %></span>
-                  <% end %>
-                </p>
-              </div>
-              <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-            </div>
-          <% end %>
-          <button id="show-tracks" type="button" name="button" class="button-light-red">See all</button>
-        <% end %>
-      </div>
-      <hr>
-      <% if @tracks_voted.any? %>
-        <div class="voted-tracks">
-          <h4>Tracks you never thought you'd like</h4>
-          <% @tracks_voted.each_with_index do |track,i| %>
-            <div class="user-track voted <%= 'hidden' if i > 3 %>">
-              <div>
-              <p>
-                <%= track.name %>
-                <% unless track.upvotes.zero? %>
-                  <span style="color: red;"> ♥ <%= track.upvotes %></span>
-                <% end %>
-              </p>
-              </div>
-              <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-            </div>
-          <% end %>
-          <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
+      <% @tracks_added[0..3].each do |track| %>
+        <div class="col-xs-3">
+          <%= render "track", track: track %>
         </div>
       <% end %>
-      <hr>
-      <div class="opinions-to-discover">
-        <h4>Opinions you might be interested in</h4>
-        <% appreciations = current_user.genres_appreciations_desc %>
-        <% unless appreciations.nil? %>
-          <% favorite = appreciations.first[:genre] %>
-          <% favorite_score = appreciations.first[:score] %>
-          <% dislike = appreciations.last[:genre] %>
-          <%= favorite.name %>
-          <%= favorite_score %>
-          <%= dislike.name %>
-        <% end %> 
-      </div>
-      </div>
-      </div>
     </div>
+
+    <% if @tracks_added.size > 4 %>
+      <div class="button-row">
+        <button id="show-added-tracks" type="button" name="button" class="button-light-red">See all</button>
+      </div>
+      <div class="row added-tracks-hidden">
+        <% @tracks_added[4..@tracks_added.size].each do |track| %>
+          <div class="col-xs-3">
+            <%= render "track", track: track %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <hr>
+
+  <% if @tracks_voted.any? %>
+    <h4>Tracks you never thought you'd like</h4>
+    <div class="row">
+      <% @tracks_voted[0..3].each do |track| %>
+        <div class="col-xs-3">
+          <%= render "track", track: track %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @tracks_voted.size > 4 %>
+      <div class="button-row">
+        <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
+      </div>
+      <div class="row voted-tracks-hidden">
+        <% @tracks_voted[4..@tracks_added.size].each do |track| %>
+          <div class="col-xs-3">
+            <%= render "track", track: track %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <hr>
+
+  <div class="opinions-to-discover">
+    <h4>Opinions you might be interested in</h4>
+    <% appreciations = current_user.genres_appreciations_desc %>
+    <% unless appreciations.nil? %>
+      <% favorite = appreciations.first[:genre] %>
+      <% favorite_score = appreciations.first[:score] %>
+      <% dislike = appreciations.last[:genre] %>
+      <%= favorite.name %>
+      <%= favorite_score %>
+      <%= dislike.name %>
+    <% end %>
+  </div>
+
+  <hr>
+
+
 </div>
