@@ -242,19 +242,39 @@ OPINIONS = [
   # OPINION 8 - Jazz - Le jazz n’a pas changé depuis les années 40
   # ___________________________________________________________
   {
-    ready: false,
+    ready: true,
     name: "Le jazz n’a pas changé depuis les années 40",
     description: "",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: '1q2DrOv_swE',
+        genre: 'jazz',
+        name: "The Creeper | Sofar London",
+        artist: "Binker & Moses"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'bmjFJd6q4Es',
+        genre: 'jazz',
+        name: "Boreal Forest",
+        artist: "Mammal Hands"
+      },
+      { youtube: '-UtAV_azaBc',
+        genre: 'jazz',
+        name: "Hopopono",
+        artist: "GoGo Penguin"
+      },
+      { youtube: '65UQSMPBCuo',
+        genre: 'jazz',
+        name: "BLACK SKIN, BLACK MASKS",
+        artist: "SHABAKA HUTCHINGS"
+      },
+      { youtube: 'TnkjcS_yTfA',
+        genre: 'jazz',
+        name: "Live | North sea jazz festival",
+        artist: "Shabaka and the Ancestors"
+      },
+      { youtube: 'lZmjxrfqdOo',
+        genre: 'jazz',
+        name: "A.R.E. Project",
+        artist: "RA Sessions"
       },
     ]
   },
@@ -262,48 +282,113 @@ OPINIONS = [
   # OPINION 9 - Pop - La pop, c'est de la musique 'girly'
   # ___________________________________________________________
   {
-    ready: false,
-    name: "La pop, c'est de la musique 'girly'",
-    description: "",
+    ready: true,
+    name: "Pop music is for girls only !",
+    description: "yes you're right. Sometimes pop music smells like lollipop and coton candy.
+    Lets say 9 out of 10. We, as men, cannot listen to Hannah Montana or One Direction beside flirting,
+    here are a few great pop songs for real men. Please add your style if you have some inspiration !",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'PIb6AZdTr-A',
+        genre: 'pop',
+        name: "Girls Just Want To Have Fun",
+        artist: "Cindy Lauper"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'ggWyUEuGcWY',
+        genre: 'pop',
+        name: "Leave (Get Out)",
+        artist: "JoJo"
+      },
+      { youtube: 'Ju8Hr50Ckwk',
+        genre: 'pop',
+        name: "If I Ain't Got You",
+        artist: "Alicia Keys"
+      },
+      { youtube: 'l5aZJBLAu1E',
+        genre: 'pop',
+        name: "It's raining men",
+        artist: "The Weather Girls"
+      },
+      { youtube: 'ZyhrYis509A',
+        genre: 'pop',
+        name: "Barbie Girl",
+        artist: "Aqua"
+      },
+      { youtube: 'YVkUvmDQ3HY',
+        genre: 'pop',
+        name: "Without me",
+        artist: "Eminem"
+      },
+      { youtube: 'Kb-0Eo0Yk0o',
+        genre: 'pop',
+        name: "Untold Stories",
+        artist: "Buju Banton"
+      },
+      { youtube: 'wflQ_0fkkog',
+        genre: 'pop',
+        name: "It's Not Enough",
+        artist: "Johnny Thunders & The Heartbreakers"
       },
     ]
   },
 
-  # OPINION 10 - Rock -Le rock n’a pas changé depuis les années 70
+  # OPINION 10 - Clasical - La flute traversière c'est pour les nerds classiques
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le rock n’a pas changé depuis les années 70",
-    description: "",
+    ready: true,
+    name: "Flute is for classical nerds only",
+    description: "Yes it's true, sometimes the flute is played by little girl and
+    guys under drugs. But have you ever listened to rock flute ?
+    Forget the dreary medievalism or contemplative thoughtfulness.
+    Here the flute stands for pure, unfettered freedom and joy.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'JhqyZeUlE8U',
+        genre: 'rock',
+        name: "Sure Shot",
+        artist: "Beastie Boys"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'sYJhhKSXOBo',
+        genre: 'rock',
+        name: "Along comes Marie",
+        artist: "The Association"
       },
+      { youtube: 'MV0F_XiR48Q',
+        genre: 'rock',
+        name: "Hocus Pocus",
+        artist: "Focus"
+      },
+      { youtube: 'uO-Dmpw_w2c',
+        genre: 'rock',
+        name: "Born To Wander",
+        artist: "Rare Earth"
+      },
+      { youtube: 'NNyPXWMnIz0',
+        genre: 'rock',
+        name: "You’ve Got to Hide Your Love Away",
+        artist: "Beatles"
+      },
+      { youtube: '3kcmwXUdDCE',
+        genre: 'rock',
+        name: "California Dreamin’",
+        artist: "The Mamas and the Papas"
+      },
+      { youtube: 'p0PjECSyJ7w',
+        genre: 'rock',
+        name: "Going Up The Country",
+        artist: "Canned Heat"
+      },
+      { youtube: '5WSulenOUb0',
+        genre: 'rock',
+        name: "My God",
+        artist: "Jethro Tull"
+      }
     ]
   },
 
-  # OPINION 11 - Genre ? -Name ?
+  # OPINION 11 - Rock - Le Rock n'a pas changé depuis les années 70
   # ___________________________________________________________
   {
     ready: false,
-    name: "",
+    name: "Rock has not changed since the 70s",
     description: "",
     tracks: [
       { youtube: '',
@@ -470,106 +555,6 @@ OPINIONS.each do |opinion|
     puts ''
   end
 end
-
-puts ''
-
-puts '-------------------------------------------------------------------------'
-puts "TESTING USER PROFILE"
-puts '-------------------------------------------------------------------------'
-
-# THE BLOCK BELOW SHOULD BE COMMENTED BEFORE SEEDING ---
-
-User.create!(
-  email: 'profile@mail.com',
-  password: 'aaaaaa'
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'classical').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'classical').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.last.id,
-  genre_id: Genre.where(name: 'rock').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Vote.create!(
-  user_id: User.last.id,
-  track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).first.id
-)
-
-Vote.create!(
-  user_id: User.last.id,
-  track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).last.id
-)
-
-Vote.create!(
-  user_id: User.last.id,
-  track_id: Track.where(genre_id: Genre.where(name: 'rock').first.id).first.id
-)
-
-Track.create!(
-  name: 'A track',
-  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
-  creator_id: User.first.id,
-  genre_id: Genre.where(name: 'folk').first.id,
-  opinion_id: Opinion.last.id
-)
-
-Vote.create!(
-  user_id: User.last.id,
-  track_id: Track.where(genre_id: Genre.where(name: 'folk').first.id).last.id
-)
-
-# rap       : 3-2-11 | 3+3+3+1+1 = 11
-# classical : 2-0-6  | 3+3 = 6
-# folk      : 0-1-1  | 1 = 1
-# rock      : 1-1-4  | 3+1 = 4
-# electro   : 0-0-0  |
-# metal     : 0-0-0  |
-# pop       : 0-0-0  |
-# jazz      : 0-0-0  |
-
-# --- END OF THE BLOCK TO COMMENT
 
 puts ''
 puts '-------------------------------------------------------------------------'

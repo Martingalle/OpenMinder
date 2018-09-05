@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Profile on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_image, image_path(current_user.genres_appreciations_desc.first[:genre].photo.sample) %>
+
 <%= render "profile" %>
 
 <div class="wrapper">
@@ -56,7 +59,7 @@
 
   <div class="opinions-to-discover">
     <h4>Opinions you might be interested in</h4>
-    based on added tracks and votes, 
+    based on added tracks and votes,
     <% appreciations = current_user.genres_appreciations_desc %>
     <% unless appreciations.nil? %>
     <!-- favorite music genre -->

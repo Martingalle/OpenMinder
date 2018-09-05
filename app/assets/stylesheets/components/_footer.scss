@@ -12,8 +12,8 @@
   z-index: -1;
 
   .footer-content {
-    margin-top: 70px;
-    position: fixed;
+    // position: fixed;
+    margin-top: 20px;
     // z-index: -1;
   }
 
@@ -24,12 +24,7 @@
   }
 
   .footer-text {
-    margin-top: 10px;
     font-weight: 100;
-  }
-
-  .mentions-legales {
-    width: 400px;
   }
 }
 
