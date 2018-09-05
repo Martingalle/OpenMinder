@@ -1,6 +1,7 @@
 .wrapper {
   margin-top: 60px;
-  margin-left: 310px;
+  margin-left: 400px;
+  margin-right: 100px;
   h4 {
     font-weight: lighter;
     color: $dark-gray;
@@ -17,7 +18,7 @@
 }
 
 #profile-info{
-  width: 250px;
+  width: 300px;
   position: fixed;
   top: 0 ;
   bottom: 0;
@@ -55,6 +56,14 @@
     font-weight: 300;
     padding-top: 5px;
     padding-bottom: 20px;
+  }
+}
+
+.opinions-to-discover {
+  .infos {
+    font-weight: lighter;
+    color: $dark-gray;
+
   }
 }
 
