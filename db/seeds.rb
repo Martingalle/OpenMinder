@@ -329,9 +329,9 @@ Opinion.destroy_all
 Genre.destroy_all
 User.destroy_all
 
-USERS_COUNT = 48
+USERS_COUNT = 1
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 99
+VOTES_BY_TRACK_MAX = 0
 
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'
@@ -480,65 +480,81 @@ puts '-------------------------------------------------------------------------'
 # THE BLOCK BELOW SHOULD BE COMMENTED BEFORE SEEDING ---
 
 User.create!(
-  username: 'profile',
+  email: 'profile@mail.com',
   password: 'aaaaaa'
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'classical').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'classical').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Track.create!(
-  creator_id: User.last,
+  creator_id: User.last.id,
   genre_id: Genre.where(name: 'rock').first.id,
-  opinion_id: Opinion.last
+  opinion_id: Opinion.last.id
 )
 
 Vote.create!(
-  user_id: User.last,
+  user_id: User.last.id,
   track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).first.id
 )
 
 Vote.create!(
-  user_id: User.last,
+  user_id: User.last.id,
   track_id: Track.where(genre_id: Genre.where(name: 'rap').first.id).last.id
 )
 
 Vote.create!(
-  user_id: User.last,
+  user_id: User.last.id,
   track_id: Track.where(genre_id: Genre.where(name: 'rock').first.id).first.id
 )
 
+Track.create!(
+  creator_id: User.first.id,
+  genre_id: Genre.where(name: 'folk').first.id,
+  opinion_id: Opinion.last.id
+)
+
+
 Vote.create!(
-  user_id: User.last,
+  user_id: User.last.id,
   track_id: Track.where(genre_id: Genre.where(name: 'folk').first.id).last.id
 )
+
+# rap       : 3-2-11 | 3+3+3+1+1 = 11
+# classical : 2-0-6  | 3+3 = 6
+# folk      : 0-1-1  | 1 = 1
+# rock      : 1-1-4  | 3+1 = 4
+# electro   : 0-0-0  |
+# metal     : 0-0-0  |
+# pop       : 0-0-0  |
+# jazz      : 0-0-0  |
 
 # --- END OF THE BLOCK TO COMMENT
 

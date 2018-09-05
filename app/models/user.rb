@@ -12,7 +12,8 @@ class User < ApplicationRecord
   has_many :genres, through: :tracks_added
   has_many :opinions_viewed, through: :tracks_voted, source: 'opinion'
 
-  def genres_appreciation
+  def genres_appreciations
+    return nil if self.tracks_added.empty? && self.tracks_voted.empty?
     genres_id_added = {}
     genres_id_voted = {}
     Genre.all.each do |genre|
@@ -26,16 +27,21 @@ class User < ApplicationRecord
       genres_id_voted[track.genre.id] += 1
     end
 
-    genres_appreciation = []
+    genres_appreciations = []
     Genre.all.each do |genre|
       hash = {}
       hash[:genre] = genre
       hash[:added] = genres_id_added[genre.id]
       hash[:voted] = genres_id_voted[genre.id]
       hash[:score] = hash[:added] * 3 + hash[:voted]
-      genres_appreciation << hash
+      genres_appreciations << hash
     end
-    genres_appreciation
+    genres_appreciations
+  end
+
+  def genres_appreciations_desc
+    return nil if self.tracks_added.empty? && self.tracks_voted.empty?
+    genres_appreciations.sort_by { |hash| hash[:score] }.reverse
   end
 end
 
