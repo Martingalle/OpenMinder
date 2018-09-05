@@ -68,35 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const forward = document.querySelector(".right-arrow");
   forward.addEventListener("click", () => {
-    console.log("j'ai cliqué sur right");
-    let selected = document.querySelector(".opinion-track-selected");
-    let next = selected.parentNode.nextElementSibling.firstElementChild;
-    selected.classList.remove("opinion-track-selected");
-    next.classList.add("opinion-track-selected");
-    loadVideoById();
-    playVideo();
-      // playVideo("cWGE9Gi0bB0");
+    playNextSong()
   });
 
   const backward = document.querySelector(".left-arrow");
   backward.addEventListener("click", () => {
-    console.log("j'ai cliqué sur left");
-    let selected = document.querySelector(".opinion-track-selected");
-    let previous = selected.parentNode.previousElementSibling.firstElementChild;
-    selected.classList.remove("opinion-track-selected");
-    previous.classList.add("opinion-track-selected");
-    loadVideoById();
-    playVideo();
-      // playVideo("cWGE9Gi0bB0");
+    playPreviousSong()
   });
-
 
     // gets youtubeId in variable to pass to the player
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     console.log(youtubeId);
 
     // display player on div with id="player"
-    player = YouTubePlayer('player');
+    player = YouTubePlayer('player',
+          // events: {
+          // 'onStateChange': onPlayerStateChange
+          // }},
+          {
+          playerVars: {
+            fs: '0',
+            disablekb: '1',
+            modestbranding: '1'
+          },
+          height: '100%',
+          width: '100%'
+          });
 
     // 'loadVideoById' is queued until the player is ready to receive API calls.
     player.loadVideoById(youtubeId);
@@ -104,25 +101,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // 'playVideo' is queue until the player is ready to received API calls and after 'loadVideoById' has been called.
     player.playVideo();
 
-    // 'stopVideo' is queued after 'playVideo'.
     player
-        .pauseVideo()
-        .then(() => {
-            // Every function returns a promise that is resolved after the target function has been executed.
-        });
+      .pauseVideo()
+      .then(() => {
+          // Every function returns a promise that is resolved after the target function has been executed.
+      });
 
     player
-    .stopVideo()
-    .then(() => {
-        // Every function returns a promise that is resolved after the target function has been executed.
-    });
+      .stopVideo()
+      .then(() => {
+          // Every function returns a promise that is resolved after the target function has been executed.
+      });
+
+    player.getDuration();
   } //end if (first)
+
+  function playPreviousSong() {
+      let selected = document.querySelector(".opinion-track-selected");
+      let previous = selected.parentNode.previousElementSibling.firstElementChild;
+      selected.classList.remove("opinion-track-selected");
+      previous.classList.add("opinion-track-selected");
+      loadVideoById();
+      playVideo();
+  }
+
+  function playNextSong() {
+      let selected = document.querySelector(".opinion-track-selected");
+      let next = selected.parentNode.nextElementSibling.firstElementChild;
+      selected.classList.remove("opinion-track-selected");
+      next.classList.add("opinion-track-selected");
+      loadVideoById();
+      playVideo();
+  }
 
   function changePlayToPause () {
     const play = document.querySelector(".play-button")
     const pause = document.querySelector(".pause-button");
       play.classList.add("hidden");
       pause.classList.remove("hidden");
+  }
+
+  function changePauseToPlay () {
+    const play = document.querySelector(".play-button")
+    const pause = document.querySelector(".pause-button");
+      play.classList.remove("hidden");
+      pause.classList.add("hidden");
   }
 
   function addInfosToPlayer () {
@@ -135,12 +158,25 @@ document.addEventListener('DOMContentLoaded', () => {
     added.innerHTML = date;
   }
 
+  function displayDurationHTML(duration) {
+    console.log("la durée de la chanson est");
+    console.log(duration);
+  }
+
+  function displayState(state){
+    console.log("l'état de la vidéo est");
+    console.log(state);
+  }
+
   function playVideo() {
-    console.log(player);
     changePlayToPause ();
     addInfosToPlayer();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    console.log(player.getPlayerState(youtubeId));
     player.playVideo(youtubeId);
+    player.getCurrentTime(youtubeId);
+    player.getDuration().then(displayDurationHTML);
+    player.getPlayerState().then(displayState);
   }
 
   function loadVideoById () {
@@ -157,8 +193,39 @@ document.addEventListener('DOMContentLoaded', () => {
   function pauseVideo() {
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.pauseVideo(youtubeId);
+    console.log("je suis en pause");
+    player.getPlayerState().then(displayState);
   }
 
+player.on('stateChange', (event) => {
+  console.log(event.data)
+  switch (event.data) {
+    case "-1":
+      console.log('non démarré.');
+      break;
+    case 0:
+      console.log('ended');
+      playNextSong();
+      break;
+    case 1:
+      console.log('en lecture');
+      changePlayToPause();
+      break;
+    case 2:
+      console.log('en pause');
+      changePauseToPlay ();
+      break;
+    case 3:
+      console.log('en mémoire tampon');
+      break;
+    case 5:
+      console.log('en file dattente');
+      break;
+    default:
+      console.log('This is the default');
+  }
+// -1 : non démarré 0 : arrêté 1 : en lecture 2 : en pause 3 : en mémoire tampon 5 : en file dattente
+});
 
   // function onPlayerStateChange(event) {
   //   if (event.data == YT.PlayerState.PLAYING) {
