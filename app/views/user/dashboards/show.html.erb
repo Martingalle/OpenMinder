@@ -1,14 +1,21 @@
 
+<div class="user-greeting">
+  <p class="greeting">Hello <%= current_user.username%>!</p>
+</div>
 <div class="flex-wrapper">
   <div id="profile-info">
     <img src='<%= image_path 'profile-picture' %>' class="avatar-large"/>
-    <h4>Profile Information</h4>
-    <p>Email</p>
-    <p>Password</p>
-    <p>Location</p>
+    <p class="infos-title">Your profile information</p>
+    <p class="infos"><i class="fas fa-at"></i> Email</p>
+    <p><%= current_user.email %></p>
+    <p class="infos"><i class="fas fa-key"></i> Password </p>
+    <p><%= link_to "Edit your password", edit_user_registration_path, :target => "_blank" %></p>
+    <p class="infos"><i class="fas fa-map-marker-alt"></i> Location </p>
+    <p><%= current_user.city %></p>
   </div>
   <div class="profile-dashboard">
     <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-9 col-lg-12">
       <div class="added-tracks">
         <h4>Tracks you added</h4>
         <% @tracks_added.each_with_index do |track, i| %>
@@ -24,11 +31,11 @@
             <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
           </div>
         <% end %>
-        <button id="show-tracks" type="button" name="button" class="button">See all</button>
+        <button id="show-tracks" type="button" name="button" class="button-light-red">See all</button>
       </div>
       <hr>
       <div class="voted-tracks">
-        <h4>Tracks you voted for</h4>
+        <h4>Tracks you never thought you'd like</h4>
         <% @tracks_voted.each_with_index do |track,i| %>
           <div class="user-track voted <%= 'hidden' if i > 3 %>">
             <div>
@@ -42,11 +49,13 @@
             <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
           </div>
         <% end %>
-        <button id="show-voted-tracks" type="button" name="button" class="button">See all</button>
+        <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
       </div>
       <hr>
       <div class="opinions-to-discover">
         <h4>Opinions you might be interested in</h4>
+        
+      </div>
       </div>
       </div>
     </div>
