@@ -5,6 +5,5 @@ class User::DashboardsController < ApplicationController
     @favorite_genre = current_user.genres_appreciations_desc.first[:genre]
     authorize [:user, @tracks_added]
     authorize [:user, @tracks_voted]
-    authorize [:user, @favorite_genre]
   end
 end
