@@ -2,8 +2,6 @@
 
 window.onload = function() {
   bombMenu_init();
-  chameleonMenu_init(true);
-  switch_init();
 };
 
 /* menu animation */
