@@ -15,6 +15,8 @@ class Track < ApplicationRecord
   private
 
   def set_genre
-    self.genre = Genre.order('RANDOM()').first if self.genre.nil?
+    if self.genre.nil?
+      self.genre = Genre.order('RANDOM()').first
+    end
   end
 end
