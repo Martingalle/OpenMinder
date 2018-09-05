@@ -19,43 +19,6 @@
 // -------------------------------------------
 
 
-.opinion-banner {
-  width: 80%;
-  margin: 20px auto;
-  position: relative;
-
-}
-.opinion-description-quote  {
-  display: flex;
-  justify-content: start;
-  position: relative;
-
-  h1 {
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: justify;
-  color: #333333;
-  align-items: end;
-  padding: 20px 20px;
-  }
-  p {
-  padding: 50px 40px;
-  text-align: center;
-
-  }
-  i {
-    font-size: 24px;
-    opacity: 0.6;
-    height: 100%;
-    position: relative;
-  }
-}
-
-.quote-right {
-  position: relative;
-  top: 100px;
-}
 
 .green-button {
   background-color: #27AE60;
@@ -76,22 +39,6 @@
 
 // -------------------------------------------
 
-.opinion-description {
-
-  margin: 40px 40px 0 40px;
-  p {
-    font-size: 18px;
-    line-height: 23px;
-    text-align: justify;
-    color: #BDBDBD;
-  }
-  h6 {
-    color: #395BCE;
-    font-size: 14px;
-    margin-bottom: 0;
-    margin-top: 10px;
-  }
-}
 
 .admin-update-button {
 
@@ -128,7 +75,7 @@
 
 .opinion-player h2 {
   margin: 20px;
-  text-align: center;
+  // text-align: center;
   font-size: 24px;
 }
 
@@ -137,28 +84,40 @@
 }
 
 .opinion-player-details {
-  display: flex;
+  // display: flex;
 }
 
 .opinion-tracks-title {
   margin-bottom: 40px;
-  margin-left: 20px;
+
   p {
     margin: 15px auto 0 auto;
     padding: 7px;
     border-radius: 50px;
     width : 150px;
   }
+
   h2 {
     margin: 20px 0 10px 0;
-    color: #EB5757;
-    text-align: center;
-    line-height: 16px;
-    font-size: 14px;
-    font-style: medium;
-    font-family: Roboto;
+    color: $red;
+    font-size: 18px;
+    font-weight: 200;
   }
 }
+
+.beat-button-title {
+  color: $red;
+  margin-top: 3em;
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center
+}
+
+.beat-button {
+  margin-left: 170px;
+  max-width: 10em;
+}
+
 .opinion-add-track {
   margin: 20px 0;
   padding: 20px;
@@ -189,6 +148,7 @@
   p {
   font-size: 12px;
   padding-left: 20px;
+  color: $dark-gray;
   }
 }
 
