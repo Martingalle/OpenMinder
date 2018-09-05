@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :store_user_location!, if: :storable_location?
 
   include Pundit
 
@@ -21,8 +22,23 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def storable_location?
+    # binding.pry
+    if request.referrer =~ /.+\/opinions\/\d+/
+      store_location_for(:user, request.referrer)
+      false
+    else
+      request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+    end
+  end
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def store_user_location!
+    # :user is the scope we are authenticating
+    store_location_for(:user, request.fullpath)
   end
 
   protected
