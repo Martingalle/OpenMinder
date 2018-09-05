@@ -1,0 +1,27 @@
+  <p class="oups">Hmmmmm.... Looks like this is not a valid genre...</p>
+
+  <iframe src="https://giphy.com/embed/JYZ397GsFrFtu" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <p class="oups">Here are the genres you can research</p>
+
+    <%= link_to :controller => 'opinions', :query => 'rock'  do%>
+      <button class="button-small-light">rock</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'classique'  do%>
+      <button class="button-small-light">classique</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'rap'  do%>
+      <button class="button-small-light">rap</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'pop'  do%>
+      <button class="button-small-light">pop</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'jazz'  do%>
+      <button class="button-small-light">jazz</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'chanson'  do%>
+      <button class="button-small-light">chanson</button>
+    <% end %>
+        <%= link_to :controller => 'opinions', :query => 'metal'  do%>
+      <button class="button-small-light">metal</button>
+    <% end %>
+
