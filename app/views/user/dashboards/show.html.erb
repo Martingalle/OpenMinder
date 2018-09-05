@@ -56,24 +56,28 @@
   <% end %>
 
   <hr>
-
-  <div class="opinions-to-discover">
-    <h4>Opinions you should try to beat</h4>
-    <!-- based on added tracks and votes -->
-
-    <% appreciations = current_user.genres_appreciations_desc %>
-    <% unless appreciations.nil? %>
-    <!-- first favorite music genre -->
-      <% favorite = appreciations.first[:genre] %>
-      <!-- favorite music genre score -->
-      <% favorite_score = appreciations.first[:score] %>
-      <p class="infos"><%= favorite.name %></p>
-      <% favorite_score %>
-
-    <% end %>
-  </div>
-
-  <hr>
-
-
+  <% appreciations = current_user.genres_appreciations_desc %>
+  <% unless appreciations.nil? %>
+    <div class="opinions-to-discover">
+      <h4>You like <%= @favorite_genre.name %>? Opinions you should try to beat</h4>
+      <% opinion_count = @favorite_genre.opinions.uniq.count %>
+      <% if opinion_count >= 3 %>
+        <% @favorite_genre.opinions[0..2].each do |opinion| %>
+          <%= render "shared/one_card", opinion: opinion %>
+        <% end  %>
+      <% elsif opinion_count == 2 %>
+        <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
+        <%= render "shared/one_card", opinion: @favorite_genre.opinions[1] %>
+        <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
+      <% else opinion_count == 1 %>
+        <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
+        <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
+        <% if @second_favorite_genre.opinions.count >= 2 %>
+          <%= render "shared/one_card", opinion: @second_favorite_genre.opinions[1] %>
+        <% else %>
+          <%= render "shared/one_card", opinion: @third_favorite_genre.opinions.first %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
