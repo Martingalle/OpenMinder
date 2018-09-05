@@ -16,11 +16,15 @@
   }
 
   .added-tracks {
-
+    h4 {
+      font-weight: lighter;
+    }
   }
 
   .voted-tracks {
-
+    h4 {
+      font-weight: lighter;
+    }
   }
   //
   // .opinions-to-discover {
@@ -37,4 +41,12 @@
     width: 175px;
   }
 
+}
+
+
+#profile-info{
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
 }

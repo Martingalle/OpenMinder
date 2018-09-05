@@ -1,8 +1,10 @@
 $(document).ready(function() {
   $('#show-tracks').on('click',function(){
-    $( ".user-track.hidden" ).removeClass( "hidden" );
+    console.log("tracks");
+    $( ".user-track.added.hidden" ).removeClass( "hidden" );
   });
   $('#show-voted-tracks').on('click',function(){
-    $( ".user-track.hidden-tracks" ).removeClass( "hidden-tracks" );
+    console.log("voted");
+    $( ".user-track.voted.hidden" ).removeClass( "hidden" );
   });
 });
