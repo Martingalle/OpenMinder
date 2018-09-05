@@ -1,3 +1,4 @@
+<div class = "header-blue"></div>
 <%= render 'shared/searchbar' %>
 
 <div class="container">
@@ -17,9 +18,13 @@
   </div>
 </div>
 
+<% if  %>
+  <%= render 'shared/searchbar_error' %>
+<% else %>
+  <%= render 'shared/opinions-cards',
+  opinions: @opinions %>
+<% end %>
 
-<%= render 'shared/opinions-cards',
-opinions: @opinions %>
 
 <% if user_signed_in? %>
   <button type="button" class="button-small add-track-button" data-toggle="modal" data-target="#add-an-opinion">

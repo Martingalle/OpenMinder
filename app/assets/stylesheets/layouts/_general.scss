@@ -16,6 +16,10 @@ body {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
 h2 {
   font-weight: 600;
   color: $dark-gray;
@@ -29,6 +33,9 @@ h3 {
 .header-blue {
   background-color: $light-blue;
   height: 8px;
+  margin-top: -20px;
+  margin-left: -20px;
+  width: 1663px;
   // position: absolute;
 }
 
