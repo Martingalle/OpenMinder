@@ -10,8 +10,8 @@
     font-weight: 400;
     font-size: 15px;
     padding-right: 10px;
-    color: $dark-gray;
-    font-weight: 300;
+    color: #AAAAAA;
+    font-weight: 400;
   }
 }
 
@@ -46,7 +46,7 @@ label.collection_radio_buttons {
   .hint {
     clear: left;
     margin-left: 120px;
-    color: $white;
+    color: $dark-gray;
     display: block;
     font-style: italic;
   }
@@ -122,10 +122,11 @@ input[type="text"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $light-blue;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
+  color: $dark-gray;
 }
 
 input[type="text"]:focus,
@@ -139,7 +140,7 @@ input[type="email"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $light-blue;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
@@ -149,14 +150,14 @@ input[type="email"]:focus,
 select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: $blue;
+  color: $dark-gray;
 }
 
 input[type="password"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $light-blue;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
@@ -171,7 +172,7 @@ select.form-control:focus {
 
 .form-opinion-login {
   h2 {
-    color: $white;
+    color: $light-blue;
     margin-top: 0;
   }
 }
@@ -209,4 +210,11 @@ select.form-control:focus {
   border-radius: 3px;
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+
+
+.form-control {
+  color: $dark-gray !important;
+  font-weight: 400;
 }
