@@ -1,3 +1,4 @@
+console.log('vote');
 container = document.querySelector("[data-track=\"<%= @vote.track.id %>\"]");
 inner = `<%= j render 'votes/heart', track: @vote.track %>`;
 container.innerHTML = inner;
