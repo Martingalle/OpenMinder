@@ -42,8 +42,13 @@
       <% end %>
 
 <div id='relatedOpinionsCards' style="display:none">
-  <%= render 'shared/opinions-cards',
-  opinions: @opinion.related_opinions %>
+  <% if @opinion.related_opinions.without(@opinion).empty? %>
+    <div class="oups">Ooooops ! Seems like there is no opinions related to this one</div>
+    <iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <% else %>
+    <%= render 'shared/opinions-cards',
+    opinions: @opinion.related_opinions.without(@opinion) %>
+  <% end %>
 </div>
 
     </div>
