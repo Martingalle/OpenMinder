@@ -1,0 +1,53 @@
+<%= link_to opinion_path(opinion) do %>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <% if opinion.main_genre.nil? %>
+
+          <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb87cdb308815f5e6decf7d1a3a4e7ca&auto=format&fit=crop&w=1001&q=80');">
+          </div>
+
+        <% else %>
+
+          <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path(opinion.main_genre.photo.sample) %>');">
+          </div>
+        <% end %>
+
+        <p class="card-heading">
+          <%= opinion.name %>
+        </p>
+
+        <% if opinion.main_genre != nil %>
+          <div class="genres">
+            <p class="main-genre-button">
+              <%= link_to opinion.main_genre.name.capitalize, :controller => 'opinions', :query => opinion.main_genre.name %>
+            </p>
+
+            <% if opinion.secondary_genre != nil %>
+              <p class="secondary-genre-button">
+                <%= link_to opinion.secondary_genre.name.capitalize, :controller => 'opinions', :query => opinion.secondary_genre.name%>
+              </p>
+            <% end %>
+
+          </div>
+        <% end %>
+
+      </div>
+
+      <div class="card-bottom">
+
+        <p class="card-description">
+          <%= opinion.description[0...125] %>...
+        </p>
+
+        <%= link_to 'Discover the opinion', opinion_path(opinion), class:'styled-link' %>
+
+      </div>
+    </div>
+
+  </div>
+<% end %>
