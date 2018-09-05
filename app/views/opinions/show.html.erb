@@ -25,17 +25,21 @@
 
       <% if @opinion.main_genre != nil %>
         <div class="opinion-genres">
-          <button class="button-small">
-            <%= @opinion.main_genre.name %>
-          </button>
-          <button class="button-small-light">
-            <%= @opinion.secondary_genre.name %>
-          </button>
+
+          <%= link_to :controller => 'opinions', :query => @opinion.main_genre.name  do%>
+            <button class="button-small"><%= @opinion.main_genre.name %></button>
+          <% end %>
+
+          <% if @opinion.secondary_genre != nil %>
+
+            <%= link_to :controller => 'opinions', :query => @opinion.secondary_genre.name  do%>
+              <button class="button-small-light"><%= @opinion.secondary_genre.name %></button>
+            <% end %>
+
+          <% end %>
+
         </div>
       <% end %>
-
-
-
 
 <div id='relatedOpinionsCards' style="display:none">
   <%= render 'shared/opinions-cards',
