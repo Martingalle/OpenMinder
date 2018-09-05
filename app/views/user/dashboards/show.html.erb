@@ -58,23 +58,18 @@
   <hr>
 
   <div class="opinions-to-discover">
-    <h4>Opinions you might be interested in</h4>
+    <h4>Opinions you should try to beat</h4>
     <!-- based on added tracks and votes -->
-    <%= current_user.
+
     <% appreciations = current_user.genres_appreciations_desc %>
     <% unless appreciations.nil? %>
-    <!-- favorite music genre -->
+    <!-- first favorite music genre -->
       <% favorite = appreciations.first[:genre] %>
       <!-- favorite music genre score -->
       <% favorite_score = appreciations.first[:score] %>
-      <!-- least favorite music genre  -->
-      <% dislike = appreciations.last[:genre] %>
-
-      <h4>You like the most...</h4>
       <p class="infos"><%= favorite.name %></p>
       <% favorite_score %>
-      <h4>You like the least...</h4>
-      <p class="infos"><%= dislike.name %></p>
+
     <% end %>
   </div>
 
