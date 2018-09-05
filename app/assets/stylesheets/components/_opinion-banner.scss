@@ -74,10 +74,25 @@
 
 .opinion-genres {
   text-align: right;
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 
 #relatedOpinions:hover {
   color: $light-blue;
   cursor: pointer;
+}
+
+
+.oups {
+  color: $red;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.giphy-embed {
+  border-radius: 10px;
 }
