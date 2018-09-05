@@ -485,36 +485,48 @@ User.create!(
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
   opinion_id: Opinion.last.id
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
   opinion_id: Opinion.last.id
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'rap').first.id,
   opinion_id: Opinion.last.id
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'classical').first.id,
   opinion_id: Opinion.last.id
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'classical').first.id,
   opinion_id: Opinion.last.id
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.last.id,
   genre_id: Genre.where(name: 'rock').first.id,
   opinion_id: Opinion.last.id
@@ -536,11 +548,12 @@ Vote.create!(
 )
 
 Track.create!(
+  name: 'A track',
+  photo: "https://i.ytimg.com/vi/G52x5zyLAgY/mqdefault.jpg",
   creator_id: User.first.id,
   genre_id: Genre.where(name: 'folk').first.id,
   opinion_id: Opinion.last.id
 )
-
 
 Vote.create!(
   user_id: User.last.id,
