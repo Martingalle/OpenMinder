@@ -1,7 +1,7 @@
 class Track < ApplicationRecord
   belongs_to :creator, class_name: 'User'
   belongs_to :opinion
-  belongs_to :genre
+  belongs_to :genre, optional: true
   has_many :votes, dependent: :destroy
 
   has_many :users_voting, through: :votes,  :source => 'user'
