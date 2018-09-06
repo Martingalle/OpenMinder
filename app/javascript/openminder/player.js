@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateVoteInPlayer () {
     let vote = document.getElementById("player-voted");
     let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
-    let selected_li = selected.querySelector("i");
+    let selected_li = selected.nextElementSibling.querySelector("i");
     let select = document.querySelector(".opinion-track-selected");
       if (selected_li.classList.contains("voted") === true) {
         vote.classList.add("voted");
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let vote = document.getElementById("player-voted");
   let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
-  let selected_li = selected.querySelector("i");
+  let selected_li = selected.nextElementSibling.querySelector("i");
 
   selected_li.addEventListener("click", () => {
     console.log("je suis dans l'add event listener");
