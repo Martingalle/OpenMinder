@@ -10,19 +10,20 @@
   <div class="row">
     <div class="col-xs-12">
 
-<% if @opinions.empty? %>
-  <%= render 'shared/searchbar_error', searchable_genres: @searchable_genres %>
-<% else %>
-  <div class="index-title">
-    <h1 class="hereare">Here are</h1>
-    <% if params[:query].present? %>
-      <h1 class="underlined-title">the opinions listed as <%= params[:query] %></h1>
-    <% else %>
-      <h1 class="underlined-title">All the opinions we have</h1>
-    <% end %>
-  </div>
-  <%= render 'shared/opinions-cards',
-  opinions: @opinions %>
+      <% if @opinions.empty? %>
+        <%= render 'shared/searchbar_error', searchable_genres: @searchable_genres %>
+      <% else %>
+        <div class="index-title">
+          <h1 class="hereare">Here are</h1>
+          <% if params[:query].present? %>
+            <h1 class="underlined-title">the opinions listed as <%= params[:query] %></h1>
+          <% else %>
+            <h1 class="underlined-title">All the opinions we have</h1>
+          <% end %>
+        </div>
+        <%= render 'shared/opinions-cards',
+        opinions: @opinions %>
+
 <% end %>
 
 
@@ -37,7 +38,9 @@
     add an opinion
   </button>
 
-  <%= render 'shared/add_an_opinion_modale'%>
+  <%= render 'shared/add_an_opinion_modale',
+  opinion_new: @opinion_new,
+  genres: @genres %>
 
 
 
