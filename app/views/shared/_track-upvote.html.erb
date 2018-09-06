@@ -5,12 +5,14 @@
     <% if track.photo.nil? %>
       <%= image_tag "https://goo.gl/t12qoj", class:"track-image hidden-xs"%>
     <% else %>
-      <%= image_tag photo, class:"track-image hidden-xs"%>
+      <%= image_tag track.photo, class:"track-image hidden-xs"%>
     <% end %>
 
     <div class='track-body'>
       <h3><%= song %></h3>
-      <p>Added : <%= added %></p>
+      <p>
+        <strong><%= track.genre.name.upcase %> - added: <%= added %> by <%= track.creator.username %></strong>
+      </p>
     </div>
     <% if current_user %>
       <% if current_user.admin == true %>
@@ -21,6 +23,11 @@
     <% end %>
   </div>
 
+  <div>
+    <% unless track.creator.photo.nil? %>
+      <%= image_tag "users/#{track.creator.photo}", class:"user-photo" %>
+    <% end %>
+  </div>
 
   <div class="kill-click">
     <%= render 'votes/heart', track: track %>

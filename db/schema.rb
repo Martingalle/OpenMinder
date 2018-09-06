@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_131522) do
+ActiveRecord::Schema.define(version: 2018_09_06_075858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 2018_08_31_131522) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.integer "approved", default: 0
+    t.bigint "genre_id"
     t.index ["creator_id"], name: "index_opinions_on_creator_id"
+    t.index ["genre_id"], name: "index_opinions_on_genre_id"
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_08_31_131522) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "opinions", "genres"
   add_foreign_key "opinions", "users", column: "creator_id"
   add_foreign_key "tracks", "genres"
   add_foreign_key "tracks", "opinions"

@@ -31,9 +31,6 @@
     color: $dark-gray;
     font-size: 16px;
   }
-  img {
-    width: 60px;
-  }
 }
 
 /* Body design */
@@ -54,7 +51,7 @@
 .track-image {
   border-radius: 10px;
   margin-right: 20px;
-  width: 175px;
+  width: 60px;
 }
 
 /* Upvote design */
@@ -155,4 +152,13 @@
 
 .voted {
   color: $red;
+}
+
+.user-photo {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  // padding: 2px;
+  // border: solid 2px $gray;
+  // border-radius: 50%;
 }
