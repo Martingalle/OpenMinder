@@ -3,25 +3,8 @@
   <iframe src="https://giphy.com/embed/JYZ397GsFrFtu" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
   <p class="oups">Here are the genres you can research</p>
 
-    <%= link_to :controller => 'opinions', :query => 'rock'  do%>
-      <button class="button-small-light">rock</button>
+    <% searchable_genres.each do |genre| %>
+      <%= link_to controller: 'opinions', query: genre.name do%>
+        <button class="button-small-light"><%= genre.name %></button>
+      <% end %>
     <% end %>
-        <%= link_to :controller => 'opinions', :query => 'classique'  do%>
-      <button class="button-small-light">classique</button>
-    <% end %>
-        <%= link_to :controller => 'opinions', :query => 'rap'  do%>
-      <button class="button-small-light">rap</button>
-    <% end %>
-        <%= link_to :controller => 'opinions', :query => 'pop'  do%>
-      <button class="button-small-light">pop</button>
-    <% end %>
-        <%= link_to :controller => 'opinions', :query => 'jazz'  do%>
-      <button class="button-small-light">jazz</button>
-    <% end %>
-        <%= link_to :controller => 'opinions', :query => 'chanson'  do%>
-      <button class="button-small-light">chanson</button>
-    <% end %>
-        <%= link_to :controller => 'opinions', :query => 'metal'  do%>
-      <button class="button-small-light">metal</button>
-    <% end %>
-

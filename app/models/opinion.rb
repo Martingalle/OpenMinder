@@ -35,19 +35,26 @@ class Opinion < ApplicationRecord
   end
 
   def main_genre
-    self.genre
-    # return nil if self.genres.empty?
-    # genres_occurrences_desc[0][:genre]
+    self.genre if self.genres.empty?
+    genres_occurrences_desc[0][:genre]
   end
 
   def secondary_genre
-    return nil if self.genres.empty?
+    return nil if self.genres.empty? || genres_occurrences_desc[1][:count] < 4
     genres_occurrences_desc[1][:genre]
   end
 
+  def all_genres
+    all_genres = []
+    all_genres << self.genre
+    all_genres << main_genre unless main_genre == self.genre
+    all_genres << secondary_genre unless secondary_genre.nil?
+    all_genres
+  end
+
   def related_opinions
-    Opinion.all.select do |opinion|
-      opinion.main_genre == self.main_genre
+    Opinion.all.reject do |opinion|
+      (opinion.all_genres & self.all_genres).empty?
     end
   end
 
@@ -59,7 +66,7 @@ class Opinion < ApplicationRecord
   # ---- search ----
 
   pg_search_scope :search_by_main_genre_and_secondary_genre,
-    against: [ :main_genre, :secondary_genre ],
+    against: [ :genre, :main_genre, :secondary_genre ],
     using: {
       tsearch: { prefix: true }
     }

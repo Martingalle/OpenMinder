@@ -292,10 +292,10 @@ OPINIONS = [
   # OPINION 9 - Pop - La pop, c'est de la musique 'girly'
   # ___________________________________________________________
   {
-    ready: true,
+    ready: false,
     name: "Pop music is for girls only !",
     genre: 'pop',
-    description: "yes you're right. Sometimes pop music smells like lollipop and coton candy.
+    description: "Yes you're right. Sometimes pop music smells like lollipop and coton candy.
     Lets say 9 out of 10. We, as men, cannot listen to Hannah Montana or One Direction beside flirting,
     here are a few great pop songs for real men. Please add your style if you have some inspiration !",
     tracks: [
@@ -347,7 +347,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Flute is for classical nerds only",
-    genre: 'rock',
+    genre: 'classical',
     description: "Yes it's true, sometimes the flute is played by little girl and
     guys under drugs. But have you ever listened to rock flute ?
     Forget the dreary medievalism or contemplative thoughtfulness.

@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :genres, through: :tracks_added
   has_many :opinions_viewed, through: :tracks_voted, source: 'opinion'
 
+  before_create :set_photo
+
   def genres_appreciations
     return nil if self.tracks_added.empty? && self.tracks_voted.empty?
     genres_id_added = {}
@@ -42,6 +44,10 @@ class User < ApplicationRecord
   def genres_appreciations_desc
     return nil if self.tracks_added.empty? && self.tracks_voted.empty?
     genres_appreciations.sort_by { |hash| hash[:score] }.reverse
+  end
+
+  def set_photo
+    self.photo = "avatar_#{rand(1..50)}.png"
   end
 end
 
