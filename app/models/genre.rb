@@ -1,6 +1,6 @@
 class Genre < ApplicationRecord
   has_many :opinions, dependent: :destroy
-  has_many :tracks, through: :opinions, dependent: :destroy
+  has_many :tracks, through: :opinions
 
   def main_related_opinions
     Opinion.all.select do |opinion|
