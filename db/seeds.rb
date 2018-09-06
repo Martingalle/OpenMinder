@@ -427,9 +427,9 @@ Opinion.destroy_all
 Genre.destroy_all
 User.destroy_all
 
-USERS_COUNT = 1
+USERS_COUNT = 48
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 0
+VOTES_BY_TRACK_MAX = 99
 
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'
