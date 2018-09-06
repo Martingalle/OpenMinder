@@ -64,49 +64,53 @@
     </div>
     <!-- <hr> -->
     <!-- 2- songs and player  -->
-    <div class="opinion-player">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 opinion-tracks">
-          <div class="opinion-tracks-title">
-            <h2>Here are the tracks that have been nicely proposed by our community to crush your vision of music</h2>
-          </div>
-          <!-- List of songs linked to an opinion -->
 
-          <div class="scrollbar hello-tracks">
-            <% @tracks_desc.each do |track| %>
+    <% if @tracks_desc.empty? %>
+      <p class="beat-button-title">Still no track for this opinion, be the first to beat it!</p>
+      <p class="button-red beat-button beat-center" data-toggle="modal" data-target="#addATrack">add a track</p>
 
-                <%= render 'shared/track-upvote',
-                photo:track.photo,
-                song:track.name,
-                upvotes: track.upvotes,
-                opinion: @opinion,
-                track: track,
-                added:track.created_at.strftime("%B %e, %Y"),
-                youtube_id: track.youtube_id
-                %>
+    <% else %>
+      <div class="opinion-player">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 opinion-tracks">
+            <div class="opinion-tracks-title">
+              <h2>Here are the tracks that have been nicely proposed by our community to crush your vision of music</h2>
+            </div>
+            <!-- List of songs linked to an opinion -->
 
-            <% end %>
+            <div class="scrollbar hello-tracks">
+              <% @tracks_desc.each do |track| %>
+                  <%= render 'shared/track-upvote',
+                  photo:track.photo,
+                  song:track.name,
+                  upvotes: track.upvotes,
+                  opinion: @opinion,
+                  track: track,
+                  added:track.created_at.strftime("%B %e, %Y"),
+                  youtube_id: track.youtube_id
+                  %>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 opinion-right-column">
-          <div class="opinion-youtube-player">
-            <div id="player" data-songs-id=<%= @youtube_ids.to_json %>></div>
+          <div class="col-xs-12 col-sm-4 opinion-right-column">
+            <div class="opinion-youtube-player">
+              <div id="player" data-songs-id=<%= @youtube_ids.to_json %>></div>
+            </div>
+            <p class="beat-button-title">Got the perfect track to beat this cliché ?</p>
+            <p class="button-red beat-button" data-toggle="modal" data-target="#addATrack">add a track</p>
           </div>
-          <p class="beat-button-title">Got the perfect track to beat this cliché ?</p>
-          <p class="button-red beat-button" data-toggle="modal" data-target="#addATrack">add a track</p>
         </div>
       </div>
-    </div>
+    <% end %>
     <!-- 3- player  -->
   </div> <!-- End of container  -->
 </div>
 
-<% content_for :player do %>
-  <%= render 'shared/player' %>
+<% if @tracks_desc.any? %>
+  <% content_for :player do %>
+    <%= render 'shared/player' %>
+  <% end %>
 <% end %>
-
-
-
 
 <!-- Modal -->
 <%= render 'shared/add_a_track_modale'%>

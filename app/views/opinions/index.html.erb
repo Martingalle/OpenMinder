@@ -4,7 +4,17 @@
 <%= link_to root_path do %>
   <%= image_tag "logo-rond.png", alt: "alttext", class:'logo-index' %>
 <% end %>
+
 <%= render 'shared/searchbar' %>
+
+<% if @opinion_new.errors.any? %>
+  <div class="alert alert-warning">
+    <p><strong>Oops! Something went wrong! Please try again...</strong></p>
+    <%#= @opinion_new.errors.full_messages.each do |message| %>
+      <!-- <p><%#= message %></p> -->
+    <%# end %>
+  </div>
+<% end %>
 
 <div class="container">
   <div class="row">
@@ -23,25 +33,16 @@
         </div>
         <%= render 'shared/opinions-cards',
         opinions: @opinions %>
-
-<% end %>
-
-
+    <% end %>
     </div>
   </div>
 </div>
-
-
 
 <% if user_signed_in? %>
   <button type="button" class="button-red add-track-button" data-toggle="modal" data-target="#add-an-opinion">
     add an opinion
   </button>
-
   <%= render 'shared/add_an_opinion_modale',
   opinion_new: @opinion_new,
   genres: @genres %>
-
-
-
 <% end %>

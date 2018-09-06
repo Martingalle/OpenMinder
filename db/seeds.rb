@@ -20,7 +20,7 @@ OPINIONS = [
   #     In the hash, there's 4 keys: 'youtube', 'genre', 'name', 'artist'.
   #     Each value is a string "...".
   #     The value for the 'youtube' key is the youtube id, find it on Youtube directly (11 numbers).
-  #     The value of genre should be: classical, rock, jazz, rap, folk, pop, electro or metal?
+  #     The value of genre should be: classical, rock, jazz, hip hop, folk, pop, electro or metal?
   #     Then fill the name of the song and the name of the artist.
 
   # ! Be carreful to not forget comas at the end of each data !
@@ -37,7 +37,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Rap lyrics are so poor, they just mumble!",
-    genre: 'rap',
+    genre: 'hip hop',
     description:
     "Why is rap so bad? This is an opinion.
     Rap Music is bad because people have preferences of music.
@@ -48,60 +48,90 @@ OPINIONS = [
     You have to become use to hearing it.",
     tracks: [
       { youtube: 'G52x5zyLAgY',
-        genre: 'rap',
+        genre: 'hip hop',
         name: "Crépuscule d'apocalyspe",
         artist: 'Dooz Kawa'
       },
       { youtube: 'akFZtK0GVU4',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Thé à la menthe',
         artist: 'La caution'
       },
       { youtube: 'QsNft5ftYSs',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Fenêtre sur rue',
         artist: 'Hugo TSR'
       },
       { youtube: 'FcHblRlbijc',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Want it back',
         artist: 'Guts'
       },
       { youtube: '2b9xNT7R1So',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Toussa Toussa',
         artist: 'Disiz La Peste'
       },
       { youtube: 'iAE1vUTZ4-Y',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Me faire la belle',
         artist: 'Dooz Kawa'
       },
       { youtube: '4o3RnLxzExo',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Chewing gum',
         artist: 'Odezenne'
       },
     ]
   },
 
-  # OPINION 2 - Jazz - Le jazz, c'est aussi ennuyeux que la musique d'ascenseur
-  # ___________________________________________________________
   {
-    ready: false,
-    name: "Le jazz, c'est aussi ennuyeux que la musique d'ascenseur",
+    ready: true,
+    name: "Jazz is as boring as elevator music",
     genre: 'jazz',
-    description: "",
+    description: "While all jazz does not have a vocalist, there is still a “story” that can be heard, a rise, climax and a fall.
+    Unlike some modern music, and so it definitely takes some time to appreciate.
+    With jazz, no two pieces are the same, and so you cannot get bored of listening to it.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'qNcPwrfK9tY',
+        genre: 'jazz',
+        name: "Kind of Blue",
+        artist: "Miles Davis"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'll3CMgiUPuU',
+        genre: 'jazz',
+        name: "John Coltrane",
+        artist: "A Love Supreme"
+      },
+      { youtube: 'vi0vIOd8XpU',
+        genre: 'jazz',
+        name: "Frank Sinitra",
+        artist: "The Very Best Of Frank Sinatra"
+      },
+      { youtube: 'tM0k7TPxX3I',
+        genre: 'jazz',
+        name: "Sonny Rollins",
+        artist: "Saxophone Colossus"
+      },
+      { youtube: 'dlee09qmnv4',
+        genre: 'jazz',
+        name: "Weather Report",
+        artist: "Heavy Weather"
+      },
+      { youtube: 'iC1XYHafUuM',
+        genre: 'jazz',
+        name: "The Very Thought of You",
+        artist: "Nat King Cole"
+      },
+      { youtube: 'rITUzQUfh_M',
+        genre: 'jazz',
+        name: "Big Band Machine",
+        artist: "Buddy Rich"
+      },
+      { youtube: '=yzxrBdryBzU',
+        genre: 'jazz',
+        name: "The Very Best of Benny Goodma",
+        artist: "Benny Goodman"
       },
     ]
   },
@@ -109,20 +139,33 @@ OPINIONS = [
   # OPINION 3 - Classique - L'opéra, ce ne sont que des histoires tristes et datéés
   # ___________________________________________________________
   {
-    ready: false,
-    name: "L'opéra, ce ne sont que des histoires tristes et datéés",
+    ready: true,
+    name: "Opera music tells old and sad stories",
     genre: 'classical',
-    description: "",
+    description: "You probably know the story of La Traviata, Carmen or Tristan and Isolde.
+    For sure, you can consider these stories to be tragic and old, but it's only so because of the time they take place!
+    The performers' act and singing talents are carrying universal emotions we feel whatever the century we live
+    and easily identify with.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'pyBv7CnsH58',
+        genre: 'classical',
+        name: "Bliss",
+        artist: "Opera Australia"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'luXlm5mUocc',
+        genre: 'classical',
+        name: "The Exterminating Angel",
+        artist: "Thomas Adès"
+      },
+      { youtube: 'AlUHKHLk_VU',
+        genre: 'classical',
+        name: "Dr Atomic",
+        artist: "John Adams"
+      },
+      { youtube: 'AlUHKHLk_VU',
+        genre: 'classical',
+        name: "The Turn of The Screw",
+        artist: "Valentina Carrasco"
       },
     ]
   },
@@ -130,20 +173,32 @@ OPINIONS = [
   # OPINION 4 - Rock - Le rock, c'est toujours les mêmes trois accords
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le rock, c'est toujours les mêmes trois accords",
+    ready: true,
+    name: "Rock is always the same three music chords",
     genre: 'rock',
-    description: "",
+    description: "There’s an old joke that asks:
+    'What’s the difference between a rock guitarist and a jazz guitarist?'
+    Answer: 'A rock guitarist plays three chords to a million people and a jazz guitarist plays a million chords to three people!'",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'NmfzWpp0hMc',
+        genre: 'rock',
+        name: "CAFO",
+        artist: "Animals As Leaders"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'IZBlqcbpmxY',
+        genre: 'rock',
+        name: "Voodoo Child",
+        artist: "Jimi Hendrix"
+      },
+      { youtube: 'sI7XiJgt0vY',
+        genre: 'rock',
+        name: "Eruption",
+        artist: "Van Halen"
+      },
+      { youtube: 'Dj7MVn3Wagg',
+        genre: 'rock',
+        name: "The Mystical Potato Head Groove Thing",
+        artist: "Joe Satriani"
       },
     ]
   },
@@ -156,7 +211,7 @@ OPINIONS = [
     genre: 'classical',
     description: "The formula for a boring classical concert usually comes down to its vibe, atmosphere and programming.
     I feel as though the dish being served cannot be too daring or risky.
-    But when it is, it allows the players to unleash their talent upon the music. ",
+    But when it is, it allows the players to unleash their talent upon the music.",
     tracks: [
       { youtube: 'gqg3l3r_DRI',
         genre: 'classical',
@@ -209,20 +264,56 @@ OPINIONS = [
   # OPINION 6 - Rap - Le rap, c'est par des mecs, pour des mec
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le rap, c'est par des mecs, pour des mecs",
-    genre: 'rap',
-    description: "",
+    ready: true,
+    name: "Rap music is mainly made by guys, for guys",
+    genre: 'hip hop',
+    description: "Since its beginnings in 70s New York, hip-hop has had a complicated history with women. Or rather, very little history at all.
+    It took the arrival of Lauryn Hill and Jean Grae in the mid-90s to offer an alternative to the tomboy/ temptress tropes.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'Wji4b2jjYOk',
+        genre: 'hip hop',
+        name: "Icy Grl",
+        artist: "Saweetie"
       },
-      { youtube: '',
-        genre: '',
+      { youtube: 'PEGccV-NOm8',
+        genre: 'hip hop',
+        name: "Bodak Yellow",
+        artist: "Cardi B"
+      },
+      { youtube: 'PN9ToyBbb_g',
+        genre: 'hip hop',
+        name: "Clap",
+        artist: "Ms Banks"
+      },
+      { youtube: 'pOTfQ4NjIKs',
+        genre: 'hip hop',
+        name: "Poppin",
+        artist: "Rico Nasty"
+      },
+      { youtube: 'c5n1wcFm9is',
+        genre: 'hip hop',
+        name: "Crayons",
+        artist: "CupcakKe"
+      },
+      { youtube: 'eSX7LmESZQ4',
+        genre: 'hip hop',
+        name: "Telefone",
+        artist: "Noname"
+      },
+      { youtube: 'tQ8xAeVp9qQ',
+        genre: 'hip hop',
+        name: "For Everybody",
+        artist: "Kash Doll"
+      },
+      { youtube: 'QGIDU7V3osQ',
+        genre: 'hip hop',
+        name: "Sad",
+        artist: "Kodie Shane"
+      },
+      { youtube: '6uRNpEynpcw',
+        genre: 'hip hop',
         name: "",
-        artist: ""
+        artist: "Kamaiyah"
       },
     ]
   },
@@ -230,20 +321,31 @@ OPINIONS = [
   # OPINION 7 - Jazz - Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation",
+    ready: true,
+    name: "Jazz is a band of guys playing like whatever because jazz is impro",
     genre: 'jazz',
-    description: "",
+    description: "Improvisation is a key ingredient of jazz that sets it apart from other genres: it requires you to really listen and feel the music!
+    Revered jazz trumpeter Miles Davis put it this way: 'I will play it first and tell you what it is later.",
     tracks: [
       { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+        genre: 'jazz',
+        name: "Savoy Blues",
+        artist: "Louis Armstrong"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'TrytKuC3Z_o',
+        genre: 'jazz',
+        name: "Satin Doll",
+        artist: "Duke Ellington "
+      },
+      { youtube: 'n4NLY8vi5Q8',
+        genre: 'jazz',
+        name: "Pipeline",
+        artist: "Bill Frisell"
+      },
+      { youtube: 'DNbD1JIH344',
+        genre: 'jazz',
+        name: "Lonely Woman",
+        artist: "Ornette Coleman"
       },
     ]
   },
@@ -251,10 +353,12 @@ OPINIONS = [
   # OPINION 8 - Jazz - Le jazz n’a pas changé depuis les années 40
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le jazz n’a pas changé depuis les années 40",
+    ready: true,
+    name: "Jazz hasn't changed since the 40s",
     genre: 'jazz',
-    description: "",
+    description: "That’s probably true. My jazz collection runs from the late 40s to the 70s with a few exceptions
+    (Bill Evans recordings, Brad Mehldau, through the present, some Pat Metheney)
+    Two terrible things happened in jazz: free jazz where anything goes and nothing sounds like music, and smooth jazz which is elevator music with saxophones.",
     tracks: [
       { youtube: '1q2DrOv_swE',
         genre: 'jazz',
@@ -479,31 +583,31 @@ puts 'CREATING GENRES'
 
 genre = Genre.create(
   name: 'classical',
-  photo: ['classical1.jpg', 'classical2.jpg', 'classical3.jpg']
+  photo: ['classical1.jpg', 'classical2.jpg', 'classical3.jpg', 'classical4.jpg', 'classical5.jpg', 'classical6.jpg']
 )
 print genre.name
 
 genre = Genre.create(
   name: 'electro',
-  photo: ['electro1.jpg', 'electro2.jpg', 'electro3.jpg']
+  photo: ['electro1.jpg', 'electro2.jpg', 'electro3.jpg', 'electro4.jpg', 'electro5.jpg', 'electro6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
   name: 'rock',
-  photo: ['rock1.jpg', 'rock2.jpg', 'rock3.jpg']
+  photo: ['rock1.jpg', 'rock2.jpg', 'rock3.jpg', 'rock4.jpg', 'rock5.jpg', 'rock6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
   name: 'jazz',
-  photo: ['jazz1.jpg', 'jazz2.jpg', 'jazz3.jpg']
+  photo: ['jazz1.jpg', 'jazz2.jpg', 'jazz3.jpg', 'jazz4.jpg', 'jazz5.jpg', 'jazz6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
-  name: 'rap',
-  photo: ['rap1.jpg', 'rap2.jpg', 'rap3.jpg']
+  name: 'hip hop',
+  photo: ['hiphop1.jpg', 'hiphop2.jpg', 'hiphop3.jpg', 'hiphop4.jpg', 'hiphop5.jpg', 'hiphop6.jpg']
 )
 print ', ' << genre.name
 
@@ -515,7 +619,7 @@ print ', ' << genre.name
 
 genre = Genre.create(
   name: 'pop',
-  photo: ['pop1.jpg', 'pop2.jpg', 'pop3.jpg']
+  photo: ['pop1.jpg', 'pop2.jpg', 'pop3.jpg', 'pop4.jpg', 'pop5.jpg', 'pop6.jpg']
 )
 print ', ' << genre.name
 
