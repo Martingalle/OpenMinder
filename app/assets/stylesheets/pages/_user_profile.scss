@@ -4,6 +4,7 @@
   top: 0 ;
   bottom: 0;
   left: 30px;
+  margin-top: 40px;
   -webkit-box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
   -moz-box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
   box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
@@ -55,4 +56,12 @@
   border-left: 2px solid #3db3e5;
   padding-left: 15px;
   margin-bottom: 25px;
+}
+
+.blue-profile {
+  background-color: $light-blue;
+  height: 1px;
+  margin-top: 20px;
+  margin-left: -20px;
+  width: calc(100% + 40px);
 }

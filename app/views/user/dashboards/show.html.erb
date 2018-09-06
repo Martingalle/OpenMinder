@@ -1,5 +1,9 @@
 <% content_for :meta_title, "Profile on #{DEFAULT_META["meta_product_name"]}" %>
 
+<%= render 'shared/logo' %>
+
+<div class = "header-blue"></div>
+
 
 <%= render "profile" %>
 
@@ -20,19 +24,25 @@
         <button id="show-added-tracks" type="button" name="button" class="button-light-red">See all</button>
       </div>
       <div class="row added-tracks-hidden">
-        <% @tracks_added[4..@tracks_added.size].each do |track| %>
+        <% @tracks_added[4..@tracks_added.size+1].each do |track| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <%= render "track", track: track %>
           </div>
         <% end %>
       </div>
     <% end %>
+  <% else %>
+
+    <h4>You haven't add any tracks yet ! If you contribute, they will appear here</h4>
   <% end %>
 
+
+
+  <div class = "blue-profile"></div>
   <hr>
 
   <% if @tracks_voted.any? %>
-    <h4>Tracks you never thought you'd like</h4>
+    <h4>Tracks you approved</h4>
     <div class="row">
       <% @tracks_voted[0..3].each do |track| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
@@ -46,20 +56,24 @@
         <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
       </div>
       <div class="row voted-tracks-hidden">
-        <% @tracks_voted[4..@tracks_added.size].each do |track| %>
+        <% @tracks_voted[4..@tracks_voted.size+1].each do |track| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <%= render "track", track: track %>
           </div>
         <% end %>
       </div>
     <% end %>
+
+  <% else %>
+    <h4>Looks like you never approved any tracks, if you do, they will appear here</h4>
   <% end %>
 
+  <div class = "blue-profile"></div>
   <hr>
   <% appreciations = current_user.genres_appreciations_desc %>
   <% unless appreciations.nil? %>
     <div class="opinions-to-display">
-      <h4>You like <%= @favorite_genre.name %>? Try to beat these opinions!</h4>
+      <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it !</h4>
       <div class="opinion-cards-to-beat">
         <% opinion_count = @favorite_genre.opinions.uniq.count %>
         <% if opinion_count >= 3 %>

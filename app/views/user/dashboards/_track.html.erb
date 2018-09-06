@@ -3,7 +3,7 @@
     <p class = "track-title">
       <%= track.name %>
       <% unless track.upvotes.zero? %>
-        <span style="color: red;"> ♥ <%= track.upvotes %></span>
+        <span style="color: $dark-gray;"> ♡<%= track.upvotes %></span>
       <% end %>
     </p>
   </div>
