@@ -292,7 +292,7 @@ OPINIONS = [
   # OPINION 9 - Pop - La pop, c'est de la musique 'girly'
   # ___________________________________________________________
   {
-    ready: false,
+    ready: true,
     name: "Pop music is for girls only !",
     genre: 'pop',
     description: "Yes you're right. Sometimes pop music smells like lollipop and coton candy.
