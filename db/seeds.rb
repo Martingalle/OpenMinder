@@ -426,9 +426,9 @@ Opinion.destroy_all
 Genre.destroy_all
 User.destroy_all
 
-USERS_COUNT = 0
+USERS_COUNT = 48
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 0
+VOTES_BY_TRACK_MAX = 29
 
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'
@@ -464,7 +464,7 @@ USERS_COUNT.times do |count|
   User.create!(
     email: Faker::Internet.email << rand(0..9).to_s,
     password: 'azerty',
-    username: Faker::Internet.username,
+    username: Faker::Internet.username(5..8),
     birth_year: 1970,
     city: Faker::Address.city,
     photo: "avatar_#{count + 2}.png",
