@@ -124,7 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
           {
           playerVars: {
             fs: '0',
-            modestbranding: '1'
+            modestbranding: '1',
+            controls: '0',
+            rel: '0'
           },
           height: '100%',
           width: '100%'
