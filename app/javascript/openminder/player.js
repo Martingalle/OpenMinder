@@ -4,6 +4,7 @@ let player;
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
   function updatePlayerControls() {
     let first_child = document.querySelector(".hello-tracks").firstElementChild.firstElementChild;
     let last_child = document.querySelector(".hello-tracks").lastElementChild.firstElementChild;
@@ -41,14 +42,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         element.classList.add("opinion-track-selected");
+        updateVoteInPlayer();
         loadVideoById();
         playVideo();
       });
     }); // end of iteration on div array with id "tracks-js"
 
+    // let vote = document.getElementById("player-voted");
+    // let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
+    // let selected_li = selected.querySelector("li");
+    // let select = document.querySelector(".opinion-track-selected");
+
+  function updateVoteInPlayer () {
+    let vote = document.getElementById("player-voted");
+    let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
+    let selected_li = selected.querySelector("i");
+    let select = document.querySelector(".opinion-track-selected");
+      if (selected_li.classList.contains("voted") === true) {
+        vote.classList.add("voted");
+      } else if  (selected_li.classList.contains("voted") === false) {
+        vote.classList.remove("voted");
+      }
+  }
+
+
+  updateVoteInPlayer();
+
+  let vote = document.getElementById("player-voted");
+  let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
+  let selected_li = selected.querySelector("i");
+
+  selected_li.addEventListener("click", () => {
+    console.log("je suis dans l'add event listener");
+    if (selected_li.classList.contains("unvoted") === true) {
+      vote.classList.add("voted");
+    } else if (selected_li.classList.contains("unvoted") === false) {
+      vote.classList.remove("voted");
+    }
+  });
+
 
   const play = document.querySelector(".play-button");
   play.addEventListener("click", () => {
+    console.log("je suis dans l'add event listener de play");
     const pause = document.querySelector(".pause-button");
       play.classList.add("hidden");
       pause.classList.remove("hidden");
@@ -60,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pause_button = document.querySelector(".pause-button");
   pause_button.addEventListener("click", () => {
+    console.log("je suis dans l'add event listener de pause")
     const play_button = document.querySelector(".play-button");
       pause_button.classList.add("hidden");
       play_button.classList.remove("hidden");
@@ -78,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // gets youtubeId in variable to pass to the player
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
-    console.log(youtubeId);
 
     // display player on div with id="player"
     player = YouTubePlayer('player',
@@ -158,20 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function displayDurationHTML(duration) {
-    console.log("la durée de la chanson est");
-    console.log(duration);
   }
 
   function displayState(state){
-    console.log("l'état de la vidéo est");
-    console.log(state);
   }
 
   function playVideo() {
     changePlayToPause ();
     addInfosToPlayer();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
-    console.log(player.getPlayerState(youtubeId));
     player.playVideo(youtubeId);
     player.getCurrentTime(youtubeId);
     player.getDuration().then(displayDurationHTML);
@@ -197,54 +228,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 player.on('stateChange', (event) => {
-  console.log(event.data)
+  // console.log(event.data)
   switch (event.data) {
     case "-1":
-      console.log('non démarré.');
       break;
     case 0:
-      console.log('ended');
       playNextSong();
       break;
     case 1:
-      console.log('en lecture');
       changePlayToPause();
       break;
     case 2:
-      console.log('en pause');
       changePauseToPlay ();
       break;
     case 3:
-      console.log('en mémoire tampon');
       break;
     case 5:
-      console.log('en file dattente');
       break;
     default:
-      console.log('This is the default');
   }
 // -1 : non démarré 0 : arrêté 1 : en lecture 2 : en pause 3 : en mémoire tampon 5 : en file dattente
 });
 
-  // function onPlayerStateChange(event) {
-  //   if (event.data == YT.PlayerState.PLAYING) {
-  //     let playing = true;
-  //   }
-  // }
-
-  // // javascript to change play button in pause button and reverse
-  // const play_all = document.querySelectorAll(".play");
-  //   play_all.forEach((element) => {
-  //     element.addEventListener("click", () => {
-  //       // playVideo(youtubeId);
-  //       play_all.forEach((lt) => {
-  //         if (lt.classList.contains("hidden-arrow")) {
-  //           lt.classList.remove("hidden-arrow");
-  //         } //end if condition
-  //       }); //end forEach
-
-  //       element.classList.add("hidden-arrow");
-  //     });//end forEach AddEventListener
-  //   });
   updatePlayerControls();
 });//end DOM
