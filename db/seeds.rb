@@ -88,20 +88,52 @@ OPINIONS = [
   # OPINION 2 - Jazz - Le jazz, c'est aussi ennuyeux que la musique d'ascenseur
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le jazz, c'est aussi ennuyeux que la musique d'ascenseur",
+    ready: true,
+    name: "Jazz is as boring as elevator music",
     genre: 'jazz',
-    description: "",
+    description: "While all jazz does not have a vocalist, there is still a “story” that can be heard, a rise, climax and a fall.
+    Unlike some modern music, and so it definitely takes some time to appreciate.
+    With jazz, no two pieces are the same, and so you cannot get bored of listening to it.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'qNcPwrfK9tY',
+        genre: 'jazz',
+        name: "Kind of Blue",
+        artist: "Miles Davis"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'll3CMgiUPuU',
+        genre: 'jazz',
+        name: "John Coltrane",
+        artist: "A Love Supreme"
+      },
+      { youtube: 'vi0vIOd8XpU',
+        genre: 'jazz',
+        name: "Frank Sinitra",
+        artist: "The Very Best Of Frank Sinatra"
+      },
+      { youtube: 'tM0k7TPxX3I',
+        genre: 'jazz',
+        name: "Sonny Rollins",
+        artist: "Saxophone Colossus"
+      },
+      { youtube: 'dlee09qmnv4',
+        genre: 'jazz',
+        name: "Weather Report",
+        artist: "Heavy Weather"
+      },
+      { youtube: 'iC1XYHafUuM',
+        genre: 'jazz',
+        name: "The Very Thought of You",
+        artist: "Nat King Cole"
+      },
+      { youtube: 'rITUzQUfh_M',
+        genre: 'jazz',
+        name: "Big Band Machine",
+        artist: "Buddy Rich"
+      },
+      { youtube: '=yzxrBdryBzU',
+        genre: 'jazz',
+        name: "The Very Best of Benny Goodma",
+        artist: "Benny Goodman"
       },
     ]
   },
@@ -109,20 +141,34 @@ OPINIONS = [
   # OPINION 3 - Classique - L'opéra, ce ne sont que des histoires tristes et datéés
   # ___________________________________________________________
   {
-    ready: false,
-    name: "L'opéra, ce ne sont que des histoires tristes et datéés",
+    ready: true,
+    name: "Opera music tells old and sad stories",
     genre: 'classical',
-    description: "",
+    description: "You probably know the story of La Traviata, Carmen or Tristan and Isolde.
+    For sure, you can consider these stories to be tragic and old, but it's only so because of the time they take place!
+    The performers' act and singing talents are carrying universal emotions (love, anger, joy, etc.) we feel whatever the century we live
+    and easily identify with.
+    ",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'pyBv7CnsH58',
+        genre: 'classical',
+        name: "Bliss",
+        artist: "Opera Australia"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'luXlm5mUocc',
+        genre: 'classical',
+        name: "The Exterminating Angel",
+        artist: "Thomas Adès"
+      },
+      { youtube: 'AlUHKHLk_VU',
+        genre: 'classical',
+        name: "Dr Atomic",
+        artist: "John Adams"
+      },
+      { youtube: 'AlUHKHLk_VU',
+        genre: 'classical',
+        name: "The Turn of The Screw",
+        artist: "Valentina Carrasco"
       },
     ]
   },
@@ -130,20 +176,34 @@ OPINIONS = [
   # OPINION 4 - Rock - Le rock, c'est toujours les mêmes trois accords
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le rock, c'est toujours les mêmes trois accords",
+    ready: true,
+    name: "Rock is always the same three music chords",
     genre: 'rock',
-    description: "",
+    description: "There’s an old joke that asks:
+    'What’s the difference between a rock guitarist and a jazz guitarist?'
+    Answer: 'A rock guitarist plays three chords to a million people and a jazz guitarist plays a million chords to three people!'
+    See this? I – IV – V: this chord progression may be considered the foundation of classic rock ‘n’ roll, modern rock, and pop music.
+    It is extremely common in songs from the 60s to 70s and traces its roots all the way back to the blues. ",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'NmfzWpp0hMc',
+        genre: 'rock',
+        name: "CAFO",
+        artist: "Animals As Leaders"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'IZBlqcbpmxY',
+        genre: 'rock',
+        name: "Voodoo Child",
+        artist: "Jimi Hendrix"
+      },
+      { youtube: 'sI7XiJgt0vY',
+        genre: 'rock',
+        name: "Eruption",
+        artist: "Van Halen"
+      },
+      { youtube: 'Dj7MVn3Wagg',
+        genre: 'rock',
+        name: "The Mystical Potato Head Groove Thing",
+        artist: "Joe Satriani"
       },
     ]
   },
@@ -209,20 +269,58 @@ OPINIONS = [
   # OPINION 6 - Rap - Le rap, c'est par des mecs, pour des mec
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le rap, c'est par des mecs, pour des mecs",
+    ready: true,
+    name: "Rap music is mainly made by guys, for guys",
     genre: 'rap',
-    description: "",
+    description: "Since its beginnings in 70s New York, hip-hop has had a complicated history with women. Or rather, very little history at all.
+    It took the arrival of Lauryn Hill and Jean Grae in the mid-90s to offer an alternative to the tomboy/ temptress tropes.
+    Finally female rappers were allowed to be the sum of their many parts, rather than conform to the cultural confines placed upon women, and particularly women of colour.
+    Throughout 2017 we have seen a flood of female voices within rap, hip-hop and grime, and not just in the US or the UK, but around the globe. ",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'Wji4b2jjYOk',
+        genre: 'rap',
+        name: "Icy Grl",
+        artist: "Saweetie"
       },
-      { youtube: '',
-        genre: '',
+      { youtube: 'PEGccV-NOm8',
+        genre: 'rap',
+        name: "Bodak Yellow",
+        artist: "Cardi B"
+      },
+      { youtube: 'PN9ToyBbb_g',
+        genre: 'rap',
+        name: "Clap",
+        artist: "Ms Banks"
+      },
+      { youtube: 'pOTfQ4NjIKs',
+        genre: 'rap',
+        name: "Poppin",
+        artist: "Rico Nasty"
+      },
+      { youtube: 'c5n1wcFm9is',
+        genre: 'rap',
+        name: "Crayons",
+        artist: "CupcakKe"
+      },
+      { youtube: 'eSX7LmESZQ4',
+        genre: 'rap',
+        name: "Telefone",
+        artist: "Noname"
+      },
+      { youtube: 'tQ8xAeVp9qQ',
+        genre: 'rap',
+        name: "For Everybody",
+        artist: "Kash Doll"
+      },
+      { youtube: 'QGIDU7V3osQ',
+        genre: 'rap',
+        name: "Sad",
+        artist: "Kodie Shane"
+      },
+      { youtube: '6uRNpEynpcw',
+        genre: 'rap',
         name: "",
-        artist: ""
+        artist: "Kamaiyah"
       },
     ]
   },
@@ -230,20 +328,31 @@ OPINIONS = [
   # OPINION 7 - Jazz - Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation",
+    ready: true,
+    name: "Jazz is a band of guys playing like whatever because jazz is impro",
     genre: 'jazz',
-    description: "",
+    description: "Improvisation is a key ingredient of jazz that sets it apart from other genres: it requires you to really listen and feel the music!
+    Revered jazz trumpeter Miles Davis put it this way: 'I will play it first and tell you what it is later.'",
     tracks: [
       { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+        genre: 'jazz',
+        name: "Savoy Blues",
+        artist: "Louis Armstrong"
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'TrytKuC3Z_o',
+        genre: 'jazz',
+        name: "Satin Doll",
+        artist: "Duke Ellington "
+      },
+      { youtube: 'n4NLY8vi5Q8',
+        genre: 'jazz',
+        name: "Pipeline",
+        artist: "Bill Frisell"
+      },
+      { youtube: 'DNbD1JIH344',
+        genre: 'jazz',
+        name: "Lonely Woman",
+        artist: "Ornette Coleman"
       },
     ]
   },
@@ -252,9 +361,14 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Le jazz n’a pas changé depuis les années 40",
+    name: "Jazz hasn't changed since the 40s",
     genre: 'jazz',
-    description: "",
+    description: "That’s probably true. My jazz collection runs from the late 1940s to the 1970s, with a few exceptions
+    (Bill Evans recordings through 1980, Brad Mehldau, through the present, some Pat Metheney, etc.)
+    Two terrible things happened in jazz: “free jazz,” where anything goes, and nothing sounds like music, and “smooth jazz,” which is elevator music with saxophones.
+    If you check out new jazz releases, there’s not much going on that’s radically different from what was happening between, say, the 1950s and 1970s.
+    Some jazz musicians are using electronic music, or copying it (such as Dawn of Midi, with their album Dysnomia). But, overall, jazz new releases mostly sound like they could be decades old. 
+    One could, of course, say the same about rock music; since the 1980s, not much has evolved, other than the use of electronics.",
     tracks: [
       { youtube: '1q2DrOv_swE',
         genre: 'jazz',
