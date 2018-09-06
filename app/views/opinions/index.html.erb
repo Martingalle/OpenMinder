@@ -1,6 +1,9 @@
 <% content_for :meta_title, "All opinions of #{DEFAULT_META["meta_product_name"]}" %>
 
 <div class = "header-blue"></div>
+<%= link_to root_path do %>
+  <%= image_tag "logo-rond", alt: "alttext", class:'logo-index' %>
+<% end %>
 <%= render 'shared/searchbar' %>
 
 <div class="container">
