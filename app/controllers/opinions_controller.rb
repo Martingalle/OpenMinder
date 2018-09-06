@@ -10,17 +10,15 @@ class OpinionsController < ApplicationController
     # - creating a new opinion
     # ---------------------------------------------------------
 
-    # ---- search ----
     @opinions = policy_scope(Opinion).order(created_at: :desc)
-
+    @random_opinions = @opinions.sample(6)
     if params[:query].present?
       @genre_query = Genre.where(name: params[:query]).first
       @opinions = @opinions.select do |opinion|
         opinion.all_genres.include? @genre_query
       end
     end
-
-
+    @genres = Genre.all
     @searchable_genres = []
     Opinion.all.each do |opinion|
       opinion.all_genres.each do |genre|
@@ -28,14 +26,7 @@ class OpinionsController < ApplicationController
       end
     end
     @searchable_genres = @searchable_genres.uniq
-    # ----------------
-
-    @random_opinions = @opinions.sample(6)
-
     @opinion_new = Opinion.new
-
-    @genres = Genre.all
-
   end
 
   def show
@@ -63,18 +54,15 @@ class OpinionsController < ApplicationController
     # USER STORIES
     # - creating a new opinion
     # ---------------------------------------------------------
-    opinion = Opinion.new(opinion_params)
-    authorize opinion
-    opinion.creator = current_user
+    @opinion_new = Opinion.new(opinion_params)
+    authorize @opinion_new
+    @opinion_new.creator = current_user
     #@new = true
-    if opinion.save
+    if @opinion_new.save
       @track_new = Track.new
-      redirect_to opinion_path(opinion, new: true)
+      redirect_to opinion_path(@opinion_new, new: true)
     else
-      @opinions = Opinion.all
-      @random_opinions = Opinion.order('RANDOM()').limit(6)
-      @opinion_new = Opinion.new
-      redirect_to opinions_path
+      render_index
     end
   end
 
@@ -114,5 +102,25 @@ class OpinionsController < ApplicationController
     @youtube_ids = @opinion.tracks.pluck(:youtube_id)
     @tracks_desc = @opinion.tracks.order(created_at: :desc)
     render :show
+  end
+
+  def render_index
+    @opinions = policy_scope(Opinion).order(created_at: :desc)
+    @random_opinions = @opinions.sample(6)
+    if params[:query].present?
+      @genre_query = Genre.where(name: params[:query]).first
+      @opinions = @opinions.select do |opinion|
+        opinion.all_genres.include? @genre_query
+      end
+    end
+    @genres = Genre.all
+    @searchable_genres = []
+    Opinion.all.each do |opinion|
+      opinion.all_genres.each do |genre|
+        @searchable_genres << genre
+      end
+    end
+    @searchable_genres = @searchable_genres.uniq
+    render :index
   end
 end
