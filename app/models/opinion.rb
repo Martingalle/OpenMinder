@@ -5,6 +5,18 @@ class Opinion < ApplicationRecord
   has_many :tracks, dependent: :destroy
   has_many :genres, through: :tracks
 
+  validates :name, presence: true, length: {
+    minimum: 20,
+    maximum: 140,
+    too_short: "%{count} characters is the minimum allowed",
+    too_long: "%{count} characters is the maximum allowed" }
+  validates :description, presence: true, length: {
+    minimum: 100,
+    maximum: 350,
+    too_short: "%{count} characters is the minimum allowed",
+    too_long: "%{count} characters is the maximum allowed" }
+  validates :genre, presence: true
+
   def genres_occurrences
     genres_id_occurrences = {}
     Genre.all.each { |genre| genres_id_occurrences[genre.id] = 0 }

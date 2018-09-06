@@ -251,7 +251,7 @@ OPINIONS = [
   # OPINION 8 - Jazz - Le jazz n’a pas changé depuis les années 40
   # ___________________________________________________________
   {
-    ready: true,
+    ready: false,
     name: "Le jazz n’a pas changé depuis les années 40",
     genre: 'jazz',
     description: "",
@@ -426,9 +426,9 @@ Opinion.destroy_all
 Genre.destroy_all
 User.destroy_all
 
-USERS_COUNT = 48
+USERS_COUNT = 0
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 29
+VOTES_BY_TRACK_MAX = 0
 
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'

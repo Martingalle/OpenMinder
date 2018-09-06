@@ -14,6 +14,12 @@ class User < ApplicationRecord
 
   before_create :set_photo
 
+  validates :username, presence: true, length: {
+    minimum: 3,
+    maximum: 15,
+    too_short: "%{count} characters is the minimum allowed",
+    too_long: "%{count} characters is the maximum allowed" }
+
   def genres_appreciations
     return nil if self.tracks_added.empty? && self.tracks_voted.empty?
     genres_id_added = {}

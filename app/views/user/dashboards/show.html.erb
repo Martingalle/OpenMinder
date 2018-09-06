@@ -33,7 +33,7 @@
     <% end %>
   <% else %>
 
-    <h4>You haven't add any tracks yet ! If you contribute, they will appear here</h4>
+    <h4>You haven't add any tracks yet! If you contribute, they will appear here...</h4>
   <% end %>
 
 
@@ -65,7 +65,7 @@
     <% end %>
 
   <% else %>
-    <h4>Looks like you never approved any tracks, if you do, they will appear here</h4>
+    <h4>Looks like you never approved any tracks, if you do, they will appear here...</h4>
   <% end %>
 
   <div class = "blue-profile"></div>
@@ -73,25 +73,14 @@
   <% appreciations = current_user.genres_appreciations_desc %>
   <% unless appreciations.nil? %>
     <div class="opinions-to-display">
-      <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it !</h4>
+      <% if @favorite_genre_match %>
+        <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it!</h4>
+      <% else %>
+        <h4>Here are some opinions you should discover!</h4>
+      <% end %>
       <div class="opinion-cards-to-beat">
-        <% opinion_count = @favorite_genre.opinions.uniq.count %>
-        <% if opinion_count >= 3 %>
-          <% @favorite_genre.opinions[0..2].each do |opinion| %>
-            <%= render "shared/one_card", opinion: opinion %>
-          <% end  %>
-        <% elsif opinion_count == 2 %>
-          <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
-          <%= render "shared/one_card", opinion: @favorite_genre.opinions[1] %>
-          <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
-        <% else opinion_count == 1 %>
-          <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
-          <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
-          <% if @second_favorite_genre.opinions.count >= 2 %>
-            <%= render "shared/one_card", opinion: @second_favorite_genre.opinions[1] %>
-          <% else %>
-            <%= render "shared/one_card", opinion: @third_favorite_genre.opinions.first %>
-          <% end %>
+        <% @discover.each do |opinion| %>
+          <%= render "shared/one_card", opinion: opinion %>
         <% end %>
       </div>
     </div>
