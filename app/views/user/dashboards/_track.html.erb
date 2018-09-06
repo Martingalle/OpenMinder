@@ -1,11 +1,13 @@
-<div class="user-track added ">
-  <div>
-    <p class = "track-title">
-      <%= track.name %>
-      <% unless track.upvotes.zero? %>
-        <span style="color: $dark-gray;"> ♡<%= track.upvotes %></span>
-      <% end %>
-    </p>
+<%= link_to opinion_path(track.opinion) do  %>
+  <div class="user-track">
+    <div>
+      <p class = "track-title">
+        <%= track.name %>
+        <% unless track.upvotes.zero? %>
+          <span style="color: $dark-gray;"> ♡<%= track.upvotes %></span>
+        <% end %>
+      </p>
+    </div>
+    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
   </div>
-  <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-</div>
+<% end %>

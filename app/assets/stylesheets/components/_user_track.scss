@@ -1,4 +1,13 @@
 .user-track {
   display: inline-block;
   margin: 10px;
+  border-radius: 10px;
+  transform: translateY(0px);
+  transition: all 0.5s ease-in-ease-out;
+
+  &:hover{
+    p {
+      font-weight: normal;
+    }
+  }
 }
