@@ -70,19 +70,16 @@
 
   <div class = "blue-profile"></div>
   <hr>
-  <% appreciations = current_user.genres_appreciations_desc %>
-  <% unless appreciations.nil? %>
-    <div class="opinions-to-display">
-      <% if @favorite_genre_match %>
-        <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it!</h4>
-      <% else %>
-        <h4>Here are some opinions you should discover!</h4>
+  <div class="opinions-to-display">
+    <% if @favorite_genre_match %>
+      <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it!</h4>
+    <% else %>
+      <h4>Here are some opinions you should discover!</h4>
+    <% end %>
+    <div class="opinion-cards-to-beat">
+      <% @discover.each do |opinion| %>
+        <%= render "shared/one_card", opinion: opinion %>
       <% end %>
-      <div class="opinion-cards-to-beat">
-        <% @discover.each do |opinion| %>
-          <%= render "shared/one_card", opinion: opinion %>
-        <% end %>
-      </div>
     </div>
-  <% end %>
+  </div>
 </div>
