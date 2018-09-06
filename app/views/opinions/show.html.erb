@@ -1,7 +1,7 @@
-<% content_for :meta_title, "#{@opinion.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_title, "#{@opinion.name}, a new opinion to beat on #{DEFAULT_META["meta_product_name"]}!" %>
 <% content_for :meta_description, @opinion.description %>
 <% unless @opinion.main_genre.nil? %>
-  <% content_for :meta_image, image_path(@opinion.main_genre.photo.sample) %>
+  <% content_for :meta_image, image_path "genres/#{@opinion.genre.photo.sample}" %>
 <% end %>
 
 <%= render 'shared/logo' %>
