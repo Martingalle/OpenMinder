@@ -1,8 +1,6 @@
 <% content_for :meta_title, "#{@opinion.name}, a new opinion to beat on #{DEFAULT_META["meta_product_name"]}!" %>
-<% content_for :meta_description, @opinion.description %>
-<% unless @opinion.main_genre.nil? %>
-  <% content_for :meta_image, image_path "genres/#{@opinion.genre.photo.sample}" %>
-<% end %>
+<% content_for :meta_description, "{@opinion.description}" %>
+<% content_for :meta_image, "genres/#{@opinion.genre.photo.sample}" %>
 
 <%= render 'shared/logo' %>
 
@@ -14,7 +12,7 @@
     <div class="opinion-banner">
       <div class="opinion-description-quote">
         <h1>
-         ² <i class="fas fa-quote-left"></i>
+          <i class="fas fa-quote-left"></i>
           <%= @opinion.name %>
           <i class="fas fa-quote-right"></i>
         </h1>

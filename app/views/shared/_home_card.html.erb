@@ -6,7 +6,7 @@
       <% if opinion.main_genre.nil? %>
         <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb87cdb308815f5e6decf7d1a3a4e7ca&auto=format&fit=crop&w=1001&q=80');"></div>
       <% else %>
-      <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path(opinion.main_genre.photo.sample) %>');"></div>
+      <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path "genres/#{opinion.genre.photo.sample}" %>');"></div>
       <% end %>
 
       <p class="card-heading">

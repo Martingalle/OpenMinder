@@ -13,7 +13,7 @@
 
         <% else %>
 
-          <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path(opinion.main_genre.photo.sample) %>');">
+          <div class="card-genre-photo" style="background-image: linear-gradient(115.74492221071614deg, rgba(0, 0, 0,0.6) 20.6015625%,rgba(1, 1, 1,0.6) 20.6015625%,rgba(255, 255, 255,0.4) 82.1640625%), url('<%= image_path "genres/#{opinion.genre.photo.sample}" %>');">
           </div>
         <% end %>
 
