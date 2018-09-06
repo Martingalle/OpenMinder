@@ -10,24 +10,25 @@ class OpinionsController < ApplicationController
     # - creating a new opinion
     # ---------------------------------------------------------
 
-
-
-
     # ---- search ----
     @opinions = policy_scope(Opinion).order(created_at: :desc)
 
     if params[:query].present?
-      @search_query = params[:query]
+      @genre_query = Genre.where(name: params[:query]).first
       @opinions = @opinions.select do |opinion|
-        if opinion.main_genre != nil
-          opinion.main_genre.name == params[:query]
-        end
+        opinion.all_genres.include? @genre_query
       end
     end
+
+
+    @searchable_genres = []
+    Opinion.all.each do |opinion|
+      opinion.all_genres.each do |genre|
+        @searchable_genres << genre
+      end
+    end
+    @searchable_genres = @searchable_genres.uniq
     # ----------------
-
-
-
 
     @random_opinions = @opinions.sample(6)
 
