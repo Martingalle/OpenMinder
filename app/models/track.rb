@@ -1,12 +1,12 @@
 class Track < ApplicationRecord
   belongs_to :creator, class_name: 'User'
-  belongs_to :genre
   belongs_to :opinion
+  belongs_to :genre
   has_many :votes, dependent: :destroy
 
   has_many :users_voting, through: :votes,  :source => 'user'
 
-  before_validation :set_genre
+  before_create :set_genre
 
   def upvotes
     self.votes.count
@@ -16,7 +16,7 @@ class Track < ApplicationRecord
 
   def set_genre
     if self.genre.nil?
-      self.genre = Genre.order('RANDOM()').first
+      self.genre = self.opinion.genre
     end
   end
 end

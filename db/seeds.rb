@@ -10,10 +10,12 @@ OPINIONS = [
 
   # 2 - Correct the name (name: ...) if needed. Max 140 characters.
 
-  # 3 - Write a description (or copy it from an article), about 350 characters.
+  # 3 - Add the main genre of the opinion in 'genre'.
+
+  # 4 - Write a description (or copy it from an article), about 350 characters.
   #     You can write it on several lines, it doesn't change anything.
 
-  # 4 - Create the playlist by filling the 'tracks' array.
+  # 5 - Create the playlist by filling the 'tracks' array.
   #     For each track to add, you need to create a new hash {} (copy the previous one).
   #     In the hash, there's 4 keys: 'youtube', 'genre', 'name', 'artist'.
   #     Each value is a string "...".
@@ -23,9 +25,9 @@ OPINIONS = [
 
   # ! Be carreful to not forget comas at the end of each data !
 
-  # 5 - When everything is ready, change the value of 'ready' key to true (false by default).
+  # 6 - When everything is ready, change the value of 'ready' key to true (false by default).
 
-  # 6 - Run db:seed and check if everything works in the website, especially if all videos play.
+  # 7 - Run db:seed and check if everything works in the website, especially if all videos play.
 
 # ______________________________________________________________________________
 
@@ -35,6 +37,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Rap lyrics are so poor, they just mumble!",
+    genre: 'rap',
     description:
     "Why is rap so bad? This is an opinion.
     Rap Music is bad because people have preferences of music.
@@ -87,6 +90,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Le jazz, c'est aussi ennuyeux que la musique d'ascenseur",
+    genre: 'jazz',
     description: "",
     tracks: [
       { youtube: '',
@@ -107,6 +111,7 @@ OPINIONS = [
   {
     ready: false,
     name: "L'opéra, ce ne sont que des histoires tristes et datéés",
+    genre: 'classical',
     description: "",
     tracks: [
       { youtube: '',
@@ -127,6 +132,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Le rock, c'est toujours les mêmes trois accords",
+    genre: 'rock',
     description: "",
     tracks: [
       { youtube: '',
@@ -147,6 +153,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Classical is inaudible unless you understand it perfectly.",
+    genre: 'classical',
     description: "The formula for a boring classical concert usually comes down to its vibe, atmosphere and programming.
     I feel as though the dish being served cannot be too daring or risky.
     But when it is, it allows the players to unleash their talent upon the music. ",
@@ -204,6 +211,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Le rap, c'est par des mecs, pour des mecs",
+    genre: 'rap',
     description: "",
     tracks: [
       { youtube: '',
@@ -224,6 +232,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation",
+    genre: 'jazz',
     description: "",
     tracks: [
       { youtube: '',
@@ -244,6 +253,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Le jazz n’a pas changé depuis les années 40",
+    genre: 'jazz',
     description: "",
     tracks: [
       { youtube: '1q2DrOv_swE',
@@ -284,6 +294,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Pop music is for girls only !",
+    genre: 'pop',
     description: "yes you're right. Sometimes pop music smells like lollipop and coton candy.
     Lets say 9 out of 10. We, as men, cannot listen to Hannah Montana or One Direction beside flirting,
     here are a few great pop songs for real men. Please add your style if you have some inspiration !",
@@ -336,6 +347,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Flute is for classical nerds only",
+    genre: 'rock',
     description: "Yes it's true, sometimes the flute is played by little girl and
     guys under drugs. But have you ever listened to rock flute ?
     Forget the dreary medievalism or contemplative thoughtfulness.
@@ -389,6 +401,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Rock has not changed since the 70s",
+    genre: 'rock',
     description: "",
     tracks: [
       { youtube: '',
@@ -524,6 +537,7 @@ OPINIONS.each do |opinion|
     user = User.order('RANDOM()').first
     opinion_instance = Opinion.create!(
       name: opinion[:name],
+      genre_id: Genre.where(name: opinion[:genre]).first.id,
       description: opinion[:description],
       creator_id: user.id
     )
