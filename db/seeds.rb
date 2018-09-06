@@ -479,31 +479,31 @@ puts 'CREATING GENRES'
 
 genre = Genre.create(
   name: 'classical',
-  photo: ['classical1.jpg', 'classical2.jpg', 'classical3.jpg']
+  photo: ['classical1.jpg', 'classical2.jpg', 'classical3.jpg', 'classical4.jpg', 'classical5.jpg', 'classical6.jpg']
 )
 print genre.name
 
 genre = Genre.create(
   name: 'electro',
-  photo: ['electro1.jpg', 'electro2.jpg', 'electro3.jpg']
+  photo: ['electro1.jpg', 'electro2.jpg', 'electro3.jpg', 'electro4.jpg', 'electro5.jpg', 'electro6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
   name: 'rock',
-  photo: ['rock1.jpg', 'rock2.jpg', 'rock3.jpg']
+  photo: ['rock1.jpg', 'rock2.jpg', 'rock3.jpg', 'rock4.jpg', 'rock5.jpg', 'rock6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
   name: 'jazz',
-  photo: ['jazz1.jpg', 'jazz2.jpg', 'jazz3.jpg']
+  photo: ['jazz1.jpg', 'jazz2.jpg', 'jazz3.jpg', 'jazz4.jpg', 'jazz5.jpg', 'jazz6.jpg']
 )
 print ', ' << genre.name
 
 genre = Genre.create(
   name: 'rap',
-  photo: ['rap1.jpg', 'rap2.jpg', 'rap3.jpg']
+  photo: ['rap1.jpg', 'rap2.jpg', 'rap3.jpg', 'rap4.jpg', 'rap5.jpg', 'rap6.jpg']
 )
 print ', ' << genre.name
 
@@ -515,7 +515,7 @@ print ', ' << genre.name
 
 genre = Genre.create(
   name: 'pop',
-  photo: ['pop1.jpg', 'pop2.jpg', 'pop3.jpg']
+  photo: ['pop1.jpg', 'pop2.jpg', 'pop3.jpg', 'pop4.jpg', 'pop5.jpg', 'pop6.jpg']
 )
 print ', ' << genre.name
 
