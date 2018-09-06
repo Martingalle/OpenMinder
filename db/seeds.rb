@@ -293,11 +293,10 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Pop music is for girls only !",
+    name: "Pop music is cheesy!",
     genre: 'pop',
-    description: "Yes you're right. Sometimes pop music smells like lollipop and coton candy.
-    Lets say 9 out of 10. We, as men, cannot listen to Hannah Montana or One Direction beside flirting,
-    here are a few great pop songs for real men. Please add your style if you have some inspiration !",
+    description: "Well, pop music smells like lollipop and coton candy more than like cheese, no?
+    Here are a few great pop songs, not cheesy, but still glittery! Please add your style if you have some inspiration!",
     tracks: [
       { youtube: 'PIb6AZdTr-A',
         genre: 'pop',
