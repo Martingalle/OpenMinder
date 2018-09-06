@@ -7,7 +7,7 @@
 
 <%= render "profile" %>
 
-<div class="wrapper">
+<div class="user-wrapper">
 
   <% if @tracks_added.any? %>
     <h4>Tracks you added</h4>
@@ -72,7 +72,7 @@
   <hr>
   <div class="opinions-to-display">
     <% if @favorite_genre_match %>
-      <h4>From your likes, it seems that you are found of <%= @favorite_genre.name %>! Try to beat these opinions to help other understand it!</h4>
+      <h4>From your likes, it seems that you are found of <span class="underlined-title"><%= @favorite_genre.name %></span>! Try to beat these opinions to help other understand it!</h4>
     <% else %>
       <h4>Here are some opinions you should discover!</h4>
     <% end %>

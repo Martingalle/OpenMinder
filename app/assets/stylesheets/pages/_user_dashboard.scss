@@ -1,4 +1,4 @@
-.wrapper {
+.user-wrapper {
   margin-top: 60px;
   margin-left: 400px;
   margin-right: 100px;
@@ -15,6 +15,12 @@
     width: 175px;
     overflow: hidden;
     font-size: 14px;
+  }
+
+  .underlined-title:before {
+    width: 100%;
+    max-width: 100%;
+    height: 10px;
   }
 }
 
