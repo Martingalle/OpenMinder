@@ -1,0 +1,11 @@
+<div class="user-track added ">
+  <div>
+    <p class = "track-title">
+      <%= track.name %>
+      <% unless track.upvotes.zero? %>
+        <span style="color: red;"> ♥ <%= track.upvotes %></span>
+      <% end %>
+    </p>
+  </div>
+  <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
+</div>

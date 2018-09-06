@@ -1,0 +1,58 @@
+#profile-info{
+  width: 300px;
+  position: fixed;
+  top: 0 ;
+  bottom: 0;
+  left: 30px;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
+  box-shadow: 1px 1px 1px 0px rgba(219,219,219,1);
+  .greeting {
+    color: $light-blue;
+    padding-top: 70px;
+    font-size: 30px;
+    font-weight: 300;
+  }
+  h5 {
+    font-weight: lighter;
+    color: $dark-gray;
+  }
+  p {
+    font-weight: lighter;
+    color: $dark-gray;
+    margin-bottom: 0;
+  }
+  .fas {
+    font-size: 14px;
+    color: $dark-gray;
+
+  }
+  .infos {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  .infos-title {
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+}
+
+.email-info {
+  border-left: 2px solid #3db3e5;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.password-info {
+  border-left: 2px solid #3db3e5;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.location-info {
+  border-left: 2px solid #3db3e5;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}

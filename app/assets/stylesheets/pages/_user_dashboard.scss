@@ -1,0 +1,58 @@
+.wrapper {
+  margin-top: 60px;
+  margin-left: 400px;
+  margin-right: 100px;
+  min-height: 100vh;
+  h4 {
+    font-weight: lighter;
+    color: $dark-gray;
+
+  }
+  .track-title {
+    font-weight: lighter;
+    color: $dark-gray;
+    height: 40px;
+    width: 175px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+}
+
+
+.opinions-to-discover {
+  .infos {
+    font-weight: lighter;
+    color: $dark-gray;
+
+  }
+}
+
+.button-row {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.opinion-cards-to-beat {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .cards {
+    margin: 10px;
+  }
+}
+
+.added-tracks-hidden {
+  display: none;
+}
+
+.added-tracks-displayed {
+  display: block;
+}
+
+.voted-tracks-hidden {
+  display: none;
+}
+
+.voted-tracks-displayed {
+  display: block;
+}

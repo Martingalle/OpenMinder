@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('#goRight').on('click', function(e){
-    console.log("hey");
     $('#slideBox').animate({
       'marginLeft' : '0%'
     });

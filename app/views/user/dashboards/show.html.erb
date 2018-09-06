@@ -1,31 +1,85 @@
-<h4>Tracks you added</h4>
+<% content_for :meta_title, "Profile on #{DEFAULT_META["meta_product_name"]}" %>
 
-<% @tracks_added.each do |track| %>
-  <div class="user-track">
-    <div>
-      <p>
-        <%= track.name %>
-        <% unless track.upvotes.zero? %>
-          <span style="color: red;"> ♥ <%= track.upvotes %></span>
-        <% end %>
-      </p>
-    </div>
-    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-  </div>
-<% end %>
 
-<hr>
+<%= render "profile" %>
 
-<h4>Tracks you voted for</h4>
+<div class="wrapper">
 
-<% @tracks_voted.each do |track| %>
-  <div class="user-track">
-    <p>
-      <%= track.name %>
-      <% unless track.upvotes.zero? %>
-        <span style="color: red;"> ♥ <%= track.upvotes %></span>
+  <% if @tracks_added.any? %>
+    <h4>Tracks you added</h4>
+    <div class="row">
+      <% @tracks_added[0..3].each do |track| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= render "track", track: track %>
+        </div>
       <% end %>
-    </p>
-    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
-  </div>
-<% end %>
+    </div>
+
+    <% if @tracks_added.size > 4 %>
+      <div class="row button-row">
+        <button id="show-added-tracks" type="button" name="button" class="button-light-red">See all</button>
+      </div>
+      <div class="row added-tracks-hidden">
+        <% @tracks_added[4..@tracks_added.size].each do |track| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= render "track", track: track %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <hr>
+
+  <% if @tracks_voted.any? %>
+    <h4>Tracks you never thought you'd like</h4>
+    <div class="row">
+      <% @tracks_voted[0..3].each do |track| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= render "track", track: track %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @tracks_voted.size > 4 %>
+      <div class="row button-row">
+        <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
+      </div>
+      <div class="row voted-tracks-hidden">
+        <% @tracks_voted[4..@tracks_added.size].each do |track| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%= render "track", track: track %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <hr>
+  <% appreciations = current_user.genres_appreciations_desc %>
+  <% unless appreciations.nil? %>
+    <div class="opinions-to-display">
+      <h4>You like <%= @favorite_genre.name %>? Try to beat these opinions!</h4>
+      <div class="opinion-cards-to-beat">
+        <% opinion_count = @favorite_genre.opinions.uniq.count %>
+        <% if opinion_count >= 3 %>
+          <% @favorite_genre.opinions[0..2].each do |opinion| %>
+            <%= render "shared/one_card", opinion: opinion %>
+          <% end  %>
+        <% elsif opinion_count == 2 %>
+          <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
+          <%= render "shared/one_card", opinion: @favorite_genre.opinions[1] %>
+          <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
+        <% else opinion_count == 1 %>
+          <%= render "shared/one_card", opinion: @favorite_genre.opinions.first %>
+          <%= render "shared/one_card", opinion: @second_favorite_genre.opinions.first %>
+          <% if @second_favorite_genre.opinions.count >= 2 %>
+            <%= render "shared/one_card", opinion: @second_favorite_genre.opinions[1] %>
+          <% else %>
+            <%= render "shared/one_card", opinion: @third_favorite_genre.opinions.first %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

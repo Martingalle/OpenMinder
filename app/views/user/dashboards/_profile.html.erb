@@ -1,0 +1,28 @@
+
+<div id="profile-info">
+  <p class="greeting">Hello <%= current_user.username%>!</p>
+
+  <% if current_user.photo.nil? %>
+  <!-- mettre une image par defaut  -->
+  <% else %>
+    <img src='<%= image_path "users/#{current_user.photo}" %>' class="avatar-large"/>
+  <% end %>
+  <p class="infos-title">Your profile information</p>
+  <div class ="email-info">
+    <p class="infos"><i class="fas fa-at"></i> Email</p>
+    <p><%= current_user.email %></p>
+  </div>
+  <div class="password-info">
+    <p class="infos"><i class="fas fa-key"></i> Password </p>
+    <p><%= link_to "Edit your password", edit_user_registration_path, :target => "_blank" %></p>
+  </div>
+  <div class="location-info">
+    <p class="infos"><i class="fas fa-map-marker-alt"></i> Location </p>
+    <% if current_user.city.nil? %>
+      <p> -- </p>
+    <% else %>
+      <p><%= current_user.city %></p>
+    <% end %>
+  </div>
+
+</div>
