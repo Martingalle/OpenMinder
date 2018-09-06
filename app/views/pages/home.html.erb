@@ -22,11 +22,11 @@
   <div class="details">
     <div class="detail">
       <%= render 'shared/svg_discover' %>
-      <p class="detail_info">Discover new musical content in an original way : just select a cliche that you believe in and let others show you that you were wrong !</p>
+      <p class="detail_info">Discover new musical content in an original way: just select a cliche that you believe in and let others show you that you were wrong!</p>
     </div>
     <div class="detail">
       <%= render 'shared/svg_suggest' %>
-      <p class="detail_info">You can also participate ! Submit songs that are able to beat a cliche and try to beat the convinced users !</p>
+      <p class="detail_info">You can also participate! Submit songs that are able to beat a cliche and try to beat the convinced users!</p>
     </div>
     <div class="detail">
       <%= render 'shared/svg_share' %>
@@ -35,13 +35,13 @@
   </div>
     <div class="next-button">
       <a href="#cards">
-        <button class="button-red">Lasts cards</button>
+        <button class="button-red">Latest cards</button>
       </a>
     </div>
 </div>
 
 <div class="last-cards" id="cards">
-  <h2 class="underlined-title">Last cards</h2>
+  <h2 class="underlined-title">Latest cards</h2>
   <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
   <div class="details-buttons">
     <%= link_to opinions_path do  %>
