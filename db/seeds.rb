@@ -20,7 +20,7 @@ OPINIONS = [
   #     In the hash, there's 4 keys: 'youtube', 'genre', 'name', 'artist'.
   #     Each value is a string "...".
   #     The value for the 'youtube' key is the youtube id, find it on Youtube directly (11 numbers).
-  #     The value of genre should be: classical, rock, jazz, hip hop, folk, pop, electro or metal?
+  #     The value of genre should be: classical, rock, jazz, hip hop, folk, pop, electronic or metal?
   #     Then fill the name of the song and the name of the artist.
 
   # ! Be carreful to not forget comas at the end of each data !
@@ -128,9 +128,9 @@ OPINIONS = [
         name: "Big Band Machine",
         artist: "Buddy Rich"
       },
-      { youtube: '=yzxrBdryBzU',
+      { youtube: 'sHcneaZIvVM',
         genre: 'jazz',
-        name: "The Very Best of Benny Goodma",
+        name: "Moonglow",
         artist: "Benny Goodman"
       },
     ]
@@ -162,7 +162,7 @@ OPINIONS = [
         name: "Dr Atomic",
         artist: "John Adams"
       },
-      { youtube: 'AlUHKHLk_VU',
+      { youtube: 'VVz-QAJJqig',
         genre: 'classical',
         name: "The Turn of The Screw",
         artist: "Valentina Carrasco"
@@ -312,7 +312,7 @@ OPINIONS = [
       },
       { youtube: '6uRNpEynpcw',
         genre: 'hip hop',
-        name: "",
+        name: "Build You Up",
         artist: "Kamaiyah"
       },
     ]
@@ -327,7 +327,7 @@ OPINIONS = [
     description: "Improvisation is a key ingredient of jazz that sets it apart from other genres: it requires you to really listen and feel the music!
     Revered jazz trumpeter Miles Davis put it this way: 'I will play it first and tell you what it is later.",
     tracks: [
-      { youtube: '',
+      { youtube: 'DiNzXslovVk',
         genre: 'jazz',
         name: "Savoy Blues",
         artist: "Louis Armstrong"
@@ -354,12 +354,41 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Jazz hasn't changed since the 40s",
+    name: "Jazz has not change since the 40's",
     genre: 'jazz',
-    description: "That’s probably true. My jazz collection runs from the late 40s to the 70s with a few exceptions
-    (Bill Evans recordings, Brad Mehldau, through the present, some Pat Metheney)
-    Two terrible things happened in jazz: free jazz where anything goes and nothing sounds like music, and smooth jazz which is elevator music with saxophones.",
+    description:
+    "Jazz is an outdated music for outdated people. The sound and the genre did not change and it's anachronic to listen to jazz today",
     tracks: [
+      { youtube: 'tWZdrBzgou8',
+        genre: 'jazz',
+        name: "Chocolate Chip",
+        artist: 'Miles Davis'
+      },
+      { youtube: 'LxW8dyxvhNU',
+        genre: 'jazz',
+        name: 'Frankenstein',
+        artist: 'Marcus Miller'
+      },
+      { youtube: 'U8NFS8WXfCI',
+        genre: 'jazz',
+        name: 'Re run home',
+        artist: 'Kamasi Washington'
+      },
+      { youtube: 'BvOZVPbTNMU',
+        genre: 'jazz',
+        name: 'Medina',
+        artist: 'Kamaal Williams'
+      },
+      { youtube: 'VsHT2PUysmw',
+        genre: 'jazz',
+        name: 'Il l a fait avec sa soeur',
+        artist: 'Chromb!'
+      },
+      { youtube: 'C8lX9sOLDvs',
+        genre: 'jazz',
+        name: 'Mista President',
+        artist: 'The Souljazz Orchestra'
+      },
       { youtube: '1q2DrOv_swE',
         genre: 'jazz',
         name: "The Creeper | Sofar London",
@@ -388,7 +417,7 @@ OPINIONS = [
       { youtube: 'lZmjxrfqdOo',
         genre: 'jazz',
         name: "A.R.E. Project",
-        artist: "RA Sessions"
+        artist: "A.R.E. Project"
       },
     ]
   },
@@ -476,7 +505,7 @@ OPINIONS = [
         name: "Born To Wander",
         artist: "Rare Earth"
       },
-      { youtube: 'NNyPXWMnIz0',
+      { youtube: 'AfON7S1mP2Q',
         genre: 'rock',
         name: "You’ve Got to Hide Your Love Away",
         artist: "Beatles"
@@ -502,20 +531,216 @@ OPINIONS = [
   # OPINION 11 - Rock - Le Rock n'a pas changé depuis les années 70
   # ___________________________________________________________
   {
-    ready: false,
-    name: "Rock has not changed since the 70s",
+  ready: false,
+    ready: true,
+    name: "Rock has not changed since the 70's",
     genre: 'rock',
-    description: "",
+    description:
+    "I still exclusively listen the tracks I used to listen in the 70's, if there are youngens around here show me that the rock can renew itself. ",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'sBzrzS1Ag_g',
+        genre: 'rock',
+        name: "The less I know the better",
+        artist: 'Tame Impala'
       },
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ""
+      { youtube: 'C-S_7A8skNw',
+        genre: 'rock',
+        name: 'To call my own',
+        artist: 'They call me Rico'
+      },
+      { youtube: 'VisSLsjrFqY',
+        genre: 'rock',
+        name: 'Can t stand me now',
+        artist: 'The Libertines'
+      },
+      { youtube: 'NQwsiIlIfH8',
+        genre: 'rock',
+        name: 'That look you give that guy',
+        artist: 'Eels'
+      },
+      { youtube: '0ZECWpnQNQ',
+        genre: 'rock',
+        name: 'Videotape',
+        artist: 'Radiohead'
+      },
+      { youtube: '_ROzwcezTHw',
+        genre: 'rock',
+        name: 'L oiseau',
+        artist: 'Feu Chatterton!'
+      },
+    ]
+  },
+   # OPINION 12 - Jazz - Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation
+  # ___________________________________________________________
+  {
+    ready: true,
+    name: "Jazz is a noisy music",
+    genre: 'jazz',
+    description:
+    "Jazz is mostly high pitched saxophone or trompet notes blown into your ears",
+    tracks: [
+      { youtube: 'tSv04ylc6To',
+        genre: 'jazz',
+        name: "Kokoroko",
+        artist: 'Abusey Junction'
+      },
+      { youtube: 'I_3cR-MDC3g',
+        genre: 'jazz',
+        name: 'San Lorenzo',
+        artist: 'Pat Metheny Group'
+      },
+      { youtube: 'WLiRqplwG_U',
+        genre: 'jazz',
+        name: 'Think of You',
+        artist: 'Terrace Martin'
+      },
+      { youtube: 'QUMuDWDVd20',
+        genre: 'jazz',
+        name: 'Turiya And Ramakrishna',
+        artist: 'Alice Coltrane'
+      },
+      { youtube: '4-lIg4hH31c',
+        genre: 'jazz',
+        name: 'Jackson reef',
+        artist: 'Nils Petter Molvær'
+      },
+      { youtube: 'NBQkHTPV_C8',
+        genre: 'jazz',
+        name: 'Smokes gets in your eyes',
+        artist: 'Miles Davis'
+      },
+    ]
+  },
+  # OPINION 13 - electronic - Electronic music is only dancefloor oriented, there is no emotions
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Electronic music is only dancefloor oriented, there is no emotions",
+    genre: 'electro',
+    description:
+    "I feel like all the electro music tracks are made to sound good on a club soundsystem. The only thing that matters to the artists and the public is the strong basse",
+    tracks: [
+      { youtube: 'vZAajrxvDs4',
+        genre: 'electro',
+        name: "But only love can break your heart",
+        artist: 'Saint Etienne'
+      },
+      { youtube: 'dIwwjy4slI8',
+        genre: 'electro',
+        name: "Says",
+        artist: 'Nils Frahm'
+      },
+      { youtube: 'UpiqXuNU7I',
+        genre: 'electro',
+        name: 'The sunrise in her eyes',
+        artist: 'Route 8'
+      },
+      { youtube: 'Dzrw52pTpso',
+        genre: 'electro',
+        name: 'Bye Bye Macadam',
+        artist: 'Rone'
+      },
+      { youtube: 'AWIqXzvX-U',
+        genre: 'electro',
+        name: 'Rhubarb',
+        artist: 'Aphex Twin'
+      },
+      { youtube: 'U4U19zwFENs',
+        genre: 'electro',
+        name: 'La femme d argent',
+        artist: 'Air'
+      },
+      { youtube: 'B--8LYoJ5WE&t',
+        genre: 'electro',
+        name: 'Woman to Woman',
+        artist: 'Moomin'
+      },
+    ]
+  },
+  # OPINION 14 - electro - electro musicians can not play, their music is just a 8 minute loop of a few notes
+  # ___________________________________________________________
+
+
+  {
+    ready: true,
+    name: "electro musicians can not play, their music is just a 8 minute loop of a few notes",
+    genre: 'electro',
+    description:
+    "I truely feel that all the electro music tracks are a simple loop of a few notes, no melody, no choruses. I doubt that most of the electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
+    tracks: [
+      { youtube: 'hGXfmPtbYmQ',
+        genre: 'electro',
+        name: "Peckham Rye",
+        artist: 'Neue Grafik'
+      },
+      { youtube: '6WCKrOR5x6Q',
+        genre: 'electro',
+        name: 'Higher Love (guitar edit)',
+        artist: 'Alankara and Jazzy D'
+      },
+      { youtube: 'vo1i-SAg09k',
+        genre: 'electro',
+        name: 'I need you so much',
+        artist: 'Moodymann'
+      },
+      { youtube: 'U93Drq3G5oE',
+        genre: 'electro',
+        name: 'Relax and have an other spliff',
+        artist: 'Kerri Chandler'
+      },
+      { youtube: 'UVIobrFP_N8',
+        genre: 'electro',
+        name: 'Une nuit au boxboys',
+        artist: 'The Pilotwings'
+      },
+      { youtube: 'qzJ9PfuqkIQ',
+        genre: 'electro',
+        name: 'The shit baby',
+        artist: 'Omar S'
+      },
+      { youtube: 'ezBF4h3ZVaM',
+        genre: 'electro',
+        name: 'Jazz Piece 2',
+        artist: 'Dj Aamkmael'
+      },
+    ]
+  },
+
+  # OPINION 15 - hip hop - Hip hop's beatmaking is not interesting without lyrics
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Hip hop's beatmaking is not interesting without lyrics",
+    genre: 'hip hop',
+    description:
+    "The beat is not interesting itself, I don't even think that beatmaking is a real form of art, it is just filling the void behind the lyrics",
+    tracks: [
+      { youtube: 'fC3Cthm0HFU',
+        genre: 'hip hop',
+        name: "Last doughnut of the night",
+        artist: 'J dilla'
+      },
+      { youtube: 'fHHSpfssBco',
+        genre: 'hip hop',
+        name: 'Respiration',
+        artist: 'Mos Def'
+      },
+      { youtube: 'CybO7XtYpdU',
+        genre: 'hip hop',
+        name: '1983',
+        artist: 'Flying Lotus'
+      },
+      { youtube: 'InFbBlpDTfQ',
+        genre: 'hip hop',
+        name: 'Midnight in a perfect world',
+        artist: 'Dj shadow'
+      },
+      { youtube: 'aVjgRlto8PI',
+        genre: 'hip hop',
+        name: 'Kemuri',
+        artist: 'Dj Krush'
       },
     ]
   },
@@ -628,6 +853,7 @@ genre = Genre.create(
   photo: ['metal1.jpg', 'metal2.jpg', 'metal3.jpg']
 )
 print ', ' << genre.name
+
 
 puts ''
 
