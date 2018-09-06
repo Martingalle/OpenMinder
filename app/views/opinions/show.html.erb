@@ -1,5 +1,5 @@
 <% content_for :meta_title, "#{@opinion.name}, a new opinion to beat on #{DEFAULT_META["meta_product_name"]}!" %>
-<% content_for :meta_description, "{@opinion.description}" %>
+<% content_for :meta_description, "#{@opinion.description}" %>
 <% content_for :meta_image, "genres/#{@opinion.genre.photo.sample}" %>
 
 <%= render 'shared/logo' %>
