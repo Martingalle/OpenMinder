@@ -6,12 +6,12 @@ class Opinion < ApplicationRecord
   has_many :genres, through: :tracks
 
   validates :name, presence: true, length: {
-    minimum: 20,
+    minimum: 15,
     maximum: 140,
     too_short: "%{count} characters is the minimum allowed",
     too_long: "%{count} characters is the maximum allowed" }
   validates :description, presence: true, length: {
-    minimum: 100,
+    minimum: 50,
     maximum: 350,
     too_short: "%{count} characters is the minimum allowed",
     too_long: "%{count} characters is the maximum allowed" }

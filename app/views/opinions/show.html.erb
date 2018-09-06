@@ -28,7 +28,7 @@
         <p><%= @opinion.description %></p>
 
         <% unless @opinion.related_opinions.without(@opinion).empty? %>
-          <p id='relatedOpinions' value='hide/show' class="related-opinions"> See Related Opinions</p>
+          <span id='relatedOpinions' value='hide/show' class="related-opinions"> See Related Opinions</span>
         <% end %>
       </div>
 
