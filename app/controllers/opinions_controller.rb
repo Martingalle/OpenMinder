@@ -33,6 +33,9 @@ class OpinionsController < ApplicationController
     @random_opinions = @opinions.sample(6)
 
     @opinion_new = Opinion.new
+
+    @genres = Genre.all
+
   end
 
   def show
@@ -63,7 +66,7 @@ class OpinionsController < ApplicationController
     opinion = Opinion.new(opinion_params)
     authorize opinion
     opinion.creator = current_user
-    @new = true
+    #@new = true
     if opinion.save
       @track_new = Track.new
       redirect_to opinion_path(opinion, new: true)
@@ -71,7 +74,7 @@ class OpinionsController < ApplicationController
       @opinions = Opinion.all
       @random_opinions = Opinion.order('RANDOM()').limit(6)
       @opinion_new = Opinion.new
-      render :index
+      redirect_to opinions_path
     end
   end
 
@@ -101,7 +104,7 @@ class OpinionsController < ApplicationController
   end
 
   def opinion_params
-    params.require(:opinion).permit(:name, :description)
+    params.require(:opinion).permit(:name, :description, :genre_id)
   end
 
   def render_show
