@@ -429,7 +429,7 @@ User.destroy_all
 
 USERS_COUNT = 48
 VOTES_BY_TRACK_MIN = 0
-VOTES_BY_TRACK_MAX = 99
+VOTES_BY_TRACK_MAX = 29
 
 puts '-------------------------------------------------------------------------'
 puts 'CREATING DEMO USERS AND ADMINS'
@@ -448,7 +448,7 @@ puts  "user@mail.com  | aaaaaa (ID: #{user.id})"
 
 admin = User.create!(
     email: 'admin@mail.com',
-    password: 'aaaaaaa',
+    password: 'aaaaaa',
     username: 'Jane Doe',
     birth_year: 1987,
     city: 'Lyon',
@@ -559,6 +559,9 @@ OPINIONS.each do |opinion|
       print (index + 1).to_s << ' - ' << track_instance.name
       rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
         user = User.order('RANDOM()').first
+        while Vote.where(user: user, track: track_instance).any?
+          user = User.order('RANDOM()').first
+        end
         vote = Vote.create!(
           user_id: user.id,
           track_id: track_instance.id
