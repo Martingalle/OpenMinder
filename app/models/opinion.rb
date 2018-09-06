@@ -1,6 +1,7 @@
 class Opinion < ApplicationRecord
   include PgSearch
   belongs_to :creator, class_name: 'User'
+  belongs_to :genre
   has_many :tracks, dependent: :destroy
   has_many :genres, through: :tracks
 
@@ -34,8 +35,9 @@ class Opinion < ApplicationRecord
   end
 
   def main_genre
-    return nil if self.genres.empty?
-    genres_occurrences_desc[0][:genre]
+    self.genre
+    # return nil if self.genres.empty?
+    # genres_occurrences_desc[0][:genre]
   end
 
   def secondary_genre
