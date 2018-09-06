@@ -251,7 +251,7 @@ OPINIONS = [
   # OPINION 8 - Jazz - Le jazz n’a pas changé depuis les années 40
   # ___________________________________________________________
   {
-    ready: true,
+    ready: false,
     name: "Le jazz n’a pas changé depuis les années 40",
     genre: 'jazz',
     description: "",
@@ -464,7 +464,7 @@ USERS_COUNT.times do |count|
   User.create!(
     email: Faker::Internet.email << rand(0..9).to_s,
     password: 'azerty',
-    username: Faker::Internet.username,
+    username: Faker::Internet.username(5..8),
     birth_year: 1970,
     city: Faker::Address.city,
     photo: "avatar_#{count + 2}.png",

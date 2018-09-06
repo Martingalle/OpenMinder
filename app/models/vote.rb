@@ -3,5 +3,5 @@ class Vote < ApplicationRecord
   belongs_to :track
 
   validates :user, uniqueness: { scope: :track,
-    message: "you already voted for this track" }
+    message: "You already voted for this track!" }
 end
