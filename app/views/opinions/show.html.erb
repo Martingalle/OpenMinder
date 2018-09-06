@@ -1,6 +1,10 @@
 <% content_for :meta_title, "#{@opinion.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @opinion.description %>
-<% content_for :meta_image, image_path(@opinion.main_genre.photo.sample) %>
+<% if @opinion.main_genre != nil %>
+
+  <%# content_for :meta_image, image_path(current_user.genres_appreciations_desc.first[:genre].photo.  sample) %>
+
+<% end %>
 
 <div class = "header-blue"></div>
 <div class="opinion-main-content" onload="initElement();">
