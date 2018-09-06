@@ -20,7 +20,7 @@ OPINIONS = [
   #     In the hash, there's 4 keys: 'youtube', 'genre', 'name', 'artist'.
   #     Each value is a string "...".
   #     The value for the 'youtube' key is the youtube id, find it on Youtube directly (11 numbers).
-  #     The value of genre should be: classical, rock, jazz, rap, folk, pop, electro or metal?
+  #     The value of genre should be: classical, rock, jazz, hip hop, folk, pop, electro or metal?
   #     Then fill the name of the song and the name of the artist.
 
   # ! Be carreful to not forget comas at the end of each data !
@@ -37,7 +37,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Rap lyrics are so poor, they just mumble!",
-    genre: 'rap',
+    genre: 'hip hop',
     description:
     "Why is rap so bad? This is an opinion.
     Rap Music is bad because people have preferences of music.
@@ -48,37 +48,37 @@ OPINIONS = [
     You have to become use to hearing it.",
     tracks: [
       { youtube: 'G52x5zyLAgY',
-        genre: 'rap',
+        genre: 'hip hop',
         name: "Crépuscule d'apocalyspe",
         artist: 'Dooz Kawa'
       },
       { youtube: 'akFZtK0GVU4',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Thé à la menthe',
         artist: 'La caution'
       },
       { youtube: 'QsNft5ftYSs',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Fenêtre sur rue',
         artist: 'Hugo TSR'
       },
       { youtube: 'FcHblRlbijc',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Want it back',
         artist: 'Guts'
       },
       { youtube: '2b9xNT7R1So',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Toussa Toussa',
         artist: 'Disiz La Peste'
       },
       { youtube: 'iAE1vUTZ4-Y',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Me faire la belle',
         artist: 'Dooz Kawa'
       },
       { youtube: '4o3RnLxzExo',
-        genre: 'rap',
+        genre: 'hip hop',
         name: 'Chewing gum',
         artist: 'Odezenne'
       },
@@ -211,7 +211,7 @@ OPINIONS = [
   {
     ready: false,
     name: "Le rap, c'est par des mecs, pour des mecs",
-    genre: 'rap',
+    genre: 'hip hop',
     description: "",
     tracks: [
       { youtube: '',
@@ -502,8 +502,8 @@ genre = Genre.create(
 print ', ' << genre.name
 
 genre = Genre.create(
-  name: 'rap',
-  photo: ['rap1.jpg', 'rap2.jpg', 'rap3.jpg', 'rap4.jpg', 'rap5.jpg', 'rap6.jpg']
+  name: 'hip hop',
+  photo: ['hiphop.jpg', 'hiphop2.jpg', 'hiphop3.jpg', 'hiphop4.jpg', 'hiphop5.jpg', 'hiphop6.jpg']
 )
 print ', ' << genre.name
 
