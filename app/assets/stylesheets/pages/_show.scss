@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  // height: 400px;
 }
 
 .beat-button-title {
@@ -25,7 +25,8 @@
 }
 
 .beat-button {
-  margin-left: 170px;
+  // margin-left: 170px;
+  margin: 0 auto;
   max-width: 10em;
 }
 
