@@ -47,7 +47,7 @@ class Opinion < ApplicationRecord
   end
 
   def main_genre
-    self.genre if self.genres.empty?
+    return self.genre if self.genres.empty?
     genres_occurrences_desc[0][:genre]
   end
 
