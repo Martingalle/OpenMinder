@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     element.classList.add("opinion-track-selected");
     updateVoteInPlayer();
+    insertYouTubeLink();
     loadVideoById();
     playVideo();
   }
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const first = document.querySelector(".tracks-js");
     if (first) {
       first.classList.add("opinion-track-selected");
+      insertYouTubeLink();
     }
   }
 
@@ -59,12 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
     tracks.forEach((track) => {
       track.addEventListener("click", clickOnTrack);
     }); // end of iteration on div array with id "tracks-js"
+    insertYouTubeLink();
   }
 
   function updateHeartInPlayerInRealTime () {
     document.addEventListener('voteUpdated', updateVoteInPlayer, false);
   }
-
+  function insertYouTubeLink () {
+    const playerShare = document.querySelector(".player-share")
+    let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
+    playerShare.innerHTML= `
+      <a href="https://www.youtube.com/watch?v=${youtubeId}" target="_blank">
+        <i class="fab fa-youtube player-youtube"></i>
+      </a>`;
+  }
 
   // initialization when DOM is loaded
   selectFirstSong ();

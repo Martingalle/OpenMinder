@@ -87,7 +87,16 @@
 
 .player-share {
   text-align: right;
-  margin-right: 40px;
+  margin-right: 60px;
+  .player-youtube {
+    font-size: 36px;
+    color: #ccc;
+    opacity: 0.8;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
 }
 
 .hidden-arrow {
