@@ -39,13 +39,9 @@ OPINIONS = [
     name: "Rap lyrics are so poor, they just mumble!",
     genre: 'hip hop',
     description:
-    "Why is rap so bad? This is an opinion.
-    Rap Music is bad because people have preferences of music.
-    Why is there no originality?
-    This question implies a falsehood.
-    There is plenty of originality in Rap Music.
-    Perhaps everyone sounds similar because you’re not a close listener of the music.
-    You have to become use to hearing it.",
+    "Why is rap so bad? Well, this is an opinion. Rap Music is bad because people have preferred music genres.
+    Why is there no originality? This question implies a falsehood: there is plenty of originality in Rap Music.
+    Perhaps every rapper sounds the same to you because you’re not listening to them closely: get used to hearing them!",
     tracks: [
       { youtube: 'G52x5zyLAgY',
         genre: 'hip hop',
