@@ -657,7 +657,7 @@ OPINIONS = [
   {
     ready: true,
     name: "Electronic musicians can not play, their music is just a 8 minute loop of a few notes",
-    genre: 'electro',
+    genre: 'electronic',
     description:
     "I truly feel all electronic music tracks are a simple loop of a few notes, without any melody or choruses. I doubt most of electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
     tracks: [
@@ -747,30 +747,15 @@ OPINIONS = [
     description:
     "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ''
+      { youtube: 'fC3Cthm0HFU',
+        genre: 'hip hop',
+        name: "Last doughnut of the night",
+        artist: 'J dilla'
       },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
+      { youtube: 'fHHSpfssBco',
+        genre: 'hip hop',
+        name: 'Respiration',
+        artist: 'Mos Def'
       },
     ]
   },
@@ -784,30 +769,15 @@ OPINIONS = [
     description:
     "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
     tracks: [
-      { youtube: '',
-        genre: '',
-        name: "",
-        artist: ''
+      { youtube: 'fC3Cthm0HFU',
+        genre: 'hip hop',
+        name: "Last doughnut of the night",
+        artist: 'J dilla'
       },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
-      },
-      { youtube: '',
-        genre: '',
-        name: '',
-        artist: ''
+      { youtube: 'fHHSpfssBco',
+        genre: 'hip hop',
+        name: 'Respiration',
+        artist: 'Mos Def'
       },
     ]
   },
