@@ -359,26 +359,6 @@ OPINIONS = [
     description:
     "Jazz is an outdated music for outdated people. The sound and the genre did not change and it's anachronic to listen to jazz today",
     tracks: [
-      { youtube: 'tWZdrBzgou8',
-        genre: 'jazz',
-        name: "Chocolate Chip",
-        artist: 'Miles Davis'
-      },
-      { youtube: 'LxW8dyxvhNU',
-        genre: 'jazz',
-        name: 'Frankenstein',
-        artist: 'Marcus Miller'
-      },
-      { youtube: 'U8NFS8WXfCI',
-        genre: 'jazz',
-        name: 'Re run home',
-        artist: 'Kamasi Washington'
-      },
-      { youtube: 'BvOZVPbTNMU',
-        genre: 'jazz',
-        name: 'Medina',
-        artist: 'Kamaal Williams'
-      },
       { youtube: 'VsHT2PUysmw',
         genre: 'jazz',
         name: 'Il l a fait avec sa soeur',
@@ -418,6 +398,21 @@ OPINIONS = [
         genre: 'jazz',
         name: "A.R.E. Project",
         artist: "A.R.E. Project"
+      },
+      { youtube: 'LxW8dyxvhNU',
+        genre: 'jazz',
+        name: 'Frankenstein',
+        artist: 'Marcus Miller'
+      },
+      { youtube: 'U8NFS8WXfCI',
+        genre: 'jazz',
+        name: 'Re run home',
+        artist: 'Kamasi Washington'
+      },
+      { youtube: 'tWZdrBzgou8',
+        genre: 'jazz',
+        name: "Chocolate Chip",
+        artist: 'Miles Davis'
       },
     ]
   },
@@ -558,7 +553,7 @@ OPINIONS = [
         name: 'That look you give that guy',
         artist: 'Eels'
       },
-      { youtube: '0ZECWpnQNQ',
+      { youtube: '-0ZECWpnQNQ',
         genre: 'rock',
         name: 'Videotape',
         artist: 'Radiohead'
@@ -617,44 +612,44 @@ OPINIONS = [
   {
     ready: true,
     name: "Electronic music is only dancefloor oriented, there is no emotions",
-    genre: 'electro',
+    genre: 'electronic',
     description:
-    "I feel like all the electro music tracks are made to sound good on a club soundsystem. The only thing that matters to the artists and the public is the strong basse",
+    "I feel like all the electronic music tracks are made to sound good on a club soundsystem. The only thing that matters to the artists and the public is the strong basse",
     tracks: [
-      { youtube: 'vZAajrxvDs4',
-        genre: 'electro',
-        name: "But only love can break your heart",
-        artist: 'Saint Etienne'
-      },
-      { youtube: 'dIwwjy4slI8',
-        genre: 'electro',
-        name: "Says",
-        artist: 'Nils Frahm'
-      },
-      { youtube: 'UpiqXuNU7I',
-        genre: 'electro',
+      { youtube: '8JCjLzrSb0E',
+        genre: 'electronic',
         name: 'The sunrise in her eyes',
         artist: 'Route 8'
       },
       { youtube: 'Dzrw52pTpso',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'Bye Bye Macadam',
         artist: 'Rone'
       },
-      { youtube: 'AWIqXzvX-U',
-        genre: 'electro',
+      { youtube: '_AWIqXzvX-U',
+        genre: 'electronic',
         name: 'Rhubarb',
         artist: 'Aphex Twin'
       },
       { youtube: 'U4U19zwFENs',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'La femme d argent',
         artist: 'Air'
       },
-      { youtube: 'B--8LYoJ5WE&t',
-        genre: 'electro',
+      { youtube: 'B--8LYoJ5WE',
+        genre: 'electronic',
         name: 'Woman to Woman',
         artist: 'Moomin'
+      },
+      { youtube: 'dIwwjy4slI8',
+        genre: 'electronic',
+        name: "Says",
+        artist: 'Nils Frahm'
+      },
+      { youtube: 'vZAajrxvDs4',
+        genre: 'electronic',
+        name: "But only love can break your heart",
+        artist: 'Saint Etienne'
       },
     ]
   },
@@ -664,43 +659,43 @@ OPINIONS = [
 
   {
     ready: true,
-    name: "electro musicians can not play, their music is just a 8 minute loop of a few notes",
-    genre: 'electro',
+    name: "Electronic musicians can not play, their music is just a 8 minute loop of a few notes",
+    genre: 'electronic',
     description:
-    "I truely feel that all the electro music tracks are a simple loop of a few notes, no melody, no choruses. I doubt that most of the electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
+    "I truely feel that all the electronic music tracks are a simple loop of a few notes, no melody, no choruses. I doubt that most of the electronic music artists are actually able to really play an instrument. Prove me wrong ! :)",
     tracks: [
       { youtube: 'hGXfmPtbYmQ',
-        genre: 'electro',
+        genre: 'electronic',
         name: "Peckham Rye",
         artist: 'Neue Grafik'
       },
       { youtube: '6WCKrOR5x6Q',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'Higher Love (guitar edit)',
         artist: 'Alankara and Jazzy D'
       },
       { youtube: 'vo1i-SAg09k',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'I need you so much',
         artist: 'Moodymann'
       },
       { youtube: 'U93Drq3G5oE',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'Relax and have an other spliff',
         artist: 'Kerri Chandler'
       },
       { youtube: 'UVIobrFP_N8',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'Une nuit au boxboys',
         artist: 'The Pilotwings'
       },
       { youtube: 'qzJ9PfuqkIQ',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'The shit baby',
         artist: 'Omar S'
       },
       { youtube: 'ezBF4h3ZVaM',
-        genre: 'electro',
+        genre: 'electronic',
         name: 'Jazz Piece 2',
         artist: 'Dj Aamkmael'
       },
@@ -813,7 +808,7 @@ genre = Genre.create(
 print genre.name
 
 genre = Genre.create(
-  name: 'electro',
+  name: 'electronic',
   photo: ['electro1.jpg', 'electro2.jpg', 'electro3.jpg', 'electro4.jpg', 'electro5.jpg', 'electro6.jpg']
 )
 print ', ' << genre.name
