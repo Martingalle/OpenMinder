@@ -89,11 +89,6 @@ OPINIONS = [
     Unlike some modern music, and so it definitely takes some time to appreciate.
     With jazz, no two pieces are the same, and so you cannot get bored listening to it.",
     tracks: [
-      { youtube: 'qNcPwrfK9tY',
-        genre: 'jazz',
-        name: "Kind of Blue",
-        artist: "Miles Davis"
-      },
       { youtube: 'll3CMgiUPuU',
         genre: 'jazz',
         name: "John Coltrane",
@@ -398,16 +393,11 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Jazz has not change since the 40s",
+    name: "Jazz has not changed since the 40s",
     genre: 'jazz',
     description:
     "Jazz is outdated music for outdated people. The sound and the genre did not change and it's anachronic to listen to jazz today",
     tracks: [
-      { youtube: 'VsHT2PUysmw',
-        genre: 'jazz',
-        name: 'Il l a fait avec sa soeur',
-        artist: 'Chromb!'
-      },
       { youtube: 'C8lX9sOLDvs',
         genre: 'jazz',
         name: 'Mista President',
@@ -732,21 +722,6 @@ OPINIONS = [
     description:
     "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
     tracks: [
-      { youtube: 'fC3Cthm0HFU',
-        genre: 'hip hop',
-        name: "Last doughnut of the night",
-        artist: 'J dilla'
-      },
-      { youtube: 'fHHSpfssBco',
-        genre: 'hip hop',
-        name: 'Respiration',
-        artist: 'Mos Def'
-      },
-      { youtube: 'CybO7XtYpdU',
-        genre: 'hip hop',
-        name: '1983',
-        artist: 'Flying Lotus'
-      },
       { youtube: 'InFbBlpDTfQ',
         genre: 'hip hop',
         name: 'Midnight in a perfect world',
@@ -948,3 +923,133 @@ puts "Users:    #{User.count}"
 puts "Opinions: #{Opinion.count}"
 puts "Tracks:   #{Track.count}"
 puts "Votes:    #{Vote.count}"
+
+puts ''
+puts '-------------------------------------------------------------------------'
+puts 'USER FOR PRESENTATION'
+
+titouan = User.create!(
+  email: 'titouan@gmail.com',
+  password: 'apapap',
+  username: 'titou',
+  birth_year: 1987,
+  city: 'Lyon',
+  photo: 'avatar_2',
+  admin: false
+)
+
+track = Track.create!(
+  name: "Chromb! - Il l'a fait avec sa soeur",
+  artist: "Chromb!",
+  photo: "https://i.ytimg.com/vi/VsHT2PUysmw/mqdefault.jpg",
+  youtube_id: "VsHT2PUysmw",
+  creator_id: titouan.id,
+  genre_id: Genre.where(name: 'jazz').first.id,
+  opinion_id: Opinion.where(name: 'Jazz has not changed since the 40s').first.id,
+  approved: rand(-1..1)
+)
+
+rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
+  user = User.order('RANDOM()').first
+  while Vote.where(user: user, track: track).any?
+    user = User.order('RANDOM()').first
+  end
+  vote = Vote.create!(
+    user_id: user.id,
+    track_id: track.id
+  )
+end
+
+track = Track.create!(
+  name: "Miles Davis - Kind of Blue",
+  artist: "Miles Davis",
+  photo: "https://i.ytimg.com/vi/qNcPwrfK9tY/mqdefault.jpg",
+  youtube_id: "qNcPwrfK9tY",
+  creator_id: titouan.id,
+  genre_id: Genre.where(name: 'jazz').first.id,
+  opinion_id: Opinion.where(name: 'Jazz is as boring as elevator music').first.id,
+  approved: rand(-1..1)
+)
+
+rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
+  user = User.order('RANDOM()').first
+  while Vote.where(user: user, track: track).any?
+    user = User.order('RANDOM()').first
+  end
+  vote = Vote.create!(
+    user_id: user.id,
+    track_id: track.id
+  )
+end
+
+track = Track.create!(
+  name: "J dilla - Last doughnut of the night",
+  artist: "J dilla",
+  photo: "https://i.ytimg.com/vi/fC3Cthm0HFU/mqdefault.jpg",
+  youtube_id: "fC3Cthm0HFU",
+  creator_id: titouan.id,
+  genre_id: Genre.where(name: 'hip hop').first.id,
+  opinion_id: Opinion.where(name: "Hip hop's beatmaking is not interesting without lyrics").first.id,
+  approved: rand(-1..1)
+)
+
+rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
+  user = User.order('RANDOM()').first
+  while Vote.where(user: user, track: track).any?
+    user = User.order('RANDOM()').first
+  end
+  vote = Vote.create!(
+    user_id: user.id,
+    track_id: track.id
+  )
+end
+
+track = Track.create!(
+  name: "Mos Def - Respiration",
+  artist: "Mos Def",
+  photo: "https://i.ytimg.com/vi/fHHSpfssBco/mqdefault.jpg",
+  youtube_id: "fHHSpfssBco",
+  creator_id: titouan.id,
+  genre_id: Genre.where(name: 'hip hop').first.id,
+  opinion_id: Opinion.where(name: "Hip hop's beatmaking is not interesting without lyrics").first.id,
+  approved: rand(-1..1)
+)
+
+rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
+  user = User.order('RANDOM()').first
+  while Vote.where(user: user, track: track).any?
+    user = User.order('RANDOM()').first
+  end
+  vote = Vote.create!(
+    user_id: user.id,
+    track_id: track.id
+  )
+end
+
+track = Track.create!(
+  name: "Flying Lotus - 1983",
+  artist: "Flying Lotus",
+  photo: "https://i.ytimg.com/vi/CybO7XtYpdU/mqdefault.jpg",
+  youtube_id: "CybO7XtYpdU",
+  creator_id: titouan.id,
+  genre_id: Genre.where(name: 'hip hop').first.id,
+  opinion_id: Opinion.where(name: "Hip hop's beatmaking is not interesting without lyrics").first.id,
+  approved: rand(-1..1)
+)
+
+rand(VOTES_BY_TRACK_MIN..VOTES_BY_TRACK_MAX).times do
+  user = User.order('RANDOM()').first
+  while Vote.where(user: user, track: track).any?
+    user = User.order('RANDOM()').first
+  end
+  vote = Vote.create!(
+    user_id: user.id,
+    track_id: track.id
+  )
+end
+
+puts ''
+puts '-------------------------------------------------------------------------'
+puts 'TITOUAN CREATED'
+
+puts  "titouan@gmail.com  | apapap (ID: #{titouan.id})"
