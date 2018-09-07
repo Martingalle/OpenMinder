@@ -22,39 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // when getting to /show/:id, I select the 1st song
-  const first = document.querySelector(".tracks-js");
-  if (first) {
-    // if there is a first song, i add the selected css
-    first.classList.add("opinion-track-selected");
-    addInfosToPlayer ()
-    // i can select any div from song tracks
-    const array = document.querySelectorAll(".tracks-js");
-
-    // i need to iterate on every div with addEventListener
-    array.forEach((element) => {
-      element.addEventListener("click", () => {
-        // i iterate on every div to unselect last selected track
-        array.forEach((div) => {
-          if (div.classList.contains("opinion-track-selected")) {
-            div.classList.remove("opinion-track-selected");
-          }
-        });
-
-        element.classList.add("opinion-track-selected");
-        updateVoteInPlayer();
-        loadVideoById();
-        playVideo();
-      });
-    }); // end of iteration on div array with id "tracks-js"
-
-    // let vote = document.getElementById("player-voted");
-    // let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
-    // let selected_li = selected.querySelector("li");
-    // let select = document.querySelector(".opinion-track-selected");
-
   function updateVoteInPlayer () {
-    let vote = document.getElementById("player-voted");
+      let vote = document.getElementById("player-voted");
     let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
     let selected_li = selected.nextElementSibling.querySelector("i");
     let select = document.querySelector(".opinion-track-selected");
@@ -65,53 +34,77 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
+  function clickOnTrack(event) {
+    const element = event.target.closest(".track");
+    const tracks = document.querySelectorAll(".tracks-js");
+    tracks.forEach((track) => {
+      if (track.classList.contains("opinion-track-selected")) {
+        track.classList.remove("opinion-track-selected");
+      }
+    });
 
-  updateVoteInPlayer();
+    element.classList.add("opinion-track-selected");
+    updateVoteInPlayer();
+    loadVideoById();
+    playVideo();
+  }
 
-  let vote = document.getElementById("player-voted");
-  let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
-  let selected_li = selected.nextElementSibling.querySelector("i");
+  // when getting to /show/:id, I select the 1st song
+  const first = document.querySelector(".tracks-js");
+  if (first) {
+    first.classList.add("opinion-track-selected");
+  } //end if (first)
 
-  selected_li.addEventListener("click", () => {
-    console.log("je suis dans l'add event listener");
-    if (selected_li.classList.contains("unvoted") === true) {
-      vote.classList.add("voted");
-    } else if (selected_li.classList.contains("unvoted") === false) {
-      vote.classList.remove("voted");
-    }
-  });
 
+    addInfosToPlayer ()
+    updateVoteInPlayer();
+    document.addEventListener('voteUpdated', updateVoteInPlayer, false);
+
+
+    // i can select any div from song tracks
+    const tracks = document.querySelectorAll(".tracks-js");
+    tracks.forEach((track) => {
+      track.addEventListener("click", clickOnTrack);
+    }); // end of iteration on div array with id "tracks-js"
+
+
+    // let vote = document.getElementById("player-voted");
+    // let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
+    // let selected_li = selected.nextElementSibling.querySelector("i");
+    // selected_li.addEventListener("click", () => {
+    //   if (selected_li.classList.contains("unvoted") === true) {
+    //     vote.classList.add("voted");
+    //   } else if (selected_li.classList.contains("unvoted") === false) {
+    //     vote.classList.remove("voted");
+    //   }
+    // });
+
+
+
+// PLAYER ___________________
 
   const play = document.querySelector(".play-button");
   play.addEventListener("click", () => {
-    console.log("je suis dans l'add event listener de play");
     const pause = document.querySelector(".pause-button");
-      play.classList.add("hidden");
-      pause.classList.remove("hidden");
-    // let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
-    // player.playVideo(youtubeId);
+    play.classList.add("hidden");
+    pause.classList.remove("hidden");
     playVideo();
-        // playVideo("cWGE9Gi0bB0");
+
   });
 
   const pause_button = document.querySelector(".pause-button");
   pause_button.addEventListener("click", () => {
-    console.log("je suis dans l'add event listener de pause")
     const play_button = document.querySelector(".play-button");
-      pause_button.classList.add("hidden");
-      play_button.classList.remove("hidden");
+    pause_button.classList.add("hidden");
+    play_button.classList.remove("hidden");
     pauseVideo();
   });
 
   const forward = document.querySelector(".right-arrow");
-  forward.addEventListener("click", () => {
-    playNextSong()
-  });
+  forward.addEventListener("click", playNextSong);
 
   const backward = document.querySelector(".left-arrow");
-  backward.addEventListener("click", () => {
-    playPreviousSong()
-  });
+  backward.addEventListener("click", playPreviousSong);
 
     // gets youtubeId in variable to pass to the player
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
@@ -125,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerVars: {
             fs: '0',
             modestbranding: '1',
-            controls: '0',
             rel: '0',
             iv_load_policy: '3',
             showinfo: '0'
@@ -153,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
     player.getDuration();
-  } //end if (first)
+
 
   function playPreviousSong() {
       let selected = document.querySelector(".opinion-track-selected");

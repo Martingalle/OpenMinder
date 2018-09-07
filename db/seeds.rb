@@ -39,13 +39,9 @@ OPINIONS = [
     name: "Rap lyrics are so poor, they just mumble!",
     genre: 'hip hop',
     description:
-    "Why is rap so bad? This is an opinion.
-    Rap Music is bad because people have preferences of music.
-    Why is there no originality?
-    This question implies a falsehood.
-    There is plenty of originality in Rap Music.
-    Perhaps everyone sounds similar because you’re not a close listener of the music.
-    You have to become use to hearing it.",
+    "Why is rap so bad? Well, this is an opinion. Rap Music is bad because people have preferred music genres.
+    Why is there no originality? This question implies a falsehood: there is plenty of originality in Rap Music.
+    Perhaps every rapper sounds the same to you because you’re not listening to them closely: get used to hearing them!",
     tracks: [
       { youtube: 'G52x5zyLAgY',
         genre: 'hip hop',
@@ -91,7 +87,7 @@ OPINIONS = [
     genre: 'jazz',
     description: "While all jazz does not have a vocalist, there is still a “story” that can be heard, a rise, climax and a fall.
     Unlike some modern music, and so it definitely takes some time to appreciate.
-    With jazz, no two pieces are the same, and so you cannot get bored of listening to it.",
+    With jazz, no two pieces are the same, and so you cannot get bored listening to it.",
     tracks: [
       { youtube: 'qNcPwrfK9tY',
         genre: 'jazz',
@@ -143,7 +139,7 @@ OPINIONS = [
     name: "Opera music tells old and sad stories",
     genre: 'classical',
     description: "You probably know the story of La Traviata, Carmen or Tristan and Isolde.
-    For sure, you can consider these stories to be tragic and old, but it's only so because of the time they take place!
+    For sure, you can consider these stories to be tragic and old, but it's only because of the time they take place!
     The performers' act and singing talents are carrying universal emotions we feel whatever the century we live
     and easily identify with.",
     tracks: [
@@ -207,7 +203,7 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Classical is inaudible unless you understand it perfectly.",
+    name: "Classical music is unlistenable unless you understand it perfectly",
     genre: 'classical',
     description: "The formula for a boring classical concert usually comes down to its vibe, atmosphere and programming.
     I feel as though the dish being served cannot be too daring or risky.
@@ -354,10 +350,10 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Jazz has not change since the 40's",
+    name: "Jazz has not change since the 40s",
     genre: 'jazz',
     description:
-    "Jazz is an outdated music for outdated people. The sound and the genre did not change and it's anachronic to listen to jazz today",
+    "Jazz is outdated music for outdated people. The sound and the genre did not change and it's anachronic to listen to jazz today",
     tracks: [
       { youtube: 'VsHT2PUysmw',
         genre: 'jazz',
@@ -423,8 +419,9 @@ OPINIONS = [
     ready: true,
     name: "Pop music is cheesy!",
     genre: 'pop',
-    description: "Well, pop music smells like lollipop and coton candy more than like cheese, no?
-    Here are a few great pop songs, not cheesy, but still glittery! Please add your style if you have some inspiration!",
+    description: "Well, pop music smells like lollipop and cotton candy more than like cheese, doesn't it?
+    Here are a few great pop songs, not cheesy, but still glittery!
+    Please add your own tracks if you have some inspiration!",
     tracks: [
       { youtube: 'PIb6AZdTr-A',
         genre: 'pop',
@@ -475,10 +472,10 @@ OPINIONS = [
     ready: true,
     name: "Flute is for classical nerds only",
     genre: 'classical',
-    description: "Yes it's true, sometimes the flute is played by little girl and
-    guys under drugs. But have you ever listened to rock flute ?
+    description: "Yes it's true, sometimes the flute is played by little girl and guys doing drugs.
+    But have you ever listened to rock flute?
     Forget the dreary medievalism or contemplative thoughtfulness.
-    Here the flute stands for pure, unfettered freedom and joy.",
+    Here, the flute stands for pure, unfettered freedom and joy.",
     tracks: [
       { youtube: 'JhqyZeUlE8U',
         genre: 'rock',
@@ -528,10 +525,10 @@ OPINIONS = [
   {
   ready: false,
     ready: true,
-    name: "Rock has not changed since the 70's",
+    name: "Rock has not changed since the 70s",
     genre: 'rock',
     description:
-    "I still exclusively listen the tracks I used to listen in the 70's, if there are youngens around here show me that the rock can renew itself. ",
+    "I still only listen to the tracks I used to listen to in the 70’s. If there are yougens around here, show me how rock is renewing itself!",
     tracks: [
       { youtube: 'sBzrzS1Ag_g',
         genre: 'rock',
@@ -569,10 +566,10 @@ OPINIONS = [
   # ___________________________________________________________
   {
     ready: true,
-    name: "Jazz is a noisy music",
+    name: "Jazz is noisy music",
     genre: 'jazz',
     description:
-    "Jazz is mostly high pitched saxophone or trompet notes blown into your ears",
+    "Jazz is mostly high pitched saxophone or trumpet notes blown into your ears",
     tracks: [
       { youtube: 'tSv04ylc6To',
         genre: 'jazz',
@@ -614,7 +611,7 @@ OPINIONS = [
     name: "Electronic music is only dancefloor oriented, there is no emotions",
     genre: 'electronic',
     description:
-    "I feel like all the electronic music tracks are made to sound good on a club soundsystem. The only thing that matters to the artists and the public is the strong basse",
+    "I feel like all electro music tracks are made to sound good on a club soundsystem. The only thing that matters to the artists and the public is the strong bass.",
     tracks: [
       { youtube: '8JCjLzrSb0E',
         genre: 'electronic',
@@ -660,9 +657,9 @@ OPINIONS = [
   {
     ready: true,
     name: "Electronic musicians can not play, their music is just a 8 minute loop of a few notes",
-    genre: 'electronic',
+    genre: 'electro',
     description:
-    "I truely feel that all the electronic music tracks are a simple loop of a few notes, no melody, no choruses. I doubt that most of the electronic music artists are actually able to really play an instrument. Prove me wrong ! :)",
+    "I truly feel all electronic music tracks are a simple loop of a few notes, without any melody or choruses. I doubt most of electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
     tracks: [
       { youtube: 'hGXfmPtbYmQ',
         genre: 'electronic',
@@ -710,7 +707,7 @@ OPINIONS = [
     name: "Hip hop's beatmaking is not interesting without lyrics",
     genre: 'hip hop',
     description:
-    "The beat is not interesting itself, I don't even think that beatmaking is a real form of art, it is just filling the void behind the lyrics",
+    "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
     tracks: [
       { youtube: 'fC3Cthm0HFU',
         genre: 'hip hop',
