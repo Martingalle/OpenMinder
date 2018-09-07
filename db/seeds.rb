@@ -736,6 +736,81 @@ OPINIONS = [
       },
     ]
   },
+
+  # OPINION 16 - electronic - Eletronic music is a fraud
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Eletronic music is a fraud",
+    genre: 'eletronic',
+    description:
+    "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
+    tracks: [
+      { youtube: '',
+        genre: '',
+        name: "",
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+    ]
+  },
+   # OPINION 16 - electronic - Lofi artists just sample an old disco loop and add a 909 kick
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Lofi artists just sample an old disco loop and add a 909 kick",
+    genre: 'eletronic',
+    description:
+    "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
+    tracks: [
+      { youtube: '',
+        genre: '',
+        name: "",
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+      { youtube: '',
+        genre: '',
+        name: '',
+        artist: ''
+      },
+    ]
+  },
 ]
 
 puts '-------------------------------------------------------------------------'
