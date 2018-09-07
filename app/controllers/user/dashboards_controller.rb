@@ -1,7 +1,8 @@
 class User::DashboardsController < ApplicationController
   def show
-    @tracks_added = current_user.tracks_added
+    @tracks_added = current_user.tracks_added.order(created_at: :desc)
     @tracks_voted = current_user.tracks_voted
+    @votes = current_user.votes.order(created_at: :desc)
 
     @favorite_genre_match = false
     if current_user.genres_appreciations_desc.nil?

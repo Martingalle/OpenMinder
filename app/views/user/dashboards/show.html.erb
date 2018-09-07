@@ -14,7 +14,7 @@
     <div class="row">
       <% @tracks_added[0..3].each do |track| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <%= render "track", track: track %>
+          <%= render 'track_added', track: track %>
         </div>
       <% end %>
     </div>
@@ -26,7 +26,7 @@
       <div class="row added-tracks-hidden">
         <% @tracks_added[4..@tracks_added.size+1].each do |track| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <%= render "track", track: track %>
+            <%= render 'track_added', track: track %>
           </div>
         <% end %>
       </div>
@@ -41,24 +41,24 @@
   <div class = "blue-profile"></div>
   <hr>
 
-  <% if @tracks_voted.any? %>
+  <% if @votes.any? %>
     <h4>Tracks you approved</h4>
     <div class="row">
-      <% @tracks_voted[0..3].each do |track| %>
+      <% @votes[0..3].each do |vote| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <%= render "track", track: track %>
+          <%= render 'track_voted', track: vote.track %>
         </div>
       <% end %>
     </div>
 
-    <% if @tracks_voted.size > 4 %>
+    <% if @votes.size > 4 %>
       <div class="row button-row">
         <button id="show-voted-tracks" type="button" name="button" class="button-light-red">See all</button>
       </div>
       <div class="row voted-tracks-hidden">
-        <% @tracks_voted[4..@tracks_voted.size+1].each do |track| %>
+        <% @votes[4..@votes.size+1].each do |vote| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <%= render "track", track: track %>
+            <%= render 'track_voted', track: vote.track %>
           </div>
         <% end %>
       </div>
