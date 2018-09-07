@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
           playerVars: {
             fs: '0',
             modestbranding: '1',
-            controls: '0',
             rel: '0',
             iv_load_policy: '3',
             showinfo: '0'
