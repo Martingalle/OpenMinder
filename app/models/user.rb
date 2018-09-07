@@ -54,6 +54,7 @@ class User < ApplicationRecord
 
   def set_photo
     self.photo = "avatar_#{rand(1..50)}.png"
+    self.photo = "avatar_22.png" if self.username == 'titou'
   end
 end
 

@@ -4,7 +4,6 @@
 
 <div class = "header-blue"></div>
 
-
 <%= render "profile" %>
 
 <div class="user-wrapper">
@@ -65,14 +64,14 @@
     <% end %>
 
   <% else %>
-    <h4>Looks like you haven't approved of any tracks, if you do, they will appear here...</h4>
+    <h4>Looks like you haven't approved any tracks, if you do, they will appear here...</h4>
   <% end %>
 
   <div class = "blue-profile"></div>
   <hr>
   <div class="opinions-to-display">
     <% if @favorite_genre_match %>
-      <h4>From your likes, it seems like you are fond of <span class="underlined-title"><%= @favorite_genre.name %></span>! Try to beat these opinions to help other understand it!</h4>
+      <h4>From your likes, it seems that you are quite fond of <span class="underlined-title"><%= @favorite_genre.name %></span>! Try to beat these opinions to help other understand it!</h4>
     <% else %>
       <h4>Here are some opinions you should discover!</h4>
     <% end %>
