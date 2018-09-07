@@ -1,0 +1,14 @@
+<%= link_to opinion_path(track.opinion) do  %>
+  <div class="user-track">
+    <div>
+      <p class = "track-title">
+        <%= track.name %>
+        <% unless track.upvotes.zero? %>
+          <br>
+          <span style="color: #AAAAAA;">♥ <%= track.upvotes %></span>
+        <% end %>
+      </p>
+    </div>
+    <div><%= image_tag track.photo, class: 'track-image hidden-xs' %></div>
+  </div>
+<% end %>
