@@ -314,6 +314,54 @@ OPINIONS = [
     ]
   },
 
+  # OPINION 14 - electro - electro musicians can not play, their music is just a 8 minute loop of a few notes
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Electronic musicians can not play, their music is just a 8 minute loop of a few notes",
+    genre: 'electronic',
+    description:
+    "I truly feel all electronic music tracks are a simple loop of a few notes, without any melody or choruses. I doubt most of electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
+    tracks: [
+      { youtube: 'hGXfmPtbYmQ',
+        genre: 'electronic',
+        name: "Peckham Rye",
+        artist: 'Neue Grafik'
+      },
+      { youtube: '6WCKrOR5x6Q',
+        genre: 'electronic',
+        name: 'Higher Love (guitar edit)',
+        artist: 'Alankara and Jazzy D'
+      },
+      { youtube: 'vo1i-SAg09k',
+        genre: 'electronic',
+        name: 'I need you so much',
+        artist: 'Moodymann'
+      },
+      { youtube: 'U93Drq3G5oE',
+        genre: 'electronic',
+        name: 'Relax and have an other spliff',
+        artist: 'Kerri Chandler'
+      },
+      { youtube: 'UVIobrFP_N8',
+        genre: 'electronic',
+        name: 'Une nuit au boxboys',
+        artist: 'The Pilotwings'
+      },
+      { youtube: 'qzJ9PfuqkIQ',
+        genre: 'electronic',
+        name: 'The shit baby',
+        artist: 'Omar S'
+      },
+      { youtube: 'ezBF4h3ZVaM',
+        genre: 'electronic',
+        name: 'Jazz Piece 2',
+        artist: 'Dj Aamkmael'
+      },
+    ]
+  },
+
   # OPINION 7 - Jazz - Le jazz c'est des mecs qui jouent n'importe comment sous prétexte d'improvisation
   # ___________________________________________________________
   {
@@ -392,7 +440,7 @@ OPINIONS = [
       },
       { youtube: 'lZmjxrfqdOo',
         genre: 'jazz',
-        name: "A.R.E. Project",
+        name: "Live set",
         artist: "A.R.E. Project"
       },
       { youtube: 'LxW8dyxvhNU',
@@ -462,6 +510,29 @@ OPINIONS = [
         genre: 'pop',
         name: "It's Not Enough",
         artist: "Johnny Thunders & The Heartbreakers"
+      },
+    ]
+  },
+
+  # OPINION 16 - electronic - Eletronic music is a fraud
+  # ___________________________________________________________
+
+  {
+    ready: true,
+    name: "Eletronic music is a fraud",
+    genre: 'electronic',
+    description:
+    "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
+    tracks: [
+      { youtube: 'fC3Cthm0HFU',
+        genre: 'hip hop',
+        name: "Last doughnut of the night",
+        artist: 'J dilla'
+      },
+      { youtube: 'fHHSpfssBco',
+        genre: 'hip hop',
+        name: 'Respiration',
+        artist: 'Mos Def'
       },
     ]
   },
@@ -650,54 +721,6 @@ OPINIONS = [
       },
     ]
   },
-  # OPINION 14 - electro - electro musicians can not play, their music is just a 8 minute loop of a few notes
-  # ___________________________________________________________
-
-
-  {
-    ready: true,
-    name: "Electronic musicians can not play, their music is just a 8 minute loop of a few notes",
-    genre: 'electronic',
-    description:
-    "I truly feel all electronic music tracks are a simple loop of a few notes, without any melody or choruses. I doubt most of electro music artists are actually able to really play an instrument. Prove me wrong ! :)",
-    tracks: [
-      { youtube: 'hGXfmPtbYmQ',
-        genre: 'electronic',
-        name: "Peckham Rye",
-        artist: 'Neue Grafik'
-      },
-      { youtube: '6WCKrOR5x6Q',
-        genre: 'electronic',
-        name: 'Higher Love (guitar edit)',
-        artist: 'Alankara and Jazzy D'
-      },
-      { youtube: 'vo1i-SAg09k',
-        genre: 'electronic',
-        name: 'I need you so much',
-        artist: 'Moodymann'
-      },
-      { youtube: 'U93Drq3G5oE',
-        genre: 'electronic',
-        name: 'Relax and have an other spliff',
-        artist: 'Kerri Chandler'
-      },
-      { youtube: 'UVIobrFP_N8',
-        genre: 'electronic',
-        name: 'Une nuit au boxboys',
-        artist: 'The Pilotwings'
-      },
-      { youtube: 'qzJ9PfuqkIQ',
-        genre: 'electronic',
-        name: 'The shit baby',
-        artist: 'Omar S'
-      },
-      { youtube: 'ezBF4h3ZVaM',
-        genre: 'electronic',
-        name: 'Jazz Piece 2',
-        artist: 'Dj Aamkmael'
-      },
-    ]
-  },
 
   # OPINION 15 - hip hop - Hip hop's beatmaking is not interesting without lyrics
   # ___________________________________________________________
@@ -737,35 +760,13 @@ OPINIONS = [
     ]
   },
 
-  # OPINION 16 - electronic - Eletronic music is a fraud
-  # ___________________________________________________________
-
-  {
-    ready: true,
-    name: "Eletronic music is a fraud",
-    genre: 'eletronic',
-    description:
-    "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
-    tracks: [
-      { youtube: 'fC3Cthm0HFU',
-        genre: 'hip hop',
-        name: "Last doughnut of the night",
-        artist: 'J dilla'
-      },
-      { youtube: 'fHHSpfssBco',
-        genre: 'hip hop',
-        name: 'Respiration',
-        artist: 'Mos Def'
-      },
-    ]
-  },
-   # OPINION 16 - electronic - Lofi artists just sample an old disco loop and add a 909 kick
+  # OPINION 16 - electronic - Lofi artists just sample an old disco loop and add a 909 kick
   # ___________________________________________________________
 
   {
     ready: true,
     name: "Lofi artists just sample an old disco loop and add a 909 kick",
-    genre: 'eletronic',
+    genre: 'electronic',
     description:
     "The beat itself is not interesting. I don't even think beatmaking is a real form of art, it is just filling the void behind the lyrics.",
     tracks: [
