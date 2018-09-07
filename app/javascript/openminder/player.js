@@ -4,7 +4,6 @@ let player;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   function updatePlayerControls() {
     let first_child = document.querySelector(".hello-tracks").firstElementChild.firstElementChild;
     let last_child = document.querySelector(".hello-tracks").lastElementChild.firstElementChild;
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateVoteInPlayer () {
-      let vote = document.getElementById("player-voted");
+    let vote = document.getElementById("player-voted");
     let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
     let selected_li = selected.nextElementSibling.querySelector("i");
     let select = document.querySelector(".opinion-track-selected");
@@ -42,89 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
         track.classList.remove("opinion-track-selected");
       }
     });
-
     element.classList.add("opinion-track-selected");
     updateVoteInPlayer();
     loadVideoById();
     playVideo();
   }
 
-  // when getting to /show/:id, I select the 1st song
-  const first = document.querySelector(".tracks-js");
-  if (first) {
-    first.classList.add("opinion-track-selected");
-  } //end if (first)
+  function selectFirstSong () {
+    const first = document.querySelector(".tracks-js");
+    if (first) {
+      first.classList.add("opinion-track-selected");
+    }
+  }
 
-
-    addInfosToPlayer ()
-    updateVoteInPlayer();
-    document.addEventListener('voteUpdated', updateVoteInPlayer, false);
-
-
-    // i can select any div from song tracks
+  function selectATrack() {
     const tracks = document.querySelectorAll(".tracks-js");
     tracks.forEach((track) => {
       track.addEventListener("click", clickOnTrack);
     }); // end of iteration on div array with id "tracks-js"
+  }
+
+  function updateHeartInPlayerInRealTime () {
+    document.addEventListener('voteUpdated', updateVoteInPlayer, false);
+  }
 
 
-    // let vote = document.getElementById("player-voted");
-    // let selected = document.querySelector(".opinion-track-selected").nextElementSibling;
-    // let selected_li = selected.nextElementSibling.querySelector("i");
-    // selected_li.addEventListener("click", () => {
-    //   if (selected_li.classList.contains("unvoted") === true) {
-    //     vote.classList.add("voted");
-    //   } else if (selected_li.classList.contains("unvoted") === false) {
-    //     vote.classList.remove("voted");
-    //   }
-    // });
+  // initialization when DOM is loaded
+  selectFirstSong ();
+  addArtistInfosToPlayer ();
+  updateVoteInPlayer();
+  selectATrack();
+  updateHeartInPlayerInRealTime();
 
 
+// -----------------------------------------
+// PLAYER YT - CREATION ET ENVOI DE PARAMS
+// -----------------------------------------
 
-// PLAYER ___________________
+  // gets youtubeId in variable to pass to the player
+  let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
 
-  const play = document.querySelector(".play-button");
-  play.addEventListener("click", () => {
-    const pause = document.querySelector(".pause-button");
-    play.classList.add("hidden");
-    pause.classList.remove("hidden");
-    playVideo();
-
-  });
-
-  const pause_button = document.querySelector(".pause-button");
-  pause_button.addEventListener("click", () => {
-    const play_button = document.querySelector(".play-button");
-    pause_button.classList.add("hidden");
-    play_button.classList.remove("hidden");
-    pauseVideo();
-  });
-
-  const forward = document.querySelector(".right-arrow");
-  forward.addEventListener("click", playNextSong);
-
-  const backward = document.querySelector(".left-arrow");
-  backward.addEventListener("click", playPreviousSong);
-
-    // gets youtubeId in variable to pass to the player
-    let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
-
-    // display player on div with id="player"
-    player = YouTubePlayer('player',
-          // events: {
-          // 'onStateChange': onPlayerStateChange
-          // }},
-          {
-          playerVars: {
-            fs: '0',
-            modestbranding: '1',
-            rel: '0',
-            iv_load_policy: '3',
-            showinfo: '0'
-          },
-          height: '100%',
-          width: '100%'
-          });
+  // display iframe player on div with id="player"
+  // Send params to the YouTubePlayer
+  player = YouTubePlayer('player',
+        {
+        playerVars: {
+          fs: '0',
+          modestbranding: '1',
+          rel: '0',
+          iv_load_policy: '3',
+          showinfo: '0'
+        },
+        height: '100%',
+        width: '100%'
+        });
 
     // 'loadVideoById' is queued until the player is ready to receive API calls.
     player.loadVideoById(youtubeId);
@@ -147,11 +117,36 @@ document.addEventListener('DOMContentLoaded', () => {
     player.getDuration();
 
 
+// -----------------------------------------------------------------------------
+//                      PLAYER BAS - FONCTIONS DE LECTURE
+// -----------------------------------------------------------------------------
+
+  const play = document.querySelector(".play-button");
+  play.addEventListener("click", () => {
+    changePlayToPause();
+    playVideo();
+  });
+
+  const pause_button = document.querySelector(".pause-button");
+  pause_button.addEventListener("click", () => {
+    changePauseToPlay();
+    pauseVideo();
+  });
+
+  const forward = document.querySelector(".right-arrow");
+  forward.addEventListener("click", playNextSong);
+
+  const backward = document.querySelector(".left-arrow");
+  backward.addEventListener("click", playPreviousSong);
+
+
+
   function playPreviousSong() {
       let selected = document.querySelector(".opinion-track-selected");
       let previous = selected.parentNode.previousElementSibling.firstElementChild;
       selected.classList.remove("opinion-track-selected");
       previous.classList.add("opinion-track-selected");
+      updateVoteInPlayer();
       loadVideoById();
       playVideo();
   }
@@ -161,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let next = selected.parentNode.nextElementSibling.firstElementChild;
       selected.classList.remove("opinion-track-selected");
       next.classList.add("opinion-track-selected");
+      updateVoteInPlayer();
       loadVideoById();
       playVideo();
   }
@@ -179,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pause.classList.add("hidden");
   }
 
-  function addInfosToPlayer () {
+  function addArtistInfosToPlayer () {
     const title = document.querySelector(".player-title h1");
     const added = document.querySelector(".player-title p");
     let name = document.querySelector(".opinion-track-selected").dataset.songName;
@@ -197,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function playVideo() {
     changePlayToPause ();
-    addInfosToPlayer();
+    addArtistInfosToPlayer();
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
     player.playVideo(youtubeId);
     player.getCurrentTime(youtubeId);
@@ -223,28 +219,26 @@ document.addEventListener('DOMContentLoaded', () => {
     player.getPlayerState().then(displayState);
   }
 
-player.on('stateChange', (event) => {
-  // console.log(event.data)
-  switch (event.data) {
-    case "-1":
-      break;
-    case 0:
-      playNextSong();
-      break;
-    case 1:
-      changePlayToPause();
-      break;
-    case 2:
-      changePauseToPlay ();
-      break;
-    case 3:
-      break;
-    case 5:
-      break;
-    default:
-  }
-// -1 : non démarré 0 : arrêté 1 : en lecture 2 : en pause 3 : en mémoire tampon 5 : en file dattente
-});
+  player.on('stateChange', (event) => {
+    // -1 : non démarré 0 : arrêté 1 : en lecture 2 : en pause 3 : en mémoire tampon 5 : en file dattente
+    switch (event.data) {
+      case "-1":
+        break;
+      case 0:
+        playNextSong();
+        break;
+      case 1:
+        changePlayToPause();
+        break;
+      case 2:
+        changePauseToPlay ();
+        break;
+      case 3:
+        break;
+      case 5:
+        break;
+      default:
+    }
+  });
 
-  updatePlayerControls();
 });//end DOM
