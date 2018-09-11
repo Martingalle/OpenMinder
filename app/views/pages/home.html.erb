@@ -20,29 +20,46 @@
 
 <div id="details-page">
   <div class="details">
-    <div class="detail">
-      <%= render 'shared/svg_discover' %>
-      <p class="detail_info">Discover new musical content in an original way: just select a cliche you believe in and let others show you that you were wrong!</p>
-    </div>
-    <div class="detail">
-      <%= render 'shared/svg_suggest' %>
-      <p class="detail_info">You can also participate! Submit songs you think can beat a cliche and try to challenge other convinced users!</p>
-    </div>
-    <div class="detail">
-      <%= render 'shared/svg_share' %>
-       <p class="detail_info">Share the cliche on social media and challenge your friends to submit their perfect track to beat a cliche... or to discover new musical horizons!</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="detail">
+          <%= render 'shared/svg_discover' %>
+          <p class="detail_info">Discover new musical content in an original way: just select a cliche you believe in and let others show you that you were wrong!</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="detail">
+          <%= render 'shared/svg_suggest' %>
+          <p class="detail_info">You can also participate! Submit songs you think can beat a cliche and try to challenge other convinced users!</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="detail">
+          <%= render 'shared/svg_share' %>
+           <p class="detail_info">Share the cliche on social media and challenge your friends to submit their perfect track to beat a cliche... or to discover new musical horizons!</p>
+        </div>
+      </div>
     </div>
   </div>
-    <div class="next-button">
-      <a href="#cards">
-        <button class="button-red">Latest cards</button>
-      </a>
+  <div class="next-button">
+    <a href="#cards">
+      <button class="button-red">Latest cards</button>
+    </a>
+  </div>
+</div> <!-- end of first row -->
+
+<div id="cards" class="last-cards">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="underlined-title">Latest cards</h2>
     </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
+    </div>
+  </div>
 </div>
 
-<div class="last-cards" id="cards">
-  <h2 class="underlined-title">Latest cards</h2>
-  <%= render 'shared/opinions-cards', opinions: @random_opinions[0..2] %>
+<div class="row">
   <div class="details-buttons">
     <%= link_to opinions_path do  %>
       <button class="button-light-red">See more...</button>
@@ -52,3 +69,4 @@
     <% end %>
   </div>
 </div>
+

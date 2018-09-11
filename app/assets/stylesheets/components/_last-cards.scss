@@ -1,19 +1,20 @@
 .last-cards {
-  position: relative;
+  // position: relative;
   margin-left: -20px;
   margin-right: -20px;
-  height: 100vh;
-  padding: 10px 50px 50px 50px;
-  .details-buttons {
-    font-size: 20px;
-    margin-top: 50px;
-    text-align: center;
+  // height: 100vh;
+  padding: 10px 40px 40px 40px;
+  a {
+    text-decoration: none;
   }
+}
+
+.details-buttons {
+    font-size: 20px;
+    margin: 20px auto;
+    text-align: center;
   .details-buttons button {
     margin-top: 10px;
     font-weight: normal;
-  }
-  a {
-    text-decoration: none;
   }
 }

@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHeartInPlayerInRealTime () {
     document.addEventListener('voteUpdated', updateVoteInPlayer, false);
   }
+
   function insertYouTubeLink () {
     const playerShare = document.querySelector(".player-share")
     let youtubeId = document.querySelector(".opinion-track-selected").dataset.youtubeId;
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initialization when DOM is loaded
   selectFirstSong ();
+  updatePlayerControls();
   addArtistInfosToPlayer ();
   updateVoteInPlayer();
   selectATrack();
@@ -102,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
           iv_load_policy: '3',
           showinfo: '0'
         },
-        height: '100%',
-        width: '100%'
+        height: '360',
+        width: '640'
         });
 
     // 'loadVideoById' is queued until the player is ready to receive API calls.
